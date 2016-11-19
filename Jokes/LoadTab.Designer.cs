@@ -108,7 +108,7 @@
             this.label1.Location = new System.Drawing.Point(18, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 70;
             this.label1.Text = "Path:";
             // 
             // txtFileName
@@ -153,15 +153,15 @@
             this.dtCreationDate.Location = new System.Drawing.Point(106, 116);
             this.dtCreationDate.Name = "dtCreationDate";
             this.dtCreationDate.Size = new System.Drawing.Size(200, 20);
-            this.dtCreationDate.TabIndex = 13;
-            this.dtCreationDate.Value = new System.DateTime(2016, 11, 18, 15, 42, 39, 0);
+            this.dtCreationDate.TabIndex = 5;
+            this.dtCreationDate.Value = new System.DateTime(2016, 11, 19, 0, 0, 0, 0);
             // 
             // numRating
             // 
             this.numRating.Location = new System.Drawing.Point(106, 178);
             this.numRating.Name = "numRating";
             this.numRating.Size = new System.Drawing.Size(48, 20);
-            this.numRating.TabIndex = 14;
+            this.numRating.TabIndex = 7;
             // 
             // btnSave
             // 
@@ -169,7 +169,7 @@
             this.btnSave.Location = new System.Drawing.Point(0, 231);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(477, 23);
-            this.btnSave.TabIndex = 15;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Load";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

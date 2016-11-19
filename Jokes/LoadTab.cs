@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using DAL;
 
 namespace Jokes
 {
     public partial class LoadTab : UserControl
     {
         JokeFileInfo info;
+        LoadTabDal myDal;
 
         public LoadTab()
         {
@@ -24,6 +26,7 @@ namespace Jokes
             
             resetBindings();
 
+            myDal = new LoadTabDal();
         }
 
         private void btnLoadFile_Click(object sender, EventArgs e)
@@ -57,7 +60,7 @@ namespace Jokes
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            myDal.SaveNewFile(info);
         }
     }
 }

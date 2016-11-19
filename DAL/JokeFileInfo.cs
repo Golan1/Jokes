@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Jokes
+namespace DAL
 {
     public class JokeFileInfo : INotifyPropertyChanged
     {
