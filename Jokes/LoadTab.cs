@@ -13,9 +13,17 @@ namespace Jokes
 {
     public partial class LoadTab : UserControl
     {
+        JokeFileInfo info;
+
         public LoadTab()
         {
             InitializeComponent();
+
+            info = new JokeFileInfo();
+            info.CreationDate = DateTime.Now;          
+            
+            resetBindings();
+
         }
 
         private void btnLoadFile_Click(object sender, EventArgs e)
@@ -24,9 +32,31 @@ namespace Jokes
             if (result == DialogResult.OK)
             {
                 string fileName = openFileDialog.FileName;
-                string text = File.ReadAllText(fileName);
+
+                info = XmlUtils.desirialize<JokeFileInfo>(fileName);
+
                 txtFileName.Text = fileName;
+
+                resetBindings();
             }
+        }
+
+        private void resetBindings()
+        {
+            txtTitle.DataBindings.Clear();
+            txtTitle.DataBindings.Add("Text", info, "Title");
+            txtAuthor.DataBindings.Clear();
+            txtAuthor.DataBindings.Add("Text", info, "Author");
+            dtCreationDate.DataBindings.Clear();
+            dtCreationDate.DataBindings.Add("Value", info, "CreationDate");
+            txtSource.DataBindings.Clear();
+            txtSource.DataBindings.Add("Text", info, "Source");
+            numRating.DataBindings.Clear();
+            numRating.DataBindings.Add("Value", info, "Rating");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using System.IO;
 
 namespace Jokes
 {
@@ -33,6 +34,27 @@ namespace Jokes
             dr.Read();
 
             var x = dr["x"].ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var x = new JokeFileInfo()
+            {
+                Title = "t",
+                Author = "a",
+                CreationDate = DateTime.Now,
+                Rating = 7,
+                Source = "s",
+                Data = "hahahah"
+            };
+
+            System.Xml.Serialization.XmlSerializer s = new System.Xml.Serialization.XmlSerializer(typeof(JokeFileInfo));
+
+            using (var sw = new StreamWriter(@".\\1.xml"))
+            {
+                s.Serialize(sw, x);
+            }
+
         }
     }
 }

@@ -37,10 +37,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.txtFileName = new System.Windows.Forms.TextBox();
-            this.txtCreationDate = new System.Windows.Forms.TextBox();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtSource = new System.Windows.Forms.TextBox();
+            this.dtCreationDate = new System.Windows.Forms.DateTimePicker();
+            this.numRating = new System.Windows.Forms.NumericUpDown();
+            this.btnSave = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numRating)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoadFile
@@ -108,10 +111,6 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Path:";
             // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog";
-            // 
             // txtFileName
             // 
             this.txtFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -121,15 +120,6 @@
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(287, 20);
             this.txtFileName.TabIndex = 1;
-            // 
-            // txtCreationDate
-            // 
-            this.txtCreationDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCreationDate.Location = new System.Drawing.Point(106, 115);
-            this.txtCreationDate.Name = "txtCreationDate";
-            this.txtCreationDate.Size = new System.Drawing.Size(287, 20);
-            this.txtCreationDate.TabIndex = 5;
             // 
             // txtAuthor
             // 
@@ -158,15 +148,43 @@
             this.txtSource.Size = new System.Drawing.Size(287, 20);
             this.txtSource.TabIndex = 6;
             // 
+            // dtCreationDate
+            // 
+            this.dtCreationDate.Location = new System.Drawing.Point(106, 116);
+            this.dtCreationDate.Name = "dtCreationDate";
+            this.dtCreationDate.Size = new System.Drawing.Size(200, 20);
+            this.dtCreationDate.TabIndex = 13;
+            this.dtCreationDate.Value = new System.DateTime(2016, 11, 18, 15, 42, 39, 0);
+            // 
+            // numRating
+            // 
+            this.numRating.Location = new System.Drawing.Point(106, 178);
+            this.numRating.Name = "numRating";
+            this.numRating.Size = new System.Drawing.Size(48, 20);
+            this.numRating.TabIndex = 14;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSave.Location = new System.Drawing.Point(0, 231);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(477, 23);
+            this.btnSave.TabIndex = 15;
+            this.btnSave.Text = "Load";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // LoadTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.numRating);
+            this.Controls.Add(this.dtCreationDate);
             this.Controls.Add(this.txtFileName);
             this.Controls.Add(this.btnLoadFile);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtAuthor);
-            this.Controls.Add(this.txtCreationDate);
             this.Controls.Add(this.txtSource);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -175,7 +193,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LoadTab";
-            this.Size = new System.Drawing.Size(477, 206);
+            this.Size = new System.Drawing.Size(477, 254);
+            ((System.ComponentModel.ISupportInitialize)(this.numRating)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,9 +211,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.TextBox txtFileName;
-        private System.Windows.Forms.TextBox txtCreationDate;
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtSource;
+        private System.Windows.Forms.DateTimePicker dtCreationDate;
+        private System.Windows.Forms.NumericUpDown numRating;
+        private System.Windows.Forms.Button btnSave;
     }
 }
