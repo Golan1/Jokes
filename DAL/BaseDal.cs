@@ -10,7 +10,9 @@ namespace DAL
 {
     abstract public class BaseDal
     {
+        private const string SQL_SELECT_SEQ = "SELECT {0}.nextval from dual";
         private const string connectionString = "user id=conn;password=conn;data source=XE";
+
         public BaseDal()
         {
 
@@ -22,6 +24,18 @@ namespace DAL
             conn.Open();
 
             return conn;
+        }
+
+        protected int NextVal(string seqName, OracleConnection conn)
+        {
+            var cmd = new OracleCommand();
+            cmd.Connection = conn;
+
+            cmd.CommandText = string.Format(SQL_SELECT_SEQ, seqName);
+
+            var returnValue = int.Parse(cmd.ExecuteScalar().ToString());
+
+            return returnValue;
         }
     }
 }

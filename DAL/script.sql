@@ -2,6 +2,7 @@ drop table relation;
 drop table word_in_group;
 drop table jk_group;
 drop table word_in_joke;
+drop sequence joke_seq;
 drop table joke;
 drop sequence jk_file_seq;
 drop table jk_file;
@@ -27,15 +28,19 @@ file_id number not null,
 joke_index number not null,
 foreign key (file_id) references jk_file(id));
 
-
+CREATE SEQUENCE joke_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+ 
 create table word_in_joke(
 joke_id number,
 index_in_joke number,
-word varchar2(50) not null,
+text varchar2(50) not null,
+text_for_search varchar2(50),
 line_index number,
 index_in_line number,
-pre_mark varchar2(10),
-post_mark varchar2(10),
 primary key (joke_id, index_in_joke),
 foreign key (joke_id) references joke(id));
 
@@ -47,8 +52,8 @@ name varchar2(100) unique not null);
 
 create table word_in_group(
 group_id number,
-word varchar2(50),
-primary key (group_id, word),
+text varchar2(50),
+primary key (group_id, text),
 foreign  key (group_id) references jk_group(id));
 
 

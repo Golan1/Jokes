@@ -34,9 +34,9 @@ namespace DAL
             }
         }
 
-        private DateTime? creationDate;
+        private DateTime creationDate;
 
-        public DateTime? CreationDate
+        public DateTime CreationDate
         {
             get { return creationDate; }
             set { creationDate = value;
@@ -64,7 +64,7 @@ namespace DAL
             }
         }
 
-        public string Data { get; set; }
+        public List<string> Jokes { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

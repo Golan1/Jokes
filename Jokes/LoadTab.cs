@@ -24,7 +24,7 @@ namespace Jokes
             info = new JokeFileInfo();
             info.CreationDate = DateTime.Now;          
             
-            resetBindings();
+            ResetBindings();
 
             myDal = new LoadTabDal();
         }
@@ -40,16 +40,18 @@ namespace Jokes
 
                 txtFileName.Text = fileName;
 
-                resetBindings();
+                ResetBindings();
             }
         }
 
-        private void resetBindings()
+        private void ResetBindings()
         {
             txtTitle.DataBindings.Clear();
             txtTitle.DataBindings.Add("Text", info, "Title");
             txtAuthor.DataBindings.Clear();
             txtAuthor.DataBindings.Add("Text", info, "Author");
+
+            info.CreationDate = DateTime.Now; // so it won't yell at us...
             dtCreationDate.DataBindings.Clear();
             dtCreationDate.DataBindings.Add("Value", info, "CreationDate");
             txtSource.DataBindings.Clear();
@@ -60,7 +62,17 @@ namespace Jokes
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            myDal.SaveNewFile(info);
+            try
+            {
+                myDal.SaveNewFile(info);
+                info = new JokeFileInfo();
+                ResetBindings();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
