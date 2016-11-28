@@ -49,6 +49,13 @@ create table jk_group(
 id number primary key,
 name varchar2(100) unique not null);
 
+CREATE SEQUENCE jk_group_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+
+
 
 create table word_in_group(
 group_id number,
