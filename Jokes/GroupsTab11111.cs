@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Jokes
 {
-    public partial class RealationsTab : UserControl
+    public partial class GroupsTab11111 : UserControl
     {
-        public RealationsTab()
+        public GroupsTab11111()
         {
             InitializeComponent();
         }

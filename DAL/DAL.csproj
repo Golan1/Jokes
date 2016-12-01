@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDal.cs" />
+    <Compile Include="GroupsTabDal.cs" />
     <Compile Include="JokeFileInfo.cs" />
     <Compile Include="LoadTabDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationsTabDal.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="script.sql" />
+    <None Include="script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

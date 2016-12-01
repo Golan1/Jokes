@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupsTab11111.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupsTab11111.Designer.cs">
+      <DependentUpon>GroupsTab11111.cs</DependentUpon>
+    </Compile>
     <Compile Include="Joke.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,9 +78,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GroupsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupsTab.Designer.cs">
+      <DependentUpon>GroupsTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlUtils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsTab11111.resx">
+      <DependentUpon>GroupsTab11111.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadTab.resx">
       <DependentUpon>LoadTab.cs</DependentUpon>
@@ -91,6 +106,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GroupsTab.resx">
+      <DependentUpon>GroupsTab.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

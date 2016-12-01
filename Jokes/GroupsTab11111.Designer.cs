@@ -1,6 +1,6 @@
 ﻿namespace Jokes
 {
-    partial class RealationsTab
+    partial class GroupsTab11111
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // GroupsTab
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "GroupsTab";
+            this.Size = new System.Drawing.Size(632, 423);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
