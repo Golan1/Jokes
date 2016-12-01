@@ -64,8 +64,21 @@ primary key (group_id, text),
 foreign  key (group_id) references jk_group(id));
 
 
-create table relation(
+create table jk_relation(
 id number primary key,
-name varchar2(100) unique not null,
+name varchar2(100) unique not null);
+
+CREATE SEQUENCE jk_relation_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+
+create table tupple_in_relation(
+relation_id number,
 word1 varchar2(50) not null,
-word2 varchar2(50) not null);
+word2 varchar2(50) not null,
+primary Key (relation_id, word1,word1),
+foreign key (relation_id) references jk_relation(id));
+
+
