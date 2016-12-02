@@ -40,9 +40,9 @@ namespace Jokes
             int idx = groupsListBox.SelectedIndex;
             int id = Groups.Keys.ToArray()[idx];
             var words =myDal.getWordsInGroup(id);
-            wordsListView.Items.Clear();
+            wordsListBox.Items.Clear();
             foreach (var w in words)
-                wordsListView.Items.Add(w);
+                wordsListBox.Items.Add(w);
         }
 
         private void addGroupBtn_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace Jokes
                     MessageBox.Show("Something is worng");
                 }
                 if (success)
-                    wordsListView.Items.Add(newWord);
+                    wordsListBox.Items.Add(newWord);
             }
 
         }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupsListBox = new System.Windows.Forms.ListBox();
-            this.wordsListView = new System.Windows.Forms.ListView();
             this.addWordBtn = new System.Windows.Forms.Button();
             this.addGroupBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupTextBox = new System.Windows.Forms.TextBox();
             this.wordTextBox = new System.Windows.Forms.TextBox();
+            this.wordsListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // groupsListBox
@@ -46,14 +46,6 @@
             this.groupsListBox.Name = "groupsListBox";
             this.groupsListBox.Size = new System.Drawing.Size(119, 228);
             this.groupsListBox.TabIndex = 0;
-            // 
-            // wordsListView
-            // 
-            this.wordsListView.Location = new System.Drawing.Point(347, 79);
-            this.wordsListView.Name = "wordsListView";
-            this.wordsListView.Size = new System.Drawing.Size(113, 228);
-            this.wordsListView.TabIndex = 1;
-            this.wordsListView.UseCompatibleStateImageBehavior = false;
             // 
             // addWordBtn
             // 
@@ -104,22 +96,32 @@
             // 
             // wordTextBox
             // 
-            this.wordTextBox.Location = new System.Drawing.Point(181, 285);
+            this.wordTextBox.Location = new System.Drawing.Point(181, 283);
             this.wordTextBox.Name = "wordTextBox";
             this.wordTextBox.Size = new System.Drawing.Size(138, 22);
             this.wordTextBox.TabIndex = 5;
+            // 
+            // wordsListBox
+            // 
+            this.wordsListBox.FormattingEnabled = true;
+            this.wordsListBox.ItemHeight = 16;
+            this.wordsListBox.Location = new System.Drawing.Point(362, 79);
+            this.wordsListBox.Name = "wordsListBox";
+            this.wordsListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.wordsListBox.Size = new System.Drawing.Size(126, 228);
+            this.wordsListBox.TabIndex = 6;
             // 
             // GroupsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.wordsListBox);
             this.Controls.Add(this.wordTextBox);
             this.Controls.Add(this.groupTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addGroupBtn);
             this.Controls.Add(this.addWordBtn);
-            this.Controls.Add(this.wordsListView);
             this.Controls.Add(this.groupsListBox);
             this.Name = "GroupsTab";
             this.Size = new System.Drawing.Size(640, 368);
@@ -131,12 +133,12 @@
         #endregion
 
         private System.Windows.Forms.ListBox groupsListBox;
-        private System.Windows.Forms.ListView wordsListView;
         private System.Windows.Forms.Button addWordBtn;
         private System.Windows.Forms.Button addGroupBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox groupTextBox;
         private System.Windows.Forms.TextBox wordTextBox;
+        private System.Windows.Forms.ListBox wordsListBox;
     }
 }

@@ -52,11 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupsTab11111.cs">
+    <Compile Include="RelationsTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GroupsTab11111.Designer.cs">
-      <DependentUpon>GroupsTab11111.cs</DependentUpon>
+    <Compile Include="RelationsTab.Designer.cs">
+      <DependentUpon>RelationsTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Joke.cs">
       <SubType>Form</SubType>
@@ -88,8 +88,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GroupsTab11111.resx">
-      <DependentUpon>GroupsTab11111.cs</DependentUpon>
+    <EmbeddedResource Include="RelationsTab.resx">
+      <DependentUpon>RelationsTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadTab.resx">
       <DependentUpon>LoadTab.cs</DependentUpon>
@@ -127,6 +127,9 @@
       <Project>{afe6c467-974d-441d-99b4-655a9e5279a5}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

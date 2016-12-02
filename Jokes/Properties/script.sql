@@ -78,7 +78,7 @@ create table tupple_in_relation(
 relation_id number,
 word1 varchar2(50) not null,
 word2 varchar2(50) not null,
-primary Key (relation_id, word1,word2),
+primary Key (relation_id, word1,word1),
 foreign key (relation_id) references jk_relation(id));
 
 

@@ -35,10 +35,12 @@
             this.Groups = new System.Windows.Forms.TabPage();
             this.groupTab1 = new Jokes.GroupsTab();
             this.Relations = new System.Windows.Forms.TabPage();
+            this.relationTab1 = new RelationsTab();
             this.Files = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.Load.SuspendLayout();
             this.Groups.SuspendLayout();
+            this.Relations.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,10 +109,10 @@
             this.groupTab1.Name = "groupTab1";
             this.groupTab1.Size = new System.Drawing.Size(625, 498);
             this.groupTab1.TabIndex = 0;
-
             // 
             // Relations
             // 
+            this.Relations.Controls.Add(this.relationTab1);
             this.Relations.Location = new System.Drawing.Point(4, 25);
             this.Relations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Relations.Name = "Relations";
@@ -118,6 +120,15 @@
             this.Relations.TabIndex = 3;
             this.Relations.Text = "Relations";
             this.Relations.UseVisualStyleBackColor = true;
+            // 
+            // relationTab1
+            // 
+            this.relationTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.relationTab1.Location = new System.Drawing.Point(0, 0);
+            this.relationTab1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.relationTab1.Name = "relationTab1";
+            this.relationTab1.Size = new System.Drawing.Size(625, 498);
+            this.relationTab1.TabIndex = 0;
             // 
             // Files
             // 
@@ -141,6 +152,7 @@
             this.tabControl1.ResumeLayout(false);
             this.Load.ResumeLayout(false);
             this.Groups.ResumeLayout(false);
+            this.Relations.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -155,5 +167,6 @@
         private System.Windows.Forms.TabPage Files;
         private LoadTab loadTab1;
         private GroupsTab groupTab1;
+        private RelationsTab relationTab1;
     }
 }
