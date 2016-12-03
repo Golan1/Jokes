@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.words = new System.Windows.Forms.Label();
+            this.wordLable = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
-            this.jokeText = new System.Windows.Forms.RichTextBox();
+            this.jokeTextBox = new System.Windows.Forms.RichTextBox();
             this.fullFileBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // words
+            // wordLable
             // 
-            this.words.AutoSize = true;
-            this.words.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.words.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.words.Location = new System.Drawing.Point(36, 30);
-            this.words.Name = "words";
-            this.words.Size = new System.Drawing.Size(92, 32);
-            this.words.TabIndex = 0;
-            this.words.Text = "Word 1";
-           
+            this.wordLable.AutoSize = true;
+            this.wordLable.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wordLable.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.wordLable.Location = new System.Drawing.Point(36, 30);
+            this.wordLable.Name = "wordLable";
+            this.wordLable.Size = new System.Drawing.Size(92, 32);
+            this.wordLable.TabIndex = 0;
+            this.wordLable.Text = "Word 1";
             // 
             // title
             // 
@@ -55,13 +54,13 @@
             this.title.TabIndex = 1;
             this.title.Text = "The Joke";
             // 
-            // jokeText
+            // jokeTextBox
             // 
-            this.jokeText.Location = new System.Drawing.Point(69, 134);
-            this.jokeText.Name = "jokeText";
-            this.jokeText.Size = new System.Drawing.Size(487, 161);
-            this.jokeText.TabIndex = 2;
-            this.jokeText.Text = "";
+            this.jokeTextBox.Location = new System.Drawing.Point(69, 134);
+            this.jokeTextBox.Name = "jokeTextBox";
+            this.jokeTextBox.Size = new System.Drawing.Size(487, 161);
+            this.jokeTextBox.TabIndex = 2;
+            this.jokeTextBox.Text = "";
             // 
             // fullFileBtn
             // 
@@ -71,6 +70,7 @@
             this.fullFileBtn.TabIndex = 3;
             this.fullFileBtn.Text = "Watch full file";
             this.fullFileBtn.UseVisualStyleBackColor = true;
+            this.fullFileBtn.Click += new System.EventHandler(this.fullFileBtn_Click);
             // 
             // Joke
             // 
@@ -78,9 +78,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 461);
             this.Controls.Add(this.fullFileBtn);
-            this.Controls.Add(this.jokeText);
+            this.Controls.Add(this.jokeTextBox);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.words);
+            this.Controls.Add(this.wordLable);
             this.Name = "Joke";
             this.Text = "Joke";
             this.ResumeLayout(false);
@@ -90,9 +90,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label words;
+        private System.Windows.Forms.Label wordLable;
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.RichTextBox jokeText;
+        private System.Windows.Forms.RichTextBox jokeTextBox;
         private System.Windows.Forms.Button fullFileBtn;
     }
 }

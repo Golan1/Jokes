@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileForm.Designer.cs">
+      <DependentUpon>FileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,8 +91,14 @@
       <DependentUpon>GroupsTab.cs</DependentUpon>
     </Compile>
     <Compile Include="XmlUtils.cs" />
+    <EmbeddedResource Include="FileForm.resx">
+      <DependentUpon>FileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Joke.resx">
+      <DependentUpon>Joke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RelationsTab.resx">
       <DependentUpon>RelationsTab.cs</DependentUpon>
