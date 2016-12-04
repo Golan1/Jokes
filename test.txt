@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JokeFileInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Title>t</Title>
+  <Author>a</Author>
+  <CreationDate>2016-11-18T15:12:04.9917405+02:00</CreationDate>
+  <Source>s</Source>
+  <Rating>7</Rating>
+  <Text>hahahah</Text>
+</JokeFileInfo>
