@@ -43,7 +43,9 @@ namespace Jokes
 
         private void Joke_Click1(object sender, EventArgs e)
         {
-          //send text to group
+            MainForm mainForm = (MainForm)this.Owner;
+            mainForm.groupFire(jokeTextBox.SelectedText);
+            this.Close();
         }
 
         private void Joke_Click2(object sender, EventArgs e)
@@ -63,7 +65,9 @@ namespace Jokes
 
         private void Joke_Click4(object sender, EventArgs e)
         {
-            //send text to search
+            MainForm mainForm = (MainForm)this.Owner;
+            mainForm.searchFire(jokeTextBox.SelectedText);
+            this.Close();//send text to search
         }
 
 
@@ -84,7 +88,7 @@ namespace Jokes
             foreach (var t in tmp)
                 tmp2 += t;
 
-
+            jokeTextBox.Clear();
             jokeTextBox.Text = joke;
             jokeTextBox.Select((int)idx,tmp2.Length);
             jokeTextBox.SelectionFont = new Font(jokeTextBox.SelectionFont, FontStyle.Bold);
@@ -103,8 +107,22 @@ namespace Jokes
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            if(selected+1<myJokes.Rows.Count)
-                updateJokes(wordLable.Text, selected++, myJokes);
+            if (selected + 1 < myJokes.Rows.Count)
+            {
+                selected++;
+                updateJokes(wordLable.Text, selected, myJokes);
+
+            }
+        }
+
+        private void prevBtn_Click(object sender, EventArgs e)
+        {
+            if (selected - 1 >=0)
+            {
+                selected--;
+                updateJokes(wordLable.Text, selected, myJokes);
+
+            }
         }
     }
 }

@@ -26,6 +26,13 @@ namespace Jokes
             myDal = new SearchDal();
         }
 
+        public void updateSearc(string sWord)
+        {
+            this.txtSearch.Text = sWord;
+            this.btnGo_Click(this,new EventArgs());
+        }
+
+
         private void refreshSearchHistory()
         {
             var searchHistory = myDal.GetSearchHistory();

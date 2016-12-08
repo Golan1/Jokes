@@ -30,7 +30,9 @@ namespace DAL
                 cmd.Parameters.Add("JOKE_ID", id);
                 OracleDataReader dr = cmd.ExecuteReader();
                 StringBuilder joke = new StringBuilder();
-                int lineIdx = 0;
+                dr.Read();
+                int lineIdx = int.Parse(dr["line_index"].ToString());
+                joke.Append(dr["text"].ToString() + " ");
                 while (dr.Read())
                 {
                     if((int.Parse(dr["line_index"].ToString()) > lineIdx))
@@ -38,7 +40,7 @@ namespace DAL
                         joke.Append("\n");
                         lineIdx++;
                     }
-                    joke.Append(dr["text"].ToString());
+                    joke.Append(dr["text"].ToString() +" ");
                 }
                     
 

@@ -29,6 +29,11 @@ namespace Jokes
         }
 
 
+        public void updateWord (string word)
+        {
+            this.wordTextBox.Text = word;
+        }
+
         private void wordSelected(object sender, EventArgs e)
         {
             MessageBox.Show("kjhg");

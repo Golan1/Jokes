@@ -92,6 +92,7 @@
             this.prevBtn.TabIndex = 4;
             this.prevBtn.Text = "Previous";
             this.prevBtn.UseVisualStyleBackColor = true;
+            this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
             // 
             // Joke
             // 
