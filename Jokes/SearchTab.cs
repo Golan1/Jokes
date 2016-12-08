@@ -36,14 +36,6 @@ namespace Jokes
             txtSearch.AutoCompleteCustomSource = source;
         }
 
-        private void dgvFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-        //    var drv= (DataRowView)dgvFiles.Rows[e.RowIndex].DataBoundItem;
-        //    var myRow = (JokesDS.JK_FILERow)drv.Row;
-        //    FileForm form = new FileForm(myRow.ID);
-        //    form.ShowDialog();
-        }
-
         private void btnGo_Click(object sender, EventArgs e)
         {
             var text = txtSearch.Text;
@@ -56,6 +48,20 @@ namespace Jokes
             {
                 source.Add(text);
                 myDal.AddToSearchHistory(text);
+            }
+
+            dgvSearchResults.DataSource = myDal.GetSearchResults(text);
+        }
+
+        private void dgvSearchResults_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                this.btnGo_Click(this, null);
             }
         }
     }

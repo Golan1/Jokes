@@ -26,7 +26,7 @@ namespace DAL {
         
         private JK_FILEDataTable tableJK_FILE;
         
-        private JK_PHRASE_TABLEDataTable tableJK_PHRASE_TABLE;
+        private JK_SEARCH_HISTORYDataTable tableJK_SEARCH_HISTORY;
         
         private SEARCH_RESULTDataTable tableSEARCH_RESULT;
         
@@ -61,8 +61,8 @@ namespace DAL {
                 if ((ds.Tables["JK_FILE"] != null)) {
                     base.Tables.Add(new JK_FILEDataTable(ds.Tables["JK_FILE"]));
                 }
-                if ((ds.Tables["JK_PHRASE_TABLE"] != null)) {
-                    base.Tables.Add(new JK_PHRASE_TABLEDataTable(ds.Tables["JK_PHRASE_TABLE"]));
+                if ((ds.Tables["JK_SEARCH_HISTORY"] != null)) {
+                    base.Tables.Add(new JK_SEARCH_HISTORYDataTable(ds.Tables["JK_SEARCH_HISTORY"]));
                 }
                 if ((ds.Tables["SEARCH_RESULT"] != null)) {
                     base.Tables.Add(new SEARCH_RESULTDataTable(ds.Tables["SEARCH_RESULT"]));
@@ -99,9 +99,9 @@ namespace DAL {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public JK_PHRASE_TABLEDataTable JK_PHRASE_TABLE {
+        public JK_SEARCH_HISTORYDataTable JK_SEARCH_HISTORY {
             get {
-                return this.tableJK_PHRASE_TABLE;
+                return this.tableJK_SEARCH_HISTORY;
             }
         }
         
@@ -185,8 +185,8 @@ namespace DAL {
                 if ((ds.Tables["JK_FILE"] != null)) {
                     base.Tables.Add(new JK_FILEDataTable(ds.Tables["JK_FILE"]));
                 }
-                if ((ds.Tables["JK_PHRASE_TABLE"] != null)) {
-                    base.Tables.Add(new JK_PHRASE_TABLEDataTable(ds.Tables["JK_PHRASE_TABLE"]));
+                if ((ds.Tables["JK_SEARCH_HISTORY"] != null)) {
+                    base.Tables.Add(new JK_SEARCH_HISTORYDataTable(ds.Tables["JK_SEARCH_HISTORY"]));
                 }
                 if ((ds.Tables["SEARCH_RESULT"] != null)) {
                     base.Tables.Add(new SEARCH_RESULTDataTable(ds.Tables["SEARCH_RESULT"]));
@@ -230,10 +230,10 @@ namespace DAL {
                     this.tableJK_FILE.InitVars();
                 }
             }
-            this.tableJK_PHRASE_TABLE = ((JK_PHRASE_TABLEDataTable)(base.Tables["JK_PHRASE_TABLE"]));
+            this.tableJK_SEARCH_HISTORY = ((JK_SEARCH_HISTORYDataTable)(base.Tables["JK_SEARCH_HISTORY"]));
             if ((initTable == true)) {
-                if ((this.tableJK_PHRASE_TABLE != null)) {
-                    this.tableJK_PHRASE_TABLE.InitVars();
+                if ((this.tableJK_SEARCH_HISTORY != null)) {
+                    this.tableJK_SEARCH_HISTORY.InitVars();
                 }
             }
             this.tableSEARCH_RESULT = ((SEARCH_RESULTDataTable)(base.Tables["SEARCH_RESULT"]));
@@ -254,8 +254,8 @@ namespace DAL {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableJK_FILE = new JK_FILEDataTable();
             base.Tables.Add(this.tableJK_FILE);
-            this.tableJK_PHRASE_TABLE = new JK_PHRASE_TABLEDataTable();
-            base.Tables.Add(this.tableJK_PHRASE_TABLE);
+            this.tableJK_SEARCH_HISTORY = new JK_SEARCH_HISTORYDataTable();
+            base.Tables.Add(this.tableJK_SEARCH_HISTORY);
             this.tableSEARCH_RESULT = new SEARCH_RESULTDataTable();
             base.Tables.Add(this.tableSEARCH_RESULT);
         }
@@ -268,7 +268,7 @@ namespace DAL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeJK_PHRASE_TABLE() {
+        private bool ShouldSerializeJK_SEARCH_HISTORY() {
             return false;
         }
         
@@ -337,7 +337,7 @@ namespace DAL {
         public delegate void JK_FILERowChangeEventHandler(object sender, JK_FILERowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void JK_PHRASE_TABLERowChangeEventHandler(object sender, JK_PHRASE_TABLERowChangeEvent e);
+        public delegate void JK_SEARCH_HISTORYRowChangeEventHandler(object sender, JK_SEARCH_HISTORYRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void SEARCH_RESULTRowChangeEventHandler(object sender, SEARCH_RESULTRowChangeEvent e);
@@ -695,14 +695,14 @@ namespace DAL {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class JK_PHRASE_TABLEDataTable : global::System.Data.TypedTableBase<JK_PHRASE_TABLERow> {
+        public partial class JK_SEARCH_HISTORYDataTable : global::System.Data.TypedTableBase<JK_SEARCH_HISTORYRow> {
             
             private global::System.Data.DataColumn columnTEXT;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public JK_PHRASE_TABLEDataTable() {
-                this.TableName = "JK_PHRASE_TABLE";
+            public JK_SEARCH_HISTORYDataTable() {
+                this.TableName = "JK_SEARCH_HISTORY";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -710,7 +710,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal JK_PHRASE_TABLEDataTable(global::System.Data.DataTable table) {
+            internal JK_SEARCH_HISTORYDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -727,7 +727,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected JK_PHRASE_TABLEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected JK_SEARCH_HISTORYDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -751,45 +751,45 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public JK_PHRASE_TABLERow this[int index] {
+            public JK_SEARCH_HISTORYRow this[int index] {
                 get {
-                    return ((JK_PHRASE_TABLERow)(this.Rows[index]));
+                    return ((JK_SEARCH_HISTORYRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event JK_PHRASE_TABLERowChangeEventHandler JK_PHRASE_TABLERowChanging;
+            public event JK_SEARCH_HISTORYRowChangeEventHandler JK_SEARCH_HISTORYRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event JK_PHRASE_TABLERowChangeEventHandler JK_PHRASE_TABLERowChanged;
+            public event JK_SEARCH_HISTORYRowChangeEventHandler JK_SEARCH_HISTORYRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event JK_PHRASE_TABLERowChangeEventHandler JK_PHRASE_TABLERowDeleting;
+            public event JK_SEARCH_HISTORYRowChangeEventHandler JK_SEARCH_HISTORYRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event JK_PHRASE_TABLERowChangeEventHandler JK_PHRASE_TABLERowDeleted;
+            public event JK_SEARCH_HISTORYRowChangeEventHandler JK_SEARCH_HISTORYRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddJK_PHRASE_TABLERow(JK_PHRASE_TABLERow row) {
+            public void AddJK_SEARCH_HISTORYRow(JK_SEARCH_HISTORYRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public JK_PHRASE_TABLERow AddJK_PHRASE_TABLERow(string TEXT) {
-                JK_PHRASE_TABLERow rowJK_PHRASE_TABLERow = ((JK_PHRASE_TABLERow)(this.NewRow()));
+            public JK_SEARCH_HISTORYRow AddJK_SEARCH_HISTORYRow(string TEXT) {
+                JK_SEARCH_HISTORYRow rowJK_SEARCH_HISTORYRow = ((JK_SEARCH_HISTORYRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TEXT};
-                rowJK_PHRASE_TABLERow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowJK_PHRASE_TABLERow);
-                return rowJK_PHRASE_TABLERow;
+                rowJK_SEARCH_HISTORYRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowJK_SEARCH_HISTORYRow);
+                return rowJK_SEARCH_HISTORYRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                JK_PHRASE_TABLEDataTable cln = ((JK_PHRASE_TABLEDataTable)(base.Clone()));
+                JK_SEARCH_HISTORYDataTable cln = ((JK_SEARCH_HISTORYDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -797,7 +797,7 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new JK_PHRASE_TABLEDataTable();
+                return new JK_SEARCH_HISTORYDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -817,28 +817,28 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public JK_PHRASE_TABLERow NewJK_PHRASE_TABLERow() {
-                return ((JK_PHRASE_TABLERow)(this.NewRow()));
+            public JK_SEARCH_HISTORYRow NewJK_SEARCH_HISTORYRow() {
+                return ((JK_SEARCH_HISTORYRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new JK_PHRASE_TABLERow(builder);
+                return new JK_SEARCH_HISTORYRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(JK_PHRASE_TABLERow);
+                return typeof(JK_SEARCH_HISTORYRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.JK_PHRASE_TABLERowChanged != null)) {
-                    this.JK_PHRASE_TABLERowChanged(this, new JK_PHRASE_TABLERowChangeEvent(((JK_PHRASE_TABLERow)(e.Row)), e.Action));
+                if ((this.JK_SEARCH_HISTORYRowChanged != null)) {
+                    this.JK_SEARCH_HISTORYRowChanged(this, new JK_SEARCH_HISTORYRowChangeEvent(((JK_SEARCH_HISTORYRow)(e.Row)), e.Action));
                 }
             }
             
@@ -846,8 +846,8 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.JK_PHRASE_TABLERowChanging != null)) {
-                    this.JK_PHRASE_TABLERowChanging(this, new JK_PHRASE_TABLERowChangeEvent(((JK_PHRASE_TABLERow)(e.Row)), e.Action));
+                if ((this.JK_SEARCH_HISTORYRowChanging != null)) {
+                    this.JK_SEARCH_HISTORYRowChanging(this, new JK_SEARCH_HISTORYRowChangeEvent(((JK_SEARCH_HISTORYRow)(e.Row)), e.Action));
                 }
             }
             
@@ -855,8 +855,8 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.JK_PHRASE_TABLERowDeleted != null)) {
-                    this.JK_PHRASE_TABLERowDeleted(this, new JK_PHRASE_TABLERowChangeEvent(((JK_PHRASE_TABLERow)(e.Row)), e.Action));
+                if ((this.JK_SEARCH_HISTORYRowDeleted != null)) {
+                    this.JK_SEARCH_HISTORYRowDeleted(this, new JK_SEARCH_HISTORYRowChangeEvent(((JK_SEARCH_HISTORYRow)(e.Row)), e.Action));
                 }
             }
             
@@ -864,14 +864,14 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.JK_PHRASE_TABLERowDeleting != null)) {
-                    this.JK_PHRASE_TABLERowDeleting(this, new JK_PHRASE_TABLERowChangeEvent(((JK_PHRASE_TABLERow)(e.Row)), e.Action));
+                if ((this.JK_SEARCH_HISTORYRowDeleting != null)) {
+                    this.JK_SEARCH_HISTORYRowDeleting(this, new JK_SEARCH_HISTORYRowChangeEvent(((JK_SEARCH_HISTORYRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveJK_PHRASE_TABLERow(JK_PHRASE_TABLERow row) {
+            public void RemoveJK_SEARCH_HISTORYRow(JK_SEARCH_HISTORYRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -898,7 +898,7 @@ namespace DAL {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "JK_PHRASE_TABLEDataTable";
+                attribute2.FixedValue = "JK_SEARCH_HISTORYDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -946,7 +946,7 @@ namespace DAL {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SEARCH_RESULTDataTable : global::System.Data.TypedTableBase<SEARCH_RESULTRow> {
             
-            private global::System.Data.DataColumn columnJOKE_ID;
+            private global::System.Data.DataColumn columnJOKE_ID1;
             
             private global::System.Data.DataColumn columnFIRST_INDEX;
             
@@ -954,7 +954,7 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnJOKE_INDEX;
             
-            private global::System.Data.DataColumn columnLINE_NUMBER;
+            private global::System.Data.DataColumn columnLINE_INDEX;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -991,9 +991,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn JOKE_IDColumn {
+            public global::System.Data.DataColumn JOKE_ID1Column {
                 get {
-                    return this.columnJOKE_ID;
+                    return this.columnJOKE_ID1;
                 }
             }
             
@@ -1023,9 +1023,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LINE_NUMBERColumn {
+            public global::System.Data.DataColumn LINE_INDEXColumn {
                 get {
-                    return this.columnLINE_NUMBER;
+                    return this.columnLINE_INDEX;
                 }
             }
             
@@ -1066,14 +1066,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_NUMBER) {
+            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID1, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_INDEX) {
                 SEARCH_RESULTRow rowSEARCH_RESULTRow = ((SEARCH_RESULTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        JOKE_ID,
+                        JOKE_ID1,
                         FIRST_INDEX,
                         FILE_TITLE,
                         JOKE_INDEX,
-                        LINE_NUMBER};
+                        LINE_INDEX};
                 rowSEARCH_RESULTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSEARCH_RESULTRow);
                 return rowSEARCH_RESULTRow;
@@ -1096,26 +1096,26 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnJOKE_ID = base.Columns["JOKE_ID"];
+                this.columnJOKE_ID1 = base.Columns["JOKE_ID1"];
                 this.columnFIRST_INDEX = base.Columns["FIRST_INDEX"];
                 this.columnFILE_TITLE = base.Columns["FILE_TITLE"];
                 this.columnJOKE_INDEX = base.Columns["JOKE_INDEX"];
-                this.columnLINE_NUMBER = base.Columns["LINE_NUMBER"];
+                this.columnLINE_INDEX = base.Columns["LINE_INDEX"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnJOKE_ID = new global::System.Data.DataColumn("JOKE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJOKE_ID);
+                this.columnJOKE_ID1 = new global::System.Data.DataColumn("JOKE_ID1", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJOKE_ID1);
                 this.columnFIRST_INDEX = new global::System.Data.DataColumn("FIRST_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFIRST_INDEX);
                 this.columnFILE_TITLE = new global::System.Data.DataColumn("FILE_TITLE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFILE_TITLE);
                 this.columnJOKE_INDEX = new global::System.Data.DataColumn("JOKE_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJOKE_INDEX);
-                this.columnLINE_NUMBER = new global::System.Data.DataColumn("LINE_NUMBER", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLINE_NUMBER);
+                this.columnLINE_INDEX = new global::System.Data.DataColumn("LINE_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLINE_INDEX);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1388,25 +1388,25 @@ namespace DAL {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class JK_PHRASE_TABLERow : global::System.Data.DataRow {
+        public partial class JK_SEARCH_HISTORYRow : global::System.Data.DataRow {
             
-            private JK_PHRASE_TABLEDataTable tableJK_PHRASE_TABLE;
+            private JK_SEARCH_HISTORYDataTable tableJK_SEARCH_HISTORY;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal JK_PHRASE_TABLERow(global::System.Data.DataRowBuilder rb) : 
+            internal JK_SEARCH_HISTORYRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableJK_PHRASE_TABLE = ((JK_PHRASE_TABLEDataTable)(this.Table));
+                this.tableJK_SEARCH_HISTORY = ((JK_SEARCH_HISTORYDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEXT {
                 get {
-                    return ((string)(this[this.tableJK_PHRASE_TABLE.TEXTColumn]));
+                    return ((string)(this[this.tableJK_SEARCH_HISTORY.TEXTColumn]));
                 }
                 set {
-                    this[this.tableJK_PHRASE_TABLE.TEXTColumn] = value;
+                    this[this.tableJK_SEARCH_HISTORY.TEXTColumn] = value;
                 }
             }
         }
@@ -1427,17 +1427,17 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal JOKE_ID {
+            public decimal JOKE_ID1 {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSEARCH_RESULT.JOKE_IDColumn]));
+                        return ((decimal)(this[this.tableSEARCH_RESULT.JOKE_ID1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'JOKE_ID\' in table \'SEARCH_RESULT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'JOKE_ID1\' in table \'SEARCH_RESULT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSEARCH_RESULT.JOKE_IDColumn] = value;
+                    this[this.tableSEARCH_RESULT.JOKE_ID1Column] = value;
                 }
             }
             
@@ -1491,30 +1491,30 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal LINE_NUMBER {
+            public decimal LINE_INDEX {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSEARCH_RESULT.LINE_NUMBERColumn]));
+                        return ((decimal)(this[this.tableSEARCH_RESULT.LINE_INDEXColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LINE_NUMBER\' in table \'SEARCH_RESULT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LINE_INDEX\' in table \'SEARCH_RESULT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSEARCH_RESULT.LINE_NUMBERColumn] = value;
+                    this[this.tableSEARCH_RESULT.LINE_INDEXColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsJOKE_IDNull() {
-                return this.IsNull(this.tableSEARCH_RESULT.JOKE_IDColumn);
+            public bool IsJOKE_ID1Null() {
+                return this.IsNull(this.tableSEARCH_RESULT.JOKE_ID1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetJOKE_IDNull() {
-                this[this.tableSEARCH_RESULT.JOKE_IDColumn] = global::System.Convert.DBNull;
+            public void SetJOKE_ID1Null() {
+                this[this.tableSEARCH_RESULT.JOKE_ID1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1555,14 +1555,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLINE_NUMBERNull() {
-                return this.IsNull(this.tableSEARCH_RESULT.LINE_NUMBERColumn);
+            public bool IsLINE_INDEXNull() {
+                return this.IsNull(this.tableSEARCH_RESULT.LINE_INDEXColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLINE_NUMBERNull() {
-                this[this.tableSEARCH_RESULT.LINE_NUMBERColumn] = global::System.Convert.DBNull;
+            public void SetLINE_INDEXNull() {
+                this[this.tableSEARCH_RESULT.LINE_INDEXColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1604,22 +1604,22 @@ namespace DAL {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class JK_PHRASE_TABLERowChangeEvent : global::System.EventArgs {
+        public class JK_SEARCH_HISTORYRowChangeEvent : global::System.EventArgs {
             
-            private JK_PHRASE_TABLERow eventRow;
+            private JK_SEARCH_HISTORYRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public JK_PHRASE_TABLERowChangeEvent(JK_PHRASE_TABLERow row, global::System.Data.DataRowAction action) {
+            public JK_SEARCH_HISTORYRowChangeEvent(JK_SEARCH_HISTORYRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public JK_PHRASE_TABLERow Row {
+            public JK_SEARCH_HISTORYRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2375,7 +2375,7 @@ namespace DAL.JokesDSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class JK_PHRASE_TABLETableAdapter : global::System.ComponentModel.Component {
+    public partial class JK_SEARCH_HISTORYTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -2389,7 +2389,7 @@ namespace DAL.JokesDSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public JK_PHRASE_TABLETableAdapter() {
+        public JK_SEARCH_HISTORYTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2486,12 +2486,12 @@ namespace DAL.JokesDSTableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "JK_PHRASE_TABLE";
+            tableMapping.DataSetTable = "JK_SEARCH_HISTORY";
             tableMapping.ColumnMappings.Add("TEXT", "TEXT");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"CONN\".\"JK_PHRASE_TABLE\" (\"TEXT\") VALUES (:TEXT)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"CONN\".\"JK_SEARCH_HISTORY\" (\"TEXT\") VALUES (:TEXT)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "TEXT";
@@ -2515,7 +2515,7 @@ namespace DAL.JokesDSTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TEXT FROM CONN.JK_PHRASE_TABLE";
+            this._commandCollection[0].CommandText = "SELECT TEXT FROM CONN.JK_SEARCH_HISTORY";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2523,7 +2523,7 @@ namespace DAL.JokesDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(JokesDS.JK_PHRASE_TABLEDataTable dataTable) {
+        public virtual int Fill(JokesDS.JK_SEARCH_HISTORYDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2536,9 +2536,9 @@ namespace DAL.JokesDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual JokesDS.JK_PHRASE_TABLEDataTable GetData() {
+        public virtual JokesDS.JK_SEARCH_HISTORYDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            JokesDS.JK_PHRASE_TABLEDataTable dataTable = new JokesDS.JK_PHRASE_TABLEDataTable();
+            JokesDS.JK_SEARCH_HISTORYDataTable dataTable = new JokesDS.JK_SEARCH_HISTORYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2546,7 +2546,7 @@ namespace DAL.JokesDSTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(JokesDS.JK_PHRASE_TABLEDataTable dataTable) {
+        public virtual int Update(JokesDS.JK_SEARCH_HISTORYDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -2554,7 +2554,7 @@ namespace DAL.JokesDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(JokesDS dataSet) {
-            return this.Adapter.Update(dataSet, "JK_PHRASE_TABLE");
+            return this.Adapter.Update(dataSet, "JK_SEARCH_HISTORY");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2614,7 +2614,7 @@ namespace DAL.JokesDSTableAdapters {
         
         private JK_FILETableAdapter _jK_FILETableAdapter;
         
-        private JK_PHRASE_TABLETableAdapter _jK_PHRASE_TABLETableAdapter;
+        private JK_SEARCH_HISTORYTableAdapter _jK_SEARCH_HISTORYTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2650,12 +2650,12 @@ namespace DAL.JokesDSTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public JK_PHRASE_TABLETableAdapter JK_PHRASE_TABLETableAdapter {
+        public JK_SEARCH_HISTORYTableAdapter JK_SEARCH_HISTORYTableAdapter {
             get {
-                return this._jK_PHRASE_TABLETableAdapter;
+                return this._jK_SEARCH_HISTORYTableAdapter;
             }
             set {
-                this._jK_PHRASE_TABLETableAdapter = value;
+                this._jK_SEARCH_HISTORYTableAdapter = value;
             }
         }
         
@@ -2682,9 +2682,9 @@ namespace DAL.JokesDSTableAdapters {
                             && (this._jK_FILETableAdapter.Connection != null))) {
                     return this._jK_FILETableAdapter.Connection;
                 }
-                if (((this._jK_PHRASE_TABLETableAdapter != null) 
-                            && (this._jK_PHRASE_TABLETableAdapter.Connection != null))) {
-                    return this._jK_PHRASE_TABLETableAdapter.Connection;
+                if (((this._jK_SEARCH_HISTORYTableAdapter != null) 
+                            && (this._jK_SEARCH_HISTORYTableAdapter.Connection != null))) {
+                    return this._jK_SEARCH_HISTORYTableAdapter.Connection;
                 }
                 return null;
             }
@@ -2702,7 +2702,7 @@ namespace DAL.JokesDSTableAdapters {
                 if ((this._jK_FILETableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._jK_PHRASE_TABLETableAdapter != null)) {
+                if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2725,12 +2725,12 @@ namespace DAL.JokesDSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._jK_PHRASE_TABLETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.JK_PHRASE_TABLE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.JK_SEARCH_HISTORY.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._jK_PHRASE_TABLETableAdapter.Update(updatedRows));
+                    result = (result + this._jK_SEARCH_HISTORYTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2752,11 +2752,11 @@ namespace DAL.JokesDSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._jK_PHRASE_TABLETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.JK_PHRASE_TABLE.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.JK_SEARCH_HISTORY.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._jK_PHRASE_TABLETableAdapter.Update(addedRows));
+                    result = (result + this._jK_SEARCH_HISTORYTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2770,11 +2770,11 @@ namespace DAL.JokesDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(JokesDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._jK_PHRASE_TABLETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.JK_PHRASE_TABLE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.JK_SEARCH_HISTORY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._jK_PHRASE_TABLETableAdapter.Update(deletedRows));
+                    result = (result + this._jK_SEARCH_HISTORYTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2830,8 +2830,8 @@ namespace DAL.JokesDSTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._jK_PHRASE_TABLETableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._jK_PHRASE_TABLETableAdapter.Connection) == false))) {
+            if (((this._jK_SEARCH_HISTORYTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._jK_SEARCH_HISTORYTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -2876,13 +2876,13 @@ namespace DAL.JokesDSTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._jK_FILETableAdapter.Adapter);
                     }
                 }
-                if ((this._jK_PHRASE_TABLETableAdapter != null)) {
-                    revertConnections.Add(this._jK_PHRASE_TABLETableAdapter, this._jK_PHRASE_TABLETableAdapter.Connection);
-                    this._jK_PHRASE_TABLETableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._jK_PHRASE_TABLETableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._jK_PHRASE_TABLETableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._jK_PHRASE_TABLETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._jK_PHRASE_TABLETableAdapter.Adapter);
+                if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
+                    revertConnections.Add(this._jK_SEARCH_HISTORYTableAdapter, this._jK_SEARCH_HISTORYTableAdapter.Connection);
+                    this._jK_SEARCH_HISTORYTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._jK_SEARCH_HISTORYTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._jK_SEARCH_HISTORYTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._jK_SEARCH_HISTORYTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._jK_SEARCH_HISTORYTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2947,9 +2947,9 @@ namespace DAL.JokesDSTableAdapters {
                     this._jK_FILETableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._jK_FILETableAdapter]));
                     this._jK_FILETableAdapter.Transaction = null;
                 }
-                if ((this._jK_PHRASE_TABLETableAdapter != null)) {
-                    this._jK_PHRASE_TABLETableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._jK_PHRASE_TABLETableAdapter]));
-                    this._jK_PHRASE_TABLETableAdapter.Transaction = null;
+                if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
+                    this._jK_SEARCH_HISTORYTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._jK_SEARCH_HISTORYTableAdapter]));
+                    this._jK_SEARCH_HISTORYTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

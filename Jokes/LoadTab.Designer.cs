@@ -48,8 +48,7 @@
             // 
             // btnLoadFile
             // 
-            this.btnLoadFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadFile.Location = new System.Drawing.Point(399, 23);
+            this.btnLoadFile.Location = new System.Drawing.Point(106, 23);
             this.btnLoadFile.Name = "btnLoadFile";
             this.btnLoadFile.Size = new System.Drawing.Size(75, 23);
             this.btnLoadFile.TabIndex = 2;
@@ -116,9 +115,9 @@
             this.txtFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFileName.Enabled = false;
-            this.txtFileName.Location = new System.Drawing.Point(106, 25);
+            this.txtFileName.Location = new System.Drawing.Point(187, 26);
             this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(287, 20);
+            this.txtFileName.Size = new System.Drawing.Size(151, 20);
             this.txtFileName.TabIndex = 1;
             // 
             // txtAuthor
@@ -127,7 +126,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAuthor.Location = new System.Drawing.Point(106, 85);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(287, 20);
+            this.txtAuthor.Size = new System.Drawing.Size(232, 20);
             this.txtAuthor.TabIndex = 4;
             // 
             // txtTitle
@@ -136,7 +135,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTitle.Location = new System.Drawing.Point(106, 55);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(287, 20);
+            this.txtTitle.Size = new System.Drawing.Size(232, 20);
             this.txtTitle.TabIndex = 3;
             // 
             // txtSource
@@ -145,7 +144,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSource.Location = new System.Drawing.Point(106, 145);
             this.txtSource.Name = "txtSource";
-            this.txtSource.Size = new System.Drawing.Size(287, 20);
+            this.txtSource.Size = new System.Drawing.Size(232, 20);
             this.txtSource.TabIndex = 6;
             // 
             // dtCreationDate
@@ -165,10 +164,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSave.Location = new System.Drawing.Point(0, 231);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(21, 204);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(477, 23);
+            this.btnSave.Size = new System.Drawing.Size(317, 23);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Load";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -193,7 +193,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LoadTab";
-            this.Size = new System.Drawing.Size(477, 254);
+            this.Size = new System.Drawing.Size(357, 233);
             ((System.ComponentModel.ISupportInitialize)(this.numRating)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

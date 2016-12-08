@@ -12,33 +12,36 @@ namespace DAL
         const string SQL_INSERT_TO_HISTORY = "INSERT INTO jk_search_history (TEXT) VALUES (:TEXT)";
 
         const string SQL_SEARCH_TEXT_FIRST =
-@"SELECT joke_id, first_index
-FROM (SELECT index_in_joke as first_index, joke_id 
+@"SELECT firsts.joke_id as joke_id, firsts.first_index as first_index, 
+f.title as file_title, j.joke_index as joke_index, firsts.line_index as line_index
+FROM (SELECT index_in_joke as first_index, joke_id, line_index
 		FROM word_in_joke 
-		WHERE word = '{0}') firsts";
+		WHERE text_for_search = '{0}') firsts
+INNER JOIN joke j ON j.id = firsts.joke_id
+INNER JOIN jk_file f ON f.id = j.file_id";
 
         const string SQL_SEARCH_TEXT_REST =
-@"'{0}' = (SELECT word 
+@"'{0}' = (SELECT text_for_search 
 					FROM word_in_joke inner 
 					WHERE inner.joke_id = firsts.joke_id 
 					AND inner.index_in_joke = firsts.first_index + {1})";
 
         public IEnumerable<string> GetSearchHistory()
         {
-            JokesDSTableAdapters.JK_PHRASE_TABLETableAdapter adapter = new JokesDSTableAdapters.JK_PHRASE_TABLETableAdapter();
+            var adapter = new JokesDSTableAdapters.JK_SEARCH_HISTORYTableAdapter();
             var data = adapter.GetData();
-            return data.AsEnumerable().Select<JokesDS.JK_PHRASE_TABLERow, string>(x => x.TEXT);
+            return data.AsEnumerable().Select(x => x.TEXT);
         }
 
         public JokesDS.SEARCH_RESULTDataTable GetSearchResults(string searchText)
         {
             using (var conn = CreateConnection())
             {
-                JokesDS.SEARCH_RESULTDataTable x = new JokesDS.SEARCH_RESULTDataTable();
-
                 var adapter = new OracleDataAdapter(new OracleCommand(BuildSearchCommand(searchText), conn));
+                DS.SEARCH_RESULT.Clear();
                 adapter.Fill(DS.SEARCH_RESULT);
             }
+
             return DS.SEARCH_RESULT;
         }
 
@@ -65,7 +68,7 @@ FROM (SELECT index_in_joke as first_index, joke_id
                     command += " AND ";
                 }
 
-                command.Remove(command.Length - 5);
+                command = command.Remove(command.Length - 5);
             }
 
             return command;

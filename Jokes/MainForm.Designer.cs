@@ -33,13 +33,13 @@
             this.LoadControl = new System.Windows.Forms.TabPage();
             this.loadTab1 = new Jokes.LoadTab();
             this.Search = new System.Windows.Forms.TabPage();
+            this.searchTab1 = new Jokes.SearchTab();
             this.Groups = new System.Windows.Forms.TabPage();
             this.groupTab1 = new Jokes.GroupsTab();
             this.Relations = new System.Windows.Forms.TabPage();
             this.relationTab1 = new Jokes.RelationsTab();
             this.Files = new System.Windows.Forms.TabPage();
             this.filesTab1 = new Jokes.FilesTab();
-            this.searchTab1 = new Jokes.SearchTab();
             this.tabControl1.SuspendLayout();
             this.LoadControl.SuspendLayout();
             this.Search.SuspendLayout();
@@ -95,6 +95,14 @@
             this.Search.TabIndex = 1;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            // 
+            // searchTab1
+            // 
+            this.searchTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTab1.Location = new System.Drawing.Point(2, 2);
+            this.searchTab1.Name = "searchTab1";
+            this.searchTab1.Size = new System.Drawing.Size(740, 398);
+            this.searchTab1.TabIndex = 0;
             // 
             // Groups
             // 
@@ -157,14 +165,6 @@
             this.filesTab1.Size = new System.Drawing.Size(744, 402);
             this.filesTab1.TabIndex = 0;
             // 
-            // searchTab1
-            // 
-            this.searchTab1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchTab1.Location = new System.Drawing.Point(2, 2);
-            this.searchTab1.Name = "searchTab1";
-            this.searchTab1.Size = new System.Drawing.Size(740, 398);
-            this.searchTab1.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +174,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControl1.ResumeLayout(false);
             this.LoadControl.ResumeLayout(false);
             this.Search.ResumeLayout(false);

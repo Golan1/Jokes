@@ -29,54 +29,48 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvFiles = new System.Windows.Forms.DataGridView();
-            this.jKFILEDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvSearchResults = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.sEARCHRESULTDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jOKEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jOKEID1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIRSTINDEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fILETITLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jOKEINDEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lINENUMBERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).BeginInit();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lINEINDEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEARCHRESULTDataTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvFiles
+            // dgvSearchResults
             // 
-            this.dgvFiles.AllowUserToAddRows = false;
-            this.dgvFiles.AllowUserToDeleteRows = false;
-            this.dgvFiles.AllowUserToOrderColumns = true;
-            this.dgvFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSearchResults.AllowUserToAddRows = false;
+            this.dgvSearchResults.AllowUserToDeleteRows = false;
+            this.dgvSearchResults.AllowUserToOrderColumns = true;
+            this.dgvSearchResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvFiles.AutoGenerateColumns = false;
-            this.dgvFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.jOKEIDDataGridViewTextBoxColumn,
+            this.dgvSearchResults.AutoGenerateColumns = false;
+            this.dgvSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.jOKEID1DataGridViewTextBoxColumn,
             this.fIRSTINDEXDataGridViewTextBoxColumn,
             this.fILETITLEDataGridViewTextBoxColumn,
-            this.jOKEINDEXDataGridViewTextBoxColumn,
-            this.lINENUMBERDataGridViewTextBoxColumn});
-            this.dgvFiles.DataSource = this.sEARCHRESULTDataTableBindingSource;
-            this.dgvFiles.Location = new System.Drawing.Point(0, 118);
-            this.dgvFiles.Name = "dgvFiles";
-            this.dgvFiles.ReadOnly = true;
-            this.dgvFiles.Size = new System.Drawing.Size(750, 297);
-            this.dgvFiles.TabIndex = 0;
-            this.dgvFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiles_CellDoubleClick);
-            // 
-            // jKFILEDataTableBindingSource
-            // 
-            this.jKFILEDataTableBindingSource.DataSource = typeof(DAL.JokesDS.JK_FILEDataTable);
+            this.dataGridViewTextBoxColumn1,
+            this.lINEINDEXDataGridViewTextBoxColumn});
+            this.dgvSearchResults.DataSource = this.sEARCHRESULTDataTableBindingSource;
+            this.dgvSearchResults.Location = new System.Drawing.Point(0, 54);
+            this.dgvSearchResults.Name = "dgvSearchResults";
+            this.dgvSearchResults.ReadOnly = true;
+            this.dgvSearchResults.Size = new System.Drawing.Size(547, 361);
+            this.dgvSearchResults.TabIndex = 0;
+            this.dgvSearchResults.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchResults_CellContentDoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 16);
+            this.label1.Location = new System.Drawing.Point(17, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
@@ -90,13 +84,14 @@
             this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearch.Location = new System.Drawing.Point(77, 16);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(523, 20);
+            this.txtSearch.Size = new System.Drawing.Size(320, 20);
             this.txtSearch.TabIndex = 2;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // btnGo
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGo.Location = new System.Drawing.Point(619, 6);
+            this.btnGo.Location = new System.Drawing.Point(416, 6);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(111, 42);
             this.btnGo.TabIndex = 3;
@@ -108,12 +103,12 @@
             // 
             this.sEARCHRESULTDataTableBindingSource.DataSource = typeof(DAL.JokesDS.SEARCH_RESULTDataTable);
             // 
-            // jOKEIDDataGridViewTextBoxColumn
+            // jOKEID1DataGridViewTextBoxColumn
             // 
-            this.jOKEIDDataGridViewTextBoxColumn.DataPropertyName = "JOKE_ID";
-            this.jOKEIDDataGridViewTextBoxColumn.HeaderText = "JOKE_ID";
-            this.jOKEIDDataGridViewTextBoxColumn.Name = "jOKEIDDataGridViewTextBoxColumn";
-            this.jOKEIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.jOKEID1DataGridViewTextBoxColumn.DataPropertyName = "JOKE_ID1";
+            this.jOKEID1DataGridViewTextBoxColumn.HeaderText = "JOKE_ID1";
+            this.jOKEID1DataGridViewTextBoxColumn.Name = "jOKEID1DataGridViewTextBoxColumn";
+            this.jOKEID1DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fIRSTINDEXDataGridViewTextBoxColumn
             // 
@@ -129,30 +124,29 @@
             this.fILETITLEDataGridViewTextBoxColumn.Name = "fILETITLEDataGridViewTextBoxColumn";
             this.fILETITLEDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // jOKEINDEXDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.jOKEINDEXDataGridViewTextBoxColumn.DataPropertyName = "JOKE_INDEX";
-            this.jOKEINDEXDataGridViewTextBoxColumn.HeaderText = "JOKE_INDEX";
-            this.jOKEINDEXDataGridViewTextBoxColumn.Name = "jOKEINDEXDataGridViewTextBoxColumn";
-            this.jOKEINDEXDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "JOKE_INDEX";
+            this.dataGridViewTextBoxColumn1.HeaderText = "JOKE_INDEX";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // lINENUMBERDataGridViewTextBoxColumn
+            // lINEINDEXDataGridViewTextBoxColumn
             // 
-            this.lINENUMBERDataGridViewTextBoxColumn.DataPropertyName = "LINE_NUMBER";
-            this.lINENUMBERDataGridViewTextBoxColumn.HeaderText = "LINE_NUMBER";
-            this.lINENUMBERDataGridViewTextBoxColumn.Name = "lINENUMBERDataGridViewTextBoxColumn";
-            this.lINENUMBERDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lINEINDEXDataGridViewTextBoxColumn.DataPropertyName = "LINE_INDEX";
+            this.lINEINDEXDataGridViewTextBoxColumn.HeaderText = "LINE_INDEX";
+            this.lINEINDEXDataGridViewTextBoxColumn.Name = "lINEINDEXDataGridViewTextBoxColumn";
+            this.lINEINDEXDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // SearchTab
             // 
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvFiles);
+            this.Controls.Add(this.dgvSearchResults);
             this.Name = "SearchTab";
-            this.Size = new System.Drawing.Size(751, 415);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).EndInit();
+            this.Size = new System.Drawing.Size(548, 415);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEARCHRESULTDataTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,16 +155,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvFiles;
-        private System.Windows.Forms.BindingSource jKFILEDataTableBindingSource;
+        private System.Windows.Forms.DataGridView dgvSearchResults;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnGo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jOKEIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fIRSTINDEXDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fILETITLEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jOKEINDEXDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lINENUMBERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jOKEID1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fIRSTINDEXDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fILETITLEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lINEINDEXDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sEARCHRESULTDataTableBindingSource;
     }
 }
