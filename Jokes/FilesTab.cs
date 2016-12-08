@@ -21,7 +21,7 @@ namespace Jokes
 
             myDal = new FilesDal();
 
-            dgvFiles.DataSource = myDal.GetFiles();
+            RefreshFiles();
         }
 
         private void dgvFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -30,6 +30,11 @@ namespace Jokes
             var myRow = (JokesDS.JK_FILERow)drv.Row;
             FileForm form = new FileForm(myRow.ID);
             form.ShowDialog();
+        }
+
+        public void RefreshFiles()
+        {
+            dgvFiles.DataSource = myDal.GetFiles();
         }
     }
 }

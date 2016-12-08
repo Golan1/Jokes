@@ -8,8 +8,15 @@ using System.Xml.Serialization;
 
 namespace DAL
 {
+    [XmlRoot("File")]
     public class JokeFileInfo : INotifyPropertyChanged
     {
+        public JokeFileInfo()
+        {
+            Jokes = new List<string>();
+            this.CreationDate = DateTime.Now;
+        }
+
         private string title;
 
         public string Title
@@ -64,6 +71,7 @@ namespace DAL
             }
         }
 
+        [XmlArrayItem("Joke")]
         public List<string> Jokes { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

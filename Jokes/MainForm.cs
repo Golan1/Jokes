@@ -16,5 +16,10 @@ namespace Jokes
         {
             InitializeComponent();
         }
+
+        public void RefreshFiles()
+        {
+            this.filesTab1.RefreshFiles();
+        }
     }
 }

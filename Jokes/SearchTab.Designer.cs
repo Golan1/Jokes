@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvSearchResults = new System.Windows.Forms.DataGridView();
+            this.sEARCHRESULTDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnGo = new System.Windows.Forms.Button();
-            this.sEARCHRESULTDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jOKEID1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIRSTINDEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fILETITLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +67,10 @@
             this.dgvSearchResults.TabIndex = 0;
             this.dgvSearchResults.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchResults_CellContentDoubleClick);
             // 
+            // sEARCHRESULTDataTableBindingSource
+            // 
+            this.sEARCHRESULTDataTableBindingSource.DataSource = typeof(DAL.JokesDS.SEARCH_RESULTDataTable);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -99,14 +103,10 @@
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
-            // sEARCHRESULTDataTableBindingSource
-            // 
-            this.sEARCHRESULTDataTableBindingSource.DataSource = typeof(DAL.JokesDS.SEARCH_RESULTDataTable);
-            // 
             // jOKEID1DataGridViewTextBoxColumn
             // 
-            this.jOKEID1DataGridViewTextBoxColumn.DataPropertyName = "JOKE_ID1";
-            this.jOKEID1DataGridViewTextBoxColumn.HeaderText = "JOKE_ID1";
+            this.jOKEID1DataGridViewTextBoxColumn.DataPropertyName = "JOKE_ID";
+            this.jOKEID1DataGridViewTextBoxColumn.HeaderText = "JOKE_ID";
             this.jOKEID1DataGridViewTextBoxColumn.Name = "jOKEID1DataGridViewTextBoxColumn";
             this.jOKEID1DataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -159,13 +159,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnGo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jOKEINDEXDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lINENUMBERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sEARCHRESULTDataTableBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn jOKEID1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fIRSTINDEXDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fILETITLEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lINEINDEXDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource sEARCHRESULTDataTableBindingSource;
     }
 }

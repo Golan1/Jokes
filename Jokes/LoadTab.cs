@@ -51,7 +51,6 @@ namespace Jokes
             txtAuthor.DataBindings.Clear();
             txtAuthor.DataBindings.Add("Text", info, "Author");
 
-            info.CreationDate = DateTime.Now; // so it won't yell at us...
             dtCreationDate.DataBindings.Clear();
             dtCreationDate.DataBindings.Add("Value", info, "CreationDate");
             txtSource.DataBindings.Clear();
@@ -66,7 +65,12 @@ namespace Jokes
             {
                 myDal.SaveNewFile(info);
                 info = new JokeFileInfo();
+
+                txtFileName.Text = "";
                 ResetDataBindings();
+
+                //TODO: Fix.
+                ((MainForm)Parent.Parent.Parent).RefreshFiles();
 
             }
             catch (Exception)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using DAL;
 
 namespace Jokes
 {
@@ -23,25 +24,25 @@ namespace Jokes
             
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    var x = new JokeFileInfo()
-        //    {
-        //        Title = "t",
-        //        Author = "a",
-        //        CreationDate = DateTime.Now,
-        //        Rating = 7,
-        //        Source = "s",
-        //        Data = "hahahah"
-        //    };
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var x = new JokeFileInfo()
+            {
+                Title = "t",
+                Author = "a",
+                CreationDate = DateTime.Now,
+                Rating = 7,
+                Source = "s",
+                Jokes = { "abc", "efd" }
+            };
 
-        //    System.Xml.Serialization.XmlSerializer s = new System.Xml.Serialization.XmlSerializer(typeof(JokeFileInfo));
+            System.Xml.Serialization.XmlSerializer s = new System.Xml.Serialization.XmlSerializer(typeof(JokeFileInfo));
 
-        //    using (var sw = new StreamWriter(@".\\1.xml"))
-        //    {
-        //        s.Serialize(sw, x);
-        //    }
+            using (var sw = new StreamWriter(@".\\1.xml"))
+            {
+                s.Serialize(sw, x);
+            }
 
-        //}
+        }
     }
 }

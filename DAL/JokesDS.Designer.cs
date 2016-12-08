@@ -946,7 +946,7 @@ namespace DAL {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SEARCH_RESULTDataTable : global::System.Data.TypedTableBase<SEARCH_RESULTRow> {
             
-            private global::System.Data.DataColumn columnJOKE_ID1;
+            private global::System.Data.DataColumn columnJOKE_ID;
             
             private global::System.Data.DataColumn columnFIRST_INDEX;
             
@@ -991,9 +991,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn JOKE_ID1Column {
+            public global::System.Data.DataColumn JOKE_IDColumn {
                 get {
-                    return this.columnJOKE_ID1;
+                    return this.columnJOKE_ID;
                 }
             }
             
@@ -1066,10 +1066,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID1, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_INDEX) {
+            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_INDEX) {
                 SEARCH_RESULTRow rowSEARCH_RESULTRow = ((SEARCH_RESULTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        JOKE_ID1,
+                        JOKE_ID,
                         FIRST_INDEX,
                         FILE_TITLE,
                         JOKE_INDEX,
@@ -1096,7 +1096,7 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnJOKE_ID1 = base.Columns["JOKE_ID1"];
+                this.columnJOKE_ID = base.Columns["JOKE_ID"];
                 this.columnFIRST_INDEX = base.Columns["FIRST_INDEX"];
                 this.columnFILE_TITLE = base.Columns["FILE_TITLE"];
                 this.columnJOKE_INDEX = base.Columns["JOKE_INDEX"];
@@ -1106,8 +1106,8 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnJOKE_ID1 = new global::System.Data.DataColumn("JOKE_ID1", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJOKE_ID1);
+                this.columnJOKE_ID = new global::System.Data.DataColumn("JOKE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJOKE_ID);
                 this.columnFIRST_INDEX = new global::System.Data.DataColumn("FIRST_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFIRST_INDEX);
                 this.columnFILE_TITLE = new global::System.Data.DataColumn("FILE_TITLE", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1427,17 +1427,17 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal JOKE_ID1 {
+            public decimal JOKE_ID {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSEARCH_RESULT.JOKE_ID1Column]));
+                        return ((decimal)(this[this.tableSEARCH_RESULT.JOKE_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'JOKE_ID1\' in table \'SEARCH_RESULT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'JOKE_ID\' in table \'SEARCH_RESULT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSEARCH_RESULT.JOKE_ID1Column] = value;
+                    this[this.tableSEARCH_RESULT.JOKE_IDColumn] = value;
                 }
             }
             
@@ -1507,14 +1507,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsJOKE_ID1Null() {
-                return this.IsNull(this.tableSEARCH_RESULT.JOKE_ID1Column);
+            public bool IsJOKE_IDNull() {
+                return this.IsNull(this.tableSEARCH_RESULT.JOKE_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetJOKE_ID1Null() {
-                this[this.tableSEARCH_RESULT.JOKE_ID1Column] = global::System.Convert.DBNull;
+            public void SetJOKE_IDNull() {
+                this[this.tableSEARCH_RESULT.JOKE_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
