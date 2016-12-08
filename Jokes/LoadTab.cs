@@ -58,6 +58,9 @@ namespace Jokes
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtFileName.Text))
+                    return;
+
                 myDal.SaveNewFile(info);
                 info = new JokeFileInfo();
 

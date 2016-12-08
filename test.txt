@@ -5,7 +5,8 @@
   <Source>s</Source>
   <Rating>7</Rating>
   <Jokes>
-    <Joke>abc Bba!</Joke>
+    <Joke>abc Bba!
+Second sentence</Joke>
     <Joke>"abc AAA" ---</Joke>
   </Jokes>
 </File>

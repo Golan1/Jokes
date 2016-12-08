@@ -33,5 +33,11 @@ namespace Jokes
             jokeForm.updateJokes(word, selected, res);
             jokeForm.Show();
         }
+
+        public void ShowFile(decimal fileId, string fileTitle)
+        {
+            var fileForm = new FileForm(fileId, fileTitle);
+            fileForm.ShowDialog();
+        }
     }
 }

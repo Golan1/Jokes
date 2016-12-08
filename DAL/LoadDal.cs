@@ -100,15 +100,17 @@ VALUES
 
             var lines = joke.Split('\n').ToList();
 
+            int indexInJoke = 0;
+
             foreach (var line in lines)
             {
-                var words = joke.Split(' ').ToList();
+                var words = line.Split(' ').ToList();
 
                 for (int i = 0; i < words.Count; i++)
                 {
                     commandText.Append(string.Format(
                         SQL_INSERT_WORD_IN_JOKE,
-                        i,
+                        indexInJoke++,
                         words[i],
                         StripWord(words[i]).ToUpper(),
                         lineIndex,

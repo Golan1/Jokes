@@ -15,6 +15,8 @@ namespace Jokes
     public partial class FilesTab : UserControl
     {
         FilesDal myDal;
+        MainForm mainForm;
+
         public FilesTab()
         {
             InitializeComponent();
@@ -24,10 +26,10 @@ namespace Jokes
 
         private void dgvFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var drv= (DataRowView)dgvFiles.Rows[e.RowIndex].DataBoundItem;
+            var drv = (DataRowView)dgvFiles.Rows[e.RowIndex].DataBoundItem;
             var myRow = (JokesDS.JK_FILERow)drv.Row;
-            FileForm form = new FileForm(myRow.ID);
-            form.ShowDialog();
+
+            mainForm.ShowFile(myRow.ID, myRow.TITLE);
         }
 
         public void RefreshFiles()
@@ -38,6 +40,7 @@ namespace Jokes
         private void FilesTab_Load(object sender, EventArgs e)
         {
             RefreshFiles();
+            mainForm = (MainForm)Parent.Parent.Parent;
         }
     }
 }

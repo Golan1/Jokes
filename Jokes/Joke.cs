@@ -94,10 +94,10 @@ namespace Jokes
 
         private void fullFileBtn_Click(object sender, EventArgs e)
         {
-            int fileId = myDal.getFileId(JokeId);
-            MyFileForm = new FileForm(fileId);          
+            //int fileId = myDal.getFileId(JokeId);
+            //MyFileForm = new FileForm(fileId);          
 
-            MyFileForm.Show();
+            //MyFileForm.Show();
 
         }
 

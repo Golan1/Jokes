@@ -13,15 +13,16 @@ namespace Jokes
     public partial class FileForm : Form
     {
         private FileFormDal myDal;
-        public decimal FileId{ get; set; }
-        public FileForm(decimal fileId)
-        {
 
+        public decimal FileId{ get; set; }
+
+        public FileForm(decimal fileId, string fileTitle)
+        {
             InitializeComponent();
             myDal = new FileFormDal();
+
             FileId = fileId;
-            richTextBox1.Text = myDal.getFileText(FileId);
-          
+            richTextBox1.Text = myDal.GetFileText(FileId);
         }
     }
 }
