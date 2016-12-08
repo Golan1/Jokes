@@ -62,7 +62,7 @@
             this.dgvFiles.Location = new System.Drawing.Point(0, 0);
             this.dgvFiles.Name = "dgvFiles";
             this.dgvFiles.ReadOnly = true;
-            this.dgvFiles.Size = new System.Drawing.Size(477, 254);
+            this.dgvFiles.Size = new System.Drawing.Size(744, 254);
             this.dgvFiles.TabIndex = 0;
             this.dgvFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiles_CellDoubleClick);
             // 
@@ -123,7 +123,7 @@
             // 
             this.Controls.Add(this.dgvFiles);
             this.Name = "FilesTab";
-            this.Size = new System.Drawing.Size(477, 254);
+            this.Size = new System.Drawing.Size(744, 254);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).EndInit();
             this.ResumeLayout(false);

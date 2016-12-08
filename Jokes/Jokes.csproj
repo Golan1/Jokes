@@ -57,6 +57,12 @@
     <Compile Include="FileForm.Designer.cs">
       <DependentUpon>FileForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchTab.Designer.cs">
+      <DependentUpon>SearchTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <EmbeddedResource Include="FileForm.resx">
       <DependentUpon>FileForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SearchTab.resx">
+      <DependentUpon>SearchTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +145,7 @@
       <DependentUpon>GroupsTab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\DAL.JokesDS+JK_FILEDataTable.datasource" />
+    <None Include="Properties\DataSources\DAL.JokesDS+SEARCH_RESULTDataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

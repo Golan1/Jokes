@@ -1,3 +1,4 @@
+drop table jk_search_history;
 drop table relation;
 drop table word_in_group;
 drop table jk_group;
@@ -81,4 +82,5 @@ word2 varchar2(50) not null,
 primary Key (relation_id, word1,word2),
 foreign key (relation_id) references jk_relation(id));
 
-
+create table jk_search_history(
+text varchar2(4000) not null);

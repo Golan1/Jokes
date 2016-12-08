@@ -39,8 +39,10 @@
             this.relationTab1 = new Jokes.RelationsTab();
             this.Files = new System.Windows.Forms.TabPage();
             this.filesTab1 = new Jokes.FilesTab();
+            this.searchTab1 = new Jokes.SearchTab();
             this.tabControl1.SuspendLayout();
             this.LoadControl.SuspendLayout();
+            this.Search.SuspendLayout();
             this.Groups.SuspendLayout();
             this.Relations.SuspendLayout();
             this.Files.SuspendLayout();
@@ -84,6 +86,7 @@
             // 
             // Search
             // 
+            this.Search.Controls.Add(this.searchTab1);
             this.Search.Location = new System.Drawing.Point(4, 22);
             this.Search.Margin = new System.Windows.Forms.Padding(2);
             this.Search.Name = "Search";
@@ -154,6 +157,14 @@
             this.filesTab1.Size = new System.Drawing.Size(744, 402);
             this.filesTab1.TabIndex = 0;
             // 
+            // searchTab1
+            // 
+            this.searchTab1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTab1.Location = new System.Drawing.Point(2, 2);
+            this.searchTab1.Name = "searchTab1";
+            this.searchTab1.Size = new System.Drawing.Size(740, 398);
+            this.searchTab1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +176,7 @@
             this.Text = "MainForm";
             this.tabControl1.ResumeLayout(false);
             this.LoadControl.ResumeLayout(false);
+            this.Search.ResumeLayout(false);
             this.Groups.ResumeLayout(false);
             this.Relations.ResumeLayout(false);
             this.Files.ResumeLayout(false);
@@ -184,5 +196,6 @@
         private GroupsTab groupTab1;
         private RelationsTab relationTab1;
         private FilesTab filesTab1;
+        private SearchTab searchTab1;
     }
 }

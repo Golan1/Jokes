@@ -14,14 +14,14 @@ namespace Jokes
 {
     public partial class FilesTab : UserControl
     {
-        FilesDal myDAL;
+        FilesDal myDal;
         public FilesTab()
         {
             InitializeComponent();
 
-            myDAL = new FilesDal();
+            myDal = new FilesDal();
 
-            dgvFiles.DataSource = myDAL.GetFiles();
+            dgvFiles.DataSource = myDal.GetFiles();
         }
 
         private void dgvFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

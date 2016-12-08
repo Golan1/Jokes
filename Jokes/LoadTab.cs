@@ -15,7 +15,7 @@ namespace Jokes
     public partial class LoadTab : UserControl
     {
         JokeFileInfo info;
-        LoadTabDal myDal;
+        LoadDal myDal;
 
         public LoadTab()
         {
@@ -26,7 +26,7 @@ namespace Jokes
             
             ResetDataBindings();
 
-            myDal = new LoadTabDal();
+            myDal = new LoadDal();
         }
 
         private void btnLoadFile_Click(object sender, EventArgs e)

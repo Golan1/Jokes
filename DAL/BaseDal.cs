@@ -39,5 +39,33 @@ namespace DAL
 
             return returnValue;
         }
+
+        protected string StripWord(string text)
+        {
+            int firstIndex = -1;
+            int lastIndex = -1;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (char.IsLetterOrDigit(text[i]))
+                {
+                    firstIndex = i;
+                    break;
+                }
+            }
+
+            if (firstIndex == -1) return string.Empty;
+
+            for (int i = text.Length - 1; i >= 0; i--)
+            {
+                if (char.IsLetterOrDigit(text[i]))
+                {
+                    lastIndex = i;
+                    break;
+                }
+            }
+
+            return text.Substring(firstIndex, lastIndex - firstIndex + 1);
+        }
     }
 }

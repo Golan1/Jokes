@@ -12,9 +12,7 @@ namespace DAL
         {
             JokesDSTableAdapters.JK_FILETableAdapter adapter = new JokesDSTableAdapters.JK_FILETableAdapter();
 
-            adapter.Fill(DS.JK_FILE);
-            var data = DS.JK_FILE;
-            return data;
+            return adapter.GetData();
         }
     }
 }

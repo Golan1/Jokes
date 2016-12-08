@@ -6,3 +6,7 @@
     {
     }
 }
+
+namespace DAL.JokesDSTableAdapters
+{
+}

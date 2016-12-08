@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class LoadTabDal : BaseDal
+    public class LoadDal : BaseDal
     {
         private const string JK_FILE_SEQ = "JK_FILE_SEQ";
         private const string JOKE_SEQ = "JOKE_SEQ";
@@ -123,34 +123,6 @@ VALUES
             cmd.CommandText = commandText.ToString();
 
             cmd.ExecuteNonQuery();
-        }
-
-        private string StripWord(string text)
-        {
-            int firstIndex = -1;
-            int lastIndex = -1;
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (char.IsLetterOrDigit(text[i]))
-                {
-                    firstIndex = i;
-                    break;
-                }
-            }
-
-            if (firstIndex == -1) return string.Empty;
-
-            for (int i = text.Length - 1; i >= 0; i--)
-            {
-                if (char.IsLetterOrDigit(text[i]))
-                {
-                    lastIndex = i;
-                    break;
-                }
-            }
-
-            return text.Substring(firstIndex, lastIndex - firstIndex + 1);
         }
     }
 }
