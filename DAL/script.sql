@@ -1,5 +1,4 @@
 drop table jk_search_history;
-drop table relation;
 drop table word_in_group;
 drop SEQUENCE jk_group_seq;
 drop table jk_group;
@@ -9,7 +8,6 @@ drop table joke;
 drop sequence jk_file_seq;
 drop table jk_file;
 drop table tupple_in_relation;
-
 drop sequence jk_relation_seq;
 drop table jk_relation;
 

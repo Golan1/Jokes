@@ -32,6 +32,8 @@
             this.title = new System.Windows.Forms.Label();
             this.jokeTextBox = new System.Windows.Forms.RichTextBox();
             this.fullFileBtn = new System.Windows.Forms.Button();
+            this.nextBtn = new System.Windows.Forms.Button();
+            this.prevBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // wordLable
@@ -64,7 +66,7 @@
             // 
             // fullFileBtn
             // 
-            this.fullFileBtn.Location = new System.Drawing.Point(443, 353);
+            this.fullFileBtn.Location = new System.Drawing.Point(433, 396);
             this.fullFileBtn.Name = "fullFileBtn";
             this.fullFileBtn.Size = new System.Drawing.Size(112, 46);
             this.fullFileBtn.TabIndex = 3;
@@ -72,11 +74,31 @@
             this.fullFileBtn.UseVisualStyleBackColor = true;
             this.fullFileBtn.Click += new System.EventHandler(this.fullFileBtn_Click);
             // 
+            // nextBtn
+            // 
+            this.nextBtn.Location = new System.Drawing.Point(433, 322);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(112, 38);
+            this.nextBtn.TabIndex = 4;
+            this.nextBtn.Text = "Next";
+            this.nextBtn.UseVisualStyleBackColor = true;
+            // 
+            // prevBtn
+            // 
+            this.prevBtn.Location = new System.Drawing.Point(69, 322);
+            this.prevBtn.Name = "prevBtn";
+            this.prevBtn.Size = new System.Drawing.Size(112, 38);
+            this.prevBtn.TabIndex = 4;
+            this.prevBtn.Text = "Previous";
+            this.prevBtn.UseVisualStyleBackColor = true;
+            // 
             // Joke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 461);
+            this.Controls.Add(this.prevBtn);
+            this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.fullFileBtn);
             this.Controls.Add(this.jokeTextBox);
             this.Controls.Add(this.title);
@@ -94,5 +116,7 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.RichTextBox jokeTextBox;
         private System.Windows.Forms.Button fullFileBtn;
+        private System.Windows.Forms.Button nextBtn;
+        private System.Windows.Forms.Button prevBtn;
     }
 }

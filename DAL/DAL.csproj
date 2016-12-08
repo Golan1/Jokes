@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDal.cs" />
-    <Compile Include="FileFormDalcs.cs" />
+    <Compile Include="FileFormDal.cs" />
     <Compile Include="FilesDal.cs" />
     <Compile Include="GroupsTabDal.cs" />
     <Compile Include="JokeFileInfo.cs" />

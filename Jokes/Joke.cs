@@ -15,6 +15,7 @@ namespace Jokes
 
         private JokeFormDal myDal;
         public int JokeId{ get; set; }
+        public List<int> Res { get; set; }
         public FileForm MyFileForm { get; set; }
 
         public Joke(string word, int id)
