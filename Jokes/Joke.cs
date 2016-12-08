@@ -67,9 +67,12 @@ namespace Jokes
         }
 
 
-
+        private int selected;
+        private JokesDS.SEARCH_RESULTDataTable myJokes;
         public void updateJokes (string word, int selected, JokesDS.SEARCH_RESULTDataTable res )
         {
+            this.selected = selected;
+            myJokes = res;
             wordLable.Text = word;
             JokeId = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).JOKE_ID;
             decimal idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
@@ -96,6 +99,12 @@ namespace Jokes
 
             MyFileForm.Show();
 
+        }
+
+        private void nextBtn_Click(object sender, EventArgs e)
+        {
+            if(selected+1<myJokes.Rows.Count)
+                updateJokes(wordLable.Text, selected++, myJokes);
         }
     }
 }
