@@ -12,13 +12,13 @@ namespace Jokes
 {
     public partial class FileForm : Form
     {
-        private FileFormDalcs myDal;
+        private FileFormDal myDal;
         public decimal FileId{ get; set; }
         public FileForm(decimal fileId)
         {
 
             InitializeComponent();
-            myDal = new FileFormDalcs();
+            myDal = new FileFormDal();
             FileId = fileId;
             richTextBox1.Text = myDal.getFileText(FileId);
             

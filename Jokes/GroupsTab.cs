@@ -77,24 +77,30 @@ namespace Jokes
             string newWord = wordTextBox.Text;
             string selectedGroup = (string)groupsListBox.SelectedItem;
             int idx = groupsListBox.SelectedIndex;
-            int id = Groups.Keys.ToArray()[idx];
 
-            if (newWord == string.Empty)
-                MessageBox.Show("Please enter a word");
+            if (idx == -1)
+                MessageBox.Show("Please select group");
             else
             {
-                bool success = true;
-                try
+                int id = Groups.Keys.ToArray()[idx];
+
+                if (newWord == string.Empty)
+                    MessageBox.Show("Please enter a word");
+                else
                 {
-                    myDal.SaveWordToGroup(id,newWord);
+                    bool success = true;
+                    try
+                    {
+                        myDal.SaveWordToGroup(id, newWord);
+                    }
+                    catch (Exception exp)
+                    {
+                        success = false;
+                        MessageBox.Show("Something is worng");
+                    }
+                    if (success)
+                        wordsListBox.Items.Add(newWord);
                 }
-                catch (Exception exp)
-                {
-                    success = false;
-                    MessageBox.Show("Something is worng");
-                }
-                if (success)
-                    wordsListBox.Items.Add(newWord);
             }
 
         }

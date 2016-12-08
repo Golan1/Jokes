@@ -76,26 +76,32 @@ namespace Jokes
             string word2 = word2TextBox.Text;
             string selectedRelations = (string)relationsListBox.SelectedItem;
             int idx = relationsListBox.SelectedIndex;
-            int id = Relations.Keys.ToArray()[idx];
 
-            if ((word1 == string.Empty) || (word2 == string.Empty))
-                MessageBox.Show("Please enter both words");
+            if (idx == -1)
+                MessageBox.Show("Please select relation");
             else
             {
-                bool success = true;
-                try
-                {
-                    myDal.saveTuppleToRelation(word1,word2, id);
-                }
-                catch (Exception exp)
-                {
-                    success = false;
-                    MessageBox.Show("Something is worng");
-                }
-                if (success)
-                    tuplesListBox.Items.Add(word1 + " / " + word2); ;
-            }
 
+                int id = Relations.Keys.ToArray()[idx];
+
+                if ((word1 == string.Empty) || (word2 == string.Empty))
+                    MessageBox.Show("Please enter both words");
+                else
+                {
+                    bool success = true;
+                    try
+                    {
+                        myDal.saveTuppleToRelation(word1, word2, id);
+                    }
+                    catch (Exception exp)
+                    {
+                        success = false;
+                        MessageBox.Show("Something is worng");
+                    }
+                    if (success)
+                        tuplesListBox.Items.Add(word1 + " / " + word2); ;
+                }
+            }
         }
     }
 }
