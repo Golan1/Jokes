@@ -13,23 +13,85 @@ namespace Jokes
     public partial class Joke : Form
     {
 
-        private JokeFormDal myDal;
-        public int JokeId{ get; set; }
-        public List<int> Res { get; set; }
-        public FileForm MyFileForm { get; set; }
 
-        public Joke(string word, int id)
+        private JokeFormDal myDal;
+        
+        public FileForm MyFileForm { get; set; }
+        public decimal JokeId { get; set; }
+
+        public Joke()
         {
             InitializeComponent();
-            JokeId = id;
+
+            myDal = new JokeFormDal();
+
+            ContextMenu cm = new ContextMenu();
+            cm.MenuItems.Add("Add to group");
+            cm.MenuItems.Add("Add to relation (first)");
+            cm.MenuItems.Add("Add to relation (seconed)");
+            cm.MenuItems.Add("Search");
+
+            jokeTextBox.ContextMenu = cm;
+
+            cm.MenuItems[0].Click += Joke_Click1;
+            cm.MenuItems[1].Click += Joke_Click2;
+            cm.MenuItems[2].Click += Joke_Click3;
+            cm.MenuItems[2].Enabled = false;
+            cm.MenuItems[3].Click += Joke_Click4;
+
+        }
+
+        private void Joke_Click1(object sender, EventArgs e)
+        {
+          //send text to group
+        }
+
+        private void Joke_Click2(object sender, EventArgs e)
+        {
+            //send text to first rela
+            jokeTextBox.ContextMenu.MenuItems[1].Enabled = false;
+            jokeTextBox.ContextMenu.MenuItems[2].Enabled = true;
+
+        }
+
+        private void Joke_Click3(object sender, EventArgs e)
+        {
+            //send text to first rela
+            jokeTextBox.ContextMenu.MenuItems[1].Enabled = true;
+            jokeTextBox.ContextMenu.MenuItems[2].Enabled = false;
+        }
+
+        private void Joke_Click4(object sender, EventArgs e)
+        {
+            //send text to search
+        }
+
+
+
+        public void updateJokes (string word, int selected, JokesDS.SEARCH_RESULTDataTable res )
+        {
             wordLable.Text = word;
+            JokeId = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).JOKE_ID;
+            decimal idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
             string joke = myDal.getJokeText(JokeId);
+
+            int cnt = word.Split(' ').Length;
+            var tmp = joke.Substring((int)idx).Split(' ').ToList().GetRange(0, cnt);
+            string tmp2 = "";
+            foreach (var t in tmp)
+                tmp2 += t;
+
+
             jokeTextBox.Text = joke;
+            jokeTextBox.Select((int)idx,tmp2.Length);
+            jokeTextBox.SelectionFont = new Font(jokeTextBox.SelectionFont, FontStyle.Bold);
+
+
         }
 
         private void fullFileBtn_Click(object sender, EventArgs e)
         {
-             int fileId = myDal.getFileId(JokeId);
+            int fileId = myDal.getFileId(JokeId);
             MyFileForm = new FileForm(fileId);          
 
             MyFileForm.Show();

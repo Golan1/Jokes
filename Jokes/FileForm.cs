@@ -21,7 +21,7 @@ namespace Jokes
             myDal = new FileFormDal();
             FileId = fileId;
             richTextBox1.Text = myDal.getFileText(FileId);
-            
+          
         }
     }
 }

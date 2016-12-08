@@ -20,7 +20,7 @@ namespace DAL
         FROM joke
         WHERE id=:ID";
 
-        public string getJokeText (int id)
+        public string getJokeText (decimal id)
         {
             using (var conn = CreateConnection())
             {
@@ -46,7 +46,7 @@ namespace DAL
             }
         }
 
-        public int getFileId(int jokeId)
+        public int getFileId(decimal jokeId)
         {
             using (var conn = CreateConnection())
             {

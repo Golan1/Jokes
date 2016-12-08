@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using DAL;
 namespace Jokes
 {
+    public delegate void SelectedToAddToGruop(object sender, EventArgs e);
+
     public partial class GroupsTab : UserControl
     {
 
         private GroupsTabDal myDal;
         public Dictionary<int,string> Groups { get; set; }
+
+        
 
         public GroupsTab()
         {
@@ -23,8 +27,15 @@ namespace Jokes
             groupsListBox.SelectedIndexChanged += GroupsListBox_SelectedIndexChanged;
             myDal = new GroupsTabDal();
             getGroups();
-           
+      
 
+
+        }
+
+
+        private void wordSelected(object sender, EventArgs e)
+        {
+            MessageBox.Show("kjhg");
         }
 
         private void getGroups ()
