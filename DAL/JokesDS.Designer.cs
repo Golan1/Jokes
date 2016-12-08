@@ -1076,7 +1076,7 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_INDEX, string FILE_ID) {
+            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_INDEX, decimal FILE_ID) {
                 SEARCH_RESULTRow rowSEARCH_RESULTRow = ((SEARCH_RESULTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         JOKE_ID,
@@ -1128,7 +1128,7 @@ namespace DAL {
                 base.Columns.Add(this.columnJOKE_INDEX);
                 this.columnLINE_INDEX = new global::System.Data.DataColumn("LINE_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLINE_INDEX);
-                this.columnFILE_ID = new global::System.Data.DataColumn("FILE_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnFILE_ID = new global::System.Data.DataColumn("FILE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFILE_ID);
             }
             
@@ -1521,10 +1521,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FILE_ID {
+            public decimal FILE_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableSEARCH_RESULT.FILE_IDColumn]));
+                        return ((decimal)(this[this.tableSEARCH_RESULT.FILE_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'FILE_ID\' in table \'SEARCH_RESULT\' is DBNull.", e);

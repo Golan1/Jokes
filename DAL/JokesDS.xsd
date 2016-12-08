@@ -168,7 +168,7 @@
               <xs:element name="FILE_TITLE" msprop:Generator_ColumnVarNameInTable="columnFILE_TITLE" msprop:Generator_ColumnPropNameInRow="FILE_TITLE" msprop:Generator_ColumnPropNameInTable="FILE_TITLEColumn" msprop:Generator_UserColumnName="FILE_TITLE" type="xs:string" minOccurs="0" />
               <xs:element name="JOKE_INDEX" msprop:Generator_ColumnVarNameInTable="columnJOKE_INDEX" msprop:Generator_ColumnPropNameInRow="JOKE_INDEX" msprop:Generator_ColumnPropNameInTable="JOKE_INDEXColumn" msprop:Generator_UserColumnName="JOKE_INDEX" type="xs:decimal" minOccurs="0" />
               <xs:element name="LINE_INDEX" msprop:Generator_ColumnVarNameInTable="columnLINE_INDEX" msprop:Generator_ColumnPropNameInRow="LINE_INDEX" msprop:Generator_ColumnPropNameInTable="LINE_INDEXColumn" msprop:Generator_UserColumnName="LINE_INDEX" type="xs:decimal" minOccurs="0" />
-              <xs:element name="FILE_ID" msprop:Generator_ColumnVarNameInTable="columnFILE_ID" msprop:Generator_ColumnPropNameInRow="FILE_ID" msprop:Generator_ColumnPropNameInTable="FILE_IDColumn" msprop:Generator_UserColumnName="FILE_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_ID" msprop:Generator_ColumnVarNameInTable="columnFILE_ID" msprop:Generator_ColumnPropNameInRow="FILE_ID" msprop:Generator_ColumnPropNameInTable="FILE_IDColumn" msprop:Generator_UserColumnName="FILE_ID" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

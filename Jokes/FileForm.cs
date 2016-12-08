@@ -22,6 +22,11 @@ namespace Jokes
             myDal = new FileFormDal();
 
             FileId = fileId;
+            
+        }
+
+        private void FileForm_Load(object sender, EventArgs e)
+        {
             richTextBox1.Text = myDal.GetFileText(FileId);
         }
     }
