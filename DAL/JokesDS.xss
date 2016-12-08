@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:JK_FILE" ZOrder="1" X="269" Y="204" Height="210" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:JK_SEARCH_HISTORY" ZOrder="3" X="394" Y="67" Height="96" Width="252" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="46" />
-    <Shape ID="DesignTable:SEARCH_RESULT" ZOrder="2" X="37" Y="53" Height="124" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="120" />
+    <Shape ID="DesignTable:SEARCH_RESULT" ZOrder="2" X="37" Y="53" Height="143" Width="162" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

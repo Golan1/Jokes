@@ -956,6 +956,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnLINE_INDEX;
             
+            private global::System.Data.DataColumn columnFILE_ID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SEARCH_RESULTDataTable() {
@@ -1031,6 +1033,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FILE_IDColumn {
+                get {
+                    return this.columnFILE_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1066,14 +1076,15 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_INDEX) {
+            public SEARCH_RESULTRow AddSEARCH_RESULTRow(decimal JOKE_ID, decimal FIRST_INDEX, string FILE_TITLE, decimal JOKE_INDEX, decimal LINE_INDEX, string FILE_ID) {
                 SEARCH_RESULTRow rowSEARCH_RESULTRow = ((SEARCH_RESULTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         JOKE_ID,
                         FIRST_INDEX,
                         FILE_TITLE,
                         JOKE_INDEX,
-                        LINE_INDEX};
+                        LINE_INDEX,
+                        FILE_ID};
                 rowSEARCH_RESULTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSEARCH_RESULTRow);
                 return rowSEARCH_RESULTRow;
@@ -1101,6 +1112,7 @@ namespace DAL {
                 this.columnFILE_TITLE = base.Columns["FILE_TITLE"];
                 this.columnJOKE_INDEX = base.Columns["JOKE_INDEX"];
                 this.columnLINE_INDEX = base.Columns["LINE_INDEX"];
+                this.columnFILE_ID = base.Columns["FILE_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1116,6 +1128,8 @@ namespace DAL {
                 base.Columns.Add(this.columnJOKE_INDEX);
                 this.columnLINE_INDEX = new global::System.Data.DataColumn("LINE_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLINE_INDEX);
+                this.columnFILE_ID = new global::System.Data.DataColumn("FILE_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFILE_ID);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1507,6 +1521,22 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FILE_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableSEARCH_RESULT.FILE_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FILE_ID\' in table \'SEARCH_RESULT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSEARCH_RESULT.FILE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsJOKE_IDNull() {
                 return this.IsNull(this.tableSEARCH_RESULT.JOKE_IDColumn);
             }
@@ -1563,6 +1593,18 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetLINE_INDEXNull() {
                 this[this.tableSEARCH_RESULT.LINE_INDEXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFILE_IDNull() {
+                return this.IsNull(this.tableSEARCH_RESULT.FILE_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFILE_IDNull() {
+                this[this.tableSEARCH_RESULT.FILE_IDColumn] = global::System.Convert.DBNull;
             }
         }
         

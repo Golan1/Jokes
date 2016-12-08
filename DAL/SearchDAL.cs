@@ -13,7 +13,7 @@ namespace DAL
 
         const string SQL_SEARCH_TEXT_FIRST =
 @"SELECT firsts.joke_id as joke_id, firsts.first_index as first_index, 
-f.title as file_title, j.joke_index as joke_index, firsts.line_index as line_index
+f.title as file_title, j.joke_index as joke_index, firsts.line_index as line_index, f.id as file_id
 FROM (SELECT index_in_joke as first_index, joke_id, line_index
 		FROM word_in_joke 
 		WHERE text_for_search = '{0}') firsts
