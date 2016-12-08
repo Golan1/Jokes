@@ -13,7 +13,7 @@ namespace Jokes
     public partial class FileForm : Form
     {
         private FileFormDal myDal;
-
+        private MainForm mainForm;
         public decimal FileId{ get; set; }
 
         public FileForm(decimal fileId, string fileTitle)
@@ -22,11 +22,59 @@ namespace Jokes
             myDal = new FileFormDal();
 
             FileId = fileId;
-            
+
+
+            ContextMenu cm = new ContextMenu();
+            cm.MenuItems.Add("Add to group");
+            cm.MenuItems.Add("Add to relation (first)");
+            cm.MenuItems.Add("Add to relation (seconed)");
+            cm.MenuItems.Add("Search");
+
+            richTextBox1.ContextMenu = cm;
+
+            cm.MenuItems[0].Click += Joke_Click1;
+            cm.MenuItems[1].Click += Joke_Click2;
+            cm.MenuItems[2].Click += Joke_Click3;
+            cm.MenuItems[2].Enabled = false;
+            cm.MenuItems[3].Click += Joke_Click4;
+
+        }
+
+        private void Joke_Click1(object sender, EventArgs e)
+        {
+
+            mainForm.groupFire(richTextBox1.SelectedText);
+            this.Close();
+        }
+
+        private void Joke_Click2(object sender, EventArgs e)
+        {
+
+            mainForm.firstRelWordFire(this.richTextBox1.SelectedText);
+            richTextBox1.ContextMenu.MenuItems[1].Enabled = false;
+            richTextBox1.ContextMenu.MenuItems[2].Enabled = true;
+
+        }
+
+        private void Joke_Click3(object sender, EventArgs e)
+        {
+
+            mainForm.secRelWordFire(this.richTextBox1.SelectedText);
+            richTextBox1.ContextMenu.MenuItems[1].Enabled = true;
+            richTextBox1.ContextMenu.MenuItems[2].Enabled = false;
+            this.Close();
+        }
+
+        private void Joke_Click4(object sender, EventArgs e)
+        {
+
+            mainForm.searchFire(richTextBox1.SelectedText);
+            this.Close();//send text to search
         }
 
         private void FileForm_Load(object sender, EventArgs e)
         {
+            mainForm = (MainForm)this.Owner;
             richTextBox1.Text = myDal.GetFileText(FileId);
         }
     }
