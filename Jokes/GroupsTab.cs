@@ -26,10 +26,6 @@ namespace Jokes
 
             groupsListBox.SelectedIndexChanged += GroupsListBox_SelectedIndexChanged;
             myDal = new GroupsTabDal();
-            getGroups();
-      
-
-
         }
 
 
@@ -114,6 +110,11 @@ namespace Jokes
                 }
             }
 
+        }
+
+        private void GroupsTab_Load(object sender, EventArgs e)
+        {
+            getGroups();
         }
     }
 }

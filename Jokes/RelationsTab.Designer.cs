@@ -42,24 +42,26 @@
             // relationsListBox
             // 
             this.relationsListBox.FormattingEnabled = true;
-            this.relationsListBox.ItemHeight = 16;
-            this.relationsListBox.Location = new System.Drawing.Point(450, 97);
+            this.relationsListBox.Location = new System.Drawing.Point(338, 79);
+            this.relationsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.relationsListBox.Name = "relationsListBox";
-            this.relationsListBox.Size = new System.Drawing.Size(141, 212);
+            this.relationsListBox.Size = new System.Drawing.Size(107, 173);
             this.relationsListBox.TabIndex = 0;
             // 
             // relationTextBox
             // 
-            this.relationTextBox.Location = new System.Drawing.Point(450, 316);
+            this.relationTextBox.Location = new System.Drawing.Point(338, 257);
+            this.relationTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.relationTextBox.Name = "relationTextBox";
-            this.relationTextBox.Size = new System.Drawing.Size(141, 22);
+            this.relationTextBox.Size = new System.Drawing.Size(107, 20);
             this.relationTextBox.TabIndex = 2;
             // 
             // addRelationBtn
             // 
-            this.addRelationBtn.Location = new System.Drawing.Point(450, 354);
+            this.addRelationBtn.Location = new System.Drawing.Point(338, 288);
+            this.addRelationBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addRelationBtn.Name = "addRelationBtn";
-            this.addRelationBtn.Size = new System.Drawing.Size(141, 27);
+            this.addRelationBtn.Size = new System.Drawing.Size(106, 22);
             this.addRelationBtn.TabIndex = 3;
             this.addRelationBtn.Text = "Add";
             this.addRelationBtn.UseVisualStyleBackColor = true;
@@ -67,23 +69,26 @@
             // 
             // word1TextBox
             // 
-            this.word1TextBox.Location = new System.Drawing.Point(238, 315);
+            this.word1TextBox.Location = new System.Drawing.Point(178, 256);
+            this.word1TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.word1TextBox.Name = "word1TextBox";
-            this.word1TextBox.Size = new System.Drawing.Size(141, 22);
+            this.word1TextBox.Size = new System.Drawing.Size(107, 20);
             this.word1TextBox.TabIndex = 2;
             // 
             // word2TextBox
             // 
-            this.word2TextBox.Location = new System.Drawing.Point(91, 315);
+            this.word2TextBox.Location = new System.Drawing.Point(68, 256);
+            this.word2TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.word2TextBox.Name = "word2TextBox";
-            this.word2TextBox.Size = new System.Drawing.Size(141, 22);
+            this.word2TextBox.Size = new System.Drawing.Size(107, 20);
             this.word2TextBox.TabIndex = 2;
             // 
             // AddTupleBtn
             // 
-            this.AddTupleBtn.Location = new System.Drawing.Point(156, 354);
+            this.AddTupleBtn.Location = new System.Drawing.Point(117, 288);
+            this.AddTupleBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddTupleBtn.Name = "AddTupleBtn";
-            this.AddTupleBtn.Size = new System.Drawing.Size(141, 27);
+            this.AddTupleBtn.Size = new System.Drawing.Size(106, 22);
             this.AddTupleBtn.TabIndex = 3;
             this.AddTupleBtn.Text = "Add";
             this.AddTupleBtn.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(444, 52);
+            this.label1.Location = new System.Drawing.Point(333, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 32);
+            this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Relations";
             // 
@@ -103,25 +109,26 @@
             // 
             this.Tupples.AutoSize = true;
             this.Tupples.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Tupples.Location = new System.Drawing.Point(89, 52);
+            this.Tupples.Location = new System.Drawing.Point(67, 42);
+            this.Tupples.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Tupples.Name = "Tupples";
-            this.Tupples.Size = new System.Drawing.Size(85, 32);
+            this.Tupples.Size = new System.Drawing.Size(67, 25);
             this.Tupples.TabIndex = 4;
             this.Tupples.Text = "Tuples";
             // 
             // tuplesListBox
             // 
             this.tuplesListBox.FormattingEnabled = true;
-            this.tuplesListBox.ItemHeight = 16;
-            this.tuplesListBox.Location = new System.Drawing.Point(91, 97);
+            this.tuplesListBox.Location = new System.Drawing.Point(68, 79);
+            this.tuplesListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tuplesListBox.Name = "tuplesListBox";
             this.tuplesListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.tuplesListBox.Size = new System.Drawing.Size(288, 212);
+            this.tuplesListBox.Size = new System.Drawing.Size(217, 173);
             this.tuplesListBox.TabIndex = 5;
             // 
             // RelationsTab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tuplesListBox);
             this.Controls.Add(this.Tupples);
@@ -132,8 +139,10 @@
             this.Controls.Add(this.word1TextBox);
             this.Controls.Add(this.relationTextBox);
             this.Controls.Add(this.relationsListBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RelationsTab";
-            this.Size = new System.Drawing.Size(632, 423);
+            this.Size = new System.Drawing.Size(474, 344);
+            this.Load += new System.EventHandler(this.RelationsTab_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,6 +17,8 @@ namespace Jokes
         SearchDal myDal;
         MainForm mainForm;
 
+        private string lastSearch;
+
         public SearchTab()
         {
             InitializeComponent();
@@ -50,11 +52,16 @@ namespace Jokes
             }
 
             dgvSearchResults.DataSource = myDal.GetSearchResults(text);
+
+            lastSearch = text;
         }
 
         private void dgvSearchResults_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (string.IsNullOrWhiteSpace(lastSearch))
+                return;
+
+            mainForm.showJokes(lastSearch, e.RowIndex, (JokesDS.SEARCH_RESULTDataTable)dgvSearchResults.DataSource);
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)

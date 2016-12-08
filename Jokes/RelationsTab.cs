@@ -19,7 +19,6 @@ namespace Jokes
         {
             InitializeComponent();
             myDal = new RelationsTabDal();
-            getRelations();
 
             relationsListBox.SelectedIndexChanged += RelationsListBox_SelectedIndexChanged;
 
@@ -102,6 +101,11 @@ namespace Jokes
                         tuplesListBox.Items.Add(word1 + " / " + word2); ;
                 }
             }
+        }
+
+        private void RelationsTab_Load(object sender, EventArgs e)
+        {
+            getRelations();
         }
     }
 }
