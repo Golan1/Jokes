@@ -13,8 +13,8 @@ namespace Jokes
     public partial class FileForm : Form
     {
         private FileFormDalcs myDal;
-        public int FileId{ get; set; }
-        public FileForm(int fileId)
+        public decimal FileId{ get; set; }
+        public FileForm(decimal fileId)
         {
 
             InitializeComponent();

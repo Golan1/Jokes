@@ -24,7 +24,7 @@ namespace Jokes
             info = new JokeFileInfo();
             info.CreationDate = DateTime.Now;          
             
-            ResetBindings();
+            ResetDataBindings();
 
             myDal = new LoadTabDal();
         }
@@ -40,11 +40,11 @@ namespace Jokes
 
                 txtFileName.Text = fileName;
 
-                ResetBindings();
+                ResetDataBindings();
             }
         }
 
-        private void ResetBindings()
+        private void ResetDataBindings()
         {
             txtTitle.DataBindings.Clear();
             txtTitle.DataBindings.Add("Text", info, "Title");
@@ -66,7 +66,7 @@ namespace Jokes
             {
                 myDal.SaveNewFile(info);
                 info = new JokeFileInfo();
-                ResetBindings();
+                ResetDataBindings();
 
             }
             catch (Exception)

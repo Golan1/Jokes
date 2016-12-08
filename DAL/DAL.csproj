@@ -43,14 +43,44 @@
   <ItemGroup>
     <Compile Include="BaseDal.cs" />
     <Compile Include="FileFormDalcs.cs" />
+    <Compile Include="FilesDal.cs" />
     <Compile Include="GroupsTabDal.cs" />
     <Compile Include="JokeFileInfo.cs" />
     <Compile Include="JokeFormDal.cs" />
+    <Compile Include="JokesDS.cs">
+      <DependentUpon>JokesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JokesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JokesDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoadTabDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="RelationsTabDal.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="JokesDS.xsc">
+      <DependentUpon>JokesDS.xsd</DependentUpon>
+    </None>
+    <None Include="JokesDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JokesDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="JokesDS.xss">
+      <DependentUpon>JokesDS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="script.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

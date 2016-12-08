@@ -8,7 +8,7 @@ namespace DAL
 {
     public class FileFormDalcs : BaseDal
     {
-        public string getFileText (int fileId)
+        public string getFileText (decimal fileId)
         {
             string text = "";
             //getfile

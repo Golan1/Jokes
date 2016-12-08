@@ -34,7 +34,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +62,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilesTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FilesTab.Designer.cs">
+      <DependentUpon>FilesTab.cs</DependentUpon>
     </Compile>
     <Compile Include="RelationsTab.cs">
       <SubType>UserControl</SubType>
@@ -100,6 +111,9 @@
     <EmbeddedResource Include="Joke.resx">
       <DependentUpon>Joke.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FilesTab.resx">
+      <DependentUpon>FilesTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RelationsTab.resx">
       <DependentUpon>RelationsTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +135,7 @@
     <EmbeddedResource Include="GroupsTab.resx">
       <DependentUpon>GroupsTab.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\DAL.JokesDS+JK_FILEDataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

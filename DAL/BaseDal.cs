@@ -11,16 +11,18 @@ namespace DAL
     abstract public class BaseDal
     {
         private const string SQL_SELECT_SEQ = "SELECT {0}.nextval from dual";
-        private const string connectionString = "user id=conn;password=conn;data source=XE";
+
+        public JokesDS DS { get; set; }
+
 
         public BaseDal()
         {
-
+            DS = new JokesDS();
         }
 
         protected OracleConnection CreateConnection()
         {
-            OracleConnection conn = new OracleConnection(connectionString);
+            OracleConnection conn = new OracleConnection(Properties.Settings.Default.ConnectionString);
             conn.Open();
 
             return conn;
