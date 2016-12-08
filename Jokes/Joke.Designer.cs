@@ -108,6 +108,7 @@
             this.Controls.Add(this.wordLable);
             this.Name = "Joke";
             this.Text = "Joke";
+            this.Load += new System.EventHandler(this.Joke_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

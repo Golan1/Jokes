@@ -43,14 +43,14 @@ namespace Jokes
 
         private void Joke_Click1(object sender, EventArgs e)
         {
-            MainForm mainForm = (MainForm)this.Owner;
+           
             mainForm.groupFire(jokeTextBox.SelectedText);
             this.Close();
         }
 
         private void Joke_Click2(object sender, EventArgs e)
         {
-            MainForm mainForm = (MainForm)this.Owner;
+            
             mainForm.firstRelWordFire(this.jokeTextBox.SelectedText);
             jokeTextBox.ContextMenu.MenuItems[1].Enabled = false;
             jokeTextBox.ContextMenu.MenuItems[2].Enabled = true;
@@ -59,7 +59,7 @@ namespace Jokes
 
         private void Joke_Click3(object sender, EventArgs e)
         {
-            MainForm mainForm = (MainForm)this.Owner;
+           
             mainForm.secRelWordFire(this.jokeTextBox.SelectedText);
             jokeTextBox.ContextMenu.MenuItems[1].Enabled = true;
             jokeTextBox.ContextMenu.MenuItems[2].Enabled = false;
@@ -68,7 +68,7 @@ namespace Jokes
 
         private void Joke_Click4(object sender, EventArgs e)
         {
-            MainForm mainForm = (MainForm)this.Owner;
+           
             mainForm.searchFire(jokeTextBox.SelectedText);
             this.Close();//send text to search
         }
@@ -104,7 +104,11 @@ namespace Jokes
             //int fileId = myDal.getFileId(JokeId);
             //MyFileForm = new FileForm(fileId);          
 
-            //MyFileForm.Show();
+            //MyFileForm.Show();'
+
+            string title = (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_TITLE;
+            //decimal id =  (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_ID;
+            mainForm.ShowFile(id , title);
 
         }
 
@@ -126,6 +130,12 @@ namespace Jokes
                 updateJokes(wordLable.Text, selected, myJokes);
 
             }
+        }
+
+        private MainForm mainForm;
+        private void Joke_Load(object sender, EventArgs e)
+        {
+            mainForm = (MainForm)this.Owner;
         }
     }
 }
