@@ -17,16 +17,11 @@ namespace Jokes
         JokeFileInfo info;
         LoadDal myDal;
 
+        MainForm mainForm;
+
         public LoadTab()
         {
             InitializeComponent();
-
-            info = new JokeFileInfo();
-            info.CreationDate = DateTime.Now;          
-            
-            ResetDataBindings();
-
-            myDal = new LoadDal();
         }
 
         private void btnLoadFile_Click(object sender, EventArgs e)
@@ -69,14 +64,25 @@ namespace Jokes
                 txtFileName.Text = "";
                 ResetDataBindings();
 
-                //TODO: Fix.
-                ((MainForm)Parent.Parent.Parent).RefreshFiles();
+                mainForm.RefreshFiles();
 
             }
             catch (Exception)
             {
                 throw;
             }
+        }
+
+        private void LoadTab_Load(object sender, EventArgs e)
+        {
+            info = new JokeFileInfo();
+            info.CreationDate = DateTime.Now;
+
+            ResetDataBindings();
+
+            myDal = new LoadDal();
+
+            mainForm = (MainForm)Parent.Parent.Parent;
         }
     }
 }

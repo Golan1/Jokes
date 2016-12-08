@@ -20,8 +20,6 @@ namespace Jokes
             InitializeComponent();
 
             myDal = new FilesDal();
-
-            RefreshFiles();
         }
 
         private void dgvFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -35,6 +33,11 @@ namespace Jokes
         public void RefreshFiles()
         {
             dgvFiles.DataSource = myDal.GetFiles();
+        }
+
+        private void FilesTab_Load(object sender, EventArgs e)
+        {
+            RefreshFiles();
         }
     }
 }

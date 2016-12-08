@@ -146,6 +146,7 @@
             this.Controls.Add(this.dgvSearchResults);
             this.Name = "SearchTab";
             this.Size = new System.Drawing.Size(548, 415);
+            this.Load += new System.EventHandler(this.SearchTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEARCHRESULTDataTableBindingSource)).EndInit();
             this.ResumeLayout(false);

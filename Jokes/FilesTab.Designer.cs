@@ -124,6 +124,7 @@
             this.Controls.Add(this.dgvFiles);
             this.Name = "FilesTab";
             this.Size = new System.Drawing.Size(744, 254);
+            this.Load += new System.EventHandler(this.FilesTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).EndInit();
             this.ResumeLayout(false);

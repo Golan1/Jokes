@@ -15,14 +15,13 @@ namespace Jokes
     public partial class SearchTab : UserControl
     {
         SearchDal myDal;
+        MainForm mainForm;
 
         public SearchTab()
         {
             InitializeComponent();
 
             myDal = new SearchDal();
-
-            refreshSearchHistory();
         }
 
         private void refreshSearchHistory()
@@ -55,6 +54,7 @@ namespace Jokes
 
         private void dgvSearchResults_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
         }
 
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
@@ -63,6 +63,13 @@ namespace Jokes
             {
                 this.btnGo_Click(this, null);
             }
+        }
+
+        private void SearchTab_Load(object sender, EventArgs e)
+        {
+            refreshSearchHistory();
+
+            mainForm = (MainForm)Parent.Parent.Parent;
         }
     }
 }
