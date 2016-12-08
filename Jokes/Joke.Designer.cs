@@ -60,6 +60,7 @@
             // 
             this.jokeTextBox.Location = new System.Drawing.Point(69, 134);
             this.jokeTextBox.Name = "jokeTextBox";
+            this.jokeTextBox.ReadOnly = true;
             this.jokeTextBox.Size = new System.Drawing.Size(487, 161);
             this.jokeTextBox.TabIndex = 2;
             this.jokeTextBox.Text = "";

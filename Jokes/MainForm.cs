@@ -40,6 +40,18 @@ namespace Jokes
             this.searchTab1.updateSearc(selected);
         }
 
+        public void firstRelWordFire (string word)
+        {
+            this.relationTab1.updateFirstW(word);
+        }
+
+        public void secRelWordFire(string word)
+        {
+            this.tabControl1.SelectedTab = this.tabControl1.TabPages[3];
+            this.relationTab1.updateSecW(word);
+        }
+
+
         public void showJokes(string word, int selected, JokesDS.SEARCH_RESULTDataTable res)
         {
             jokeForm = new Joke();

@@ -50,7 +50,8 @@ namespace Jokes
 
         private void Joke_Click2(object sender, EventArgs e)
         {
-            //send text to first rela
+            MainForm mainForm = (MainForm)this.Owner;
+            mainForm.firstRelWordFire(this.jokeTextBox.SelectedText);
             jokeTextBox.ContextMenu.MenuItems[1].Enabled = false;
             jokeTextBox.ContextMenu.MenuItems[2].Enabled = true;
 
@@ -58,9 +59,11 @@ namespace Jokes
 
         private void Joke_Click3(object sender, EventArgs e)
         {
-            //send text to first rela
+            MainForm mainForm = (MainForm)this.Owner;
+            mainForm.secRelWordFire(this.jokeTextBox.SelectedText);
             jokeTextBox.ContextMenu.MenuItems[1].Enabled = true;
             jokeTextBox.ContextMenu.MenuItems[2].Enabled = false;
+            this.Close();
         }
 
         private void Joke_Click4(object sender, EventArgs e)

@@ -24,6 +24,17 @@ namespace Jokes
 
         }
 
+
+        public void updateFirstW (string w)
+        {
+            this.word1TextBox.Text = w;
+        }
+
+        public void updateSecW(string w)
+        {
+            this.word2TextBox.Text = w;
+        }
+
         private void RelationsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idx = relationsListBox.SelectedIndex;
