@@ -63,7 +63,7 @@ namespace Jokes
         public void ShowFile(decimal fileId, string fileTitle)
         {
             var fileForm = new FileForm(fileId, fileTitle);
-            fileForm.ShowDialog();
+            fileForm.ShowDialog(this);
         }
     }
 }

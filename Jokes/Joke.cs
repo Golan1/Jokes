@@ -84,16 +84,24 @@ namespace Jokes
             JokeId = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).JOKE_ID;
             decimal idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
             string joke = myDal.getJokeText(JokeId);
+            var wordsList = word.Split(' ');
+            int cnt = wordsList.Length;
+            int charIndex = 0;
+            for (int i = 0; i < idx; i++)
+                charIndex += wordsList[i].Length;
 
-            int cnt = word.Split(' ').Length;
+            if (charIndex > 0)
+                charIndex += 2;
+            
             var tmp = joke.Substring((int)idx).Split(' ').ToList().GetRange(0, cnt);
+
             string tmp2 = "";
             foreach (var t in tmp)
                 tmp2 += t;
 
             jokeTextBox.Clear();
             jokeTextBox.Text = joke;
-            jokeTextBox.Select((int)idx,tmp2.Length);
+            jokeTextBox.Select(charIndex, tmp2.Length);
             jokeTextBox.SelectionFont = new Font(jokeTextBox.SelectionFont, FontStyle.Bold);
 
 
