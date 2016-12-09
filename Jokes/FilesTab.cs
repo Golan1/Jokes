@@ -26,6 +26,7 @@ namespace Jokes
 
         private void dgvFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             var drv = (DataRowView)dgvFiles.Rows[e.RowIndex].DataBoundItem;
             var myRow = (JokesDS.JK_FILERow)drv.Row;
 

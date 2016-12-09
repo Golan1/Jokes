@@ -25,7 +25,7 @@ FROM(
     GROUP BY lines.joke_index
     ORDER BY lines.joke_index) jokes";
 
-        public string GetFileText (decimal fileId)
+        public string GetFileText(decimal fileId)
         {
             string text = "";
 
@@ -36,12 +36,71 @@ FROM(
                 cmd.Parameters.Add("FILE_ID", fileId);
 
                 OracleDataReader dr = cmd.ExecuteReader();
-               
+
                 dr.Read();
                 text = dr["text"].ToString();
 
                 return text;
             }
         }
+
+        const string SQL_BY_FILE = @"
+SELECT wij.*, j.joke_index as JOKE_INDEX
+FROM word_in_joke wij
+JOIN joke j ON j.id = wij.joke_id
+WHERE j.FILE_ID = :FILE_ID
+{0}
+ORDER BY j.joke_index, wij.index_in_joke";
+
+        const string WHERE_BY_JOKE_INDEX =
+@"AND j.joke_index = :JOKE_INDEX
+AND wij.index_in_joke = :INDEX_IN_JOKE";
+
+        const string WHERE_BY_LINE_INDEX =
+@"AND wij.line_index = :LINE_INDEX
+AND wij.index_in_line = :INDEX_IN_LINE";
+
+        private JokesDS.WORD_IN_JOKEDataTable GetWords(OracleCommand cmd)
+        {
+            using (var conn = CreateConnection())
+            {
+                cmd.Connection = conn;
+                var adapter = new OracleDataAdapter(cmd);
+                DS.WORD_IN_JOKE.Clear();
+                adapter.Fill(DS.WORD_IN_JOKE);
+            }
+
+            return DS.WORD_IN_JOKE;
+        }
+
+        public JokesDS.WORD_IN_JOKEDataTable GetWordsFile(decimal fileId)
+        {
+            var cmd = new OracleCommand(string.Format(SQL_BY_FILE, ""));
+            cmd.Parameters.Add("FILED_ID", fileId);
+
+            return GetWords(cmd);
+        }
+
+        public JokesDS.WORD_IN_JOKEDataTable GetWordsFileByJokeAndIndex(decimal fileId, decimal jokeIndex, decimal indexInJoke)
+        {
+            var cmd = new OracleCommand(string.Format(SQL_BY_FILE, WHERE_BY_JOKE_INDEX));
+            cmd.Parameters.Add("FILE_ID", fileId);
+            cmd.Parameters.Add("JOKE_INDEX", jokeIndex);
+            cmd.Parameters.Add("INDEX_IN_JOKE", indexInJoke);
+
+            return GetWords(cmd);
+        }
+
+        public JokesDS.WORD_IN_JOKEDataTable GetWordsFileByLineAndIndex(decimal fileId, decimal lineIndex, decimal indexInLine)
+        {
+            var cmd = new OracleCommand(string.Format(SQL_BY_FILE, WHERE_BY_LINE_INDEX));
+            cmd.Parameters.Add("FILE_ID", fileId);
+            cmd.Parameters.Add("LINE_INDEX", lineIndex);
+            cmd.Parameters.Add("INDEX_IN_LINE", indexInLine);
+
+            return GetWords(cmd);
+        }
+
+
     }
 }

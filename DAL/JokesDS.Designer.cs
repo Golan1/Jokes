@@ -28,6 +28,8 @@ namespace DAL {
         
         private JK_SEARCH_HISTORYDataTable tableJK_SEARCH_HISTORY;
         
+        private WORD_IN_JOKEDataTable tableWORD_IN_JOKE;
+        
         private SEARCH_RESULTDataTable tableSEARCH_RESULT;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -63,6 +65,9 @@ namespace DAL {
                 }
                 if ((ds.Tables["JK_SEARCH_HISTORY"] != null)) {
                     base.Tables.Add(new JK_SEARCH_HISTORYDataTable(ds.Tables["JK_SEARCH_HISTORY"]));
+                }
+                if ((ds.Tables["WORD_IN_JOKE"] != null)) {
+                    base.Tables.Add(new WORD_IN_JOKEDataTable(ds.Tables["WORD_IN_JOKE"]));
                 }
                 if ((ds.Tables["SEARCH_RESULT"] != null)) {
                     base.Tables.Add(new SEARCH_RESULTDataTable(ds.Tables["SEARCH_RESULT"]));
@@ -102,6 +107,16 @@ namespace DAL {
         public JK_SEARCH_HISTORYDataTable JK_SEARCH_HISTORY {
             get {
                 return this.tableJK_SEARCH_HISTORY;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public WORD_IN_JOKEDataTable WORD_IN_JOKE {
+            get {
+                return this.tableWORD_IN_JOKE;
             }
         }
         
@@ -188,6 +203,9 @@ namespace DAL {
                 if ((ds.Tables["JK_SEARCH_HISTORY"] != null)) {
                     base.Tables.Add(new JK_SEARCH_HISTORYDataTable(ds.Tables["JK_SEARCH_HISTORY"]));
                 }
+                if ((ds.Tables["WORD_IN_JOKE"] != null)) {
+                    base.Tables.Add(new WORD_IN_JOKEDataTable(ds.Tables["WORD_IN_JOKE"]));
+                }
                 if ((ds.Tables["SEARCH_RESULT"] != null)) {
                     base.Tables.Add(new SEARCH_RESULTDataTable(ds.Tables["SEARCH_RESULT"]));
                 }
@@ -236,6 +254,12 @@ namespace DAL {
                     this.tableJK_SEARCH_HISTORY.InitVars();
                 }
             }
+            this.tableWORD_IN_JOKE = ((WORD_IN_JOKEDataTable)(base.Tables["WORD_IN_JOKE"]));
+            if ((initTable == true)) {
+                if ((this.tableWORD_IN_JOKE != null)) {
+                    this.tableWORD_IN_JOKE.InitVars();
+                }
+            }
             this.tableSEARCH_RESULT = ((SEARCH_RESULTDataTable)(base.Tables["SEARCH_RESULT"]));
             if ((initTable == true)) {
                 if ((this.tableSEARCH_RESULT != null)) {
@@ -256,6 +280,8 @@ namespace DAL {
             base.Tables.Add(this.tableJK_FILE);
             this.tableJK_SEARCH_HISTORY = new JK_SEARCH_HISTORYDataTable();
             base.Tables.Add(this.tableJK_SEARCH_HISTORY);
+            this.tableWORD_IN_JOKE = new WORD_IN_JOKEDataTable();
+            base.Tables.Add(this.tableWORD_IN_JOKE);
             this.tableSEARCH_RESULT = new SEARCH_RESULTDataTable();
             base.Tables.Add(this.tableSEARCH_RESULT);
         }
@@ -269,6 +295,12 @@ namespace DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeJK_SEARCH_HISTORY() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeWORD_IN_JOKE() {
             return false;
         }
         
@@ -338,6 +370,9 @@ namespace DAL {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void JK_SEARCH_HISTORYRowChangeEventHandler(object sender, JK_SEARCH_HISTORYRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void WORD_IN_JOKERowChangeEventHandler(object sender, WORD_IN_JOKERowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void SEARCH_RESULTRowChangeEventHandler(object sender, SEARCH_RESULTRowChangeEvent e);
@@ -944,6 +979,354 @@ namespace DAL {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class WORD_IN_JOKEDataTable : global::System.Data.TypedTableBase<WORD_IN_JOKERow> {
+            
+            private global::System.Data.DataColumn columnJOKE_ID;
+            
+            private global::System.Data.DataColumn columnINDEX_IN_JOKE;
+            
+            private global::System.Data.DataColumn columnTEXT;
+            
+            private global::System.Data.DataColumn columnTEXT_FOR_SEARCH;
+            
+            private global::System.Data.DataColumn columnLINE_INDEX;
+            
+            private global::System.Data.DataColumn columnINDEX_IN_LINE;
+            
+            private global::System.Data.DataColumn columnJOKE_INDEX;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WORD_IN_JOKEDataTable() {
+                this.TableName = "WORD_IN_JOKE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal WORD_IN_JOKEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected WORD_IN_JOKEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JOKE_IDColumn {
+                get {
+                    return this.columnJOKE_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn INDEX_IN_JOKEColumn {
+                get {
+                    return this.columnINDEX_IN_JOKE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TEXTColumn {
+                get {
+                    return this.columnTEXT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TEXT_FOR_SEARCHColumn {
+                get {
+                    return this.columnTEXT_FOR_SEARCH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LINE_INDEXColumn {
+                get {
+                    return this.columnLINE_INDEX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn INDEX_IN_LINEColumn {
+                get {
+                    return this.columnINDEX_IN_LINE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn JOKE_INDEXColumn {
+                get {
+                    return this.columnJOKE_INDEX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WORD_IN_JOKERow this[int index] {
+                get {
+                    return ((WORD_IN_JOKERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event WORD_IN_JOKERowChangeEventHandler WORD_IN_JOKERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event WORD_IN_JOKERowChangeEventHandler WORD_IN_JOKERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event WORD_IN_JOKERowChangeEventHandler WORD_IN_JOKERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event WORD_IN_JOKERowChangeEventHandler WORD_IN_JOKERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddWORD_IN_JOKERow(WORD_IN_JOKERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WORD_IN_JOKERow AddWORD_IN_JOKERow(decimal JOKE_ID, decimal INDEX_IN_JOKE, string TEXT, string TEXT_FOR_SEARCH, decimal LINE_INDEX, decimal INDEX_IN_LINE, decimal JOKE_INDEX) {
+                WORD_IN_JOKERow rowWORD_IN_JOKERow = ((WORD_IN_JOKERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        JOKE_ID,
+                        INDEX_IN_JOKE,
+                        TEXT,
+                        TEXT_FOR_SEARCH,
+                        LINE_INDEX,
+                        INDEX_IN_LINE,
+                        JOKE_INDEX};
+                rowWORD_IN_JOKERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWORD_IN_JOKERow);
+                return rowWORD_IN_JOKERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WORD_IN_JOKERow FindByJOKE_IDINDEX_IN_JOKE(decimal JOKE_ID, decimal INDEX_IN_JOKE) {
+                return ((WORD_IN_JOKERow)(this.Rows.Find(new object[] {
+                            JOKE_ID,
+                            INDEX_IN_JOKE})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                WORD_IN_JOKEDataTable cln = ((WORD_IN_JOKEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new WORD_IN_JOKEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnJOKE_ID = base.Columns["JOKE_ID"];
+                this.columnINDEX_IN_JOKE = base.Columns["INDEX_IN_JOKE"];
+                this.columnTEXT = base.Columns["TEXT"];
+                this.columnTEXT_FOR_SEARCH = base.Columns["TEXT_FOR_SEARCH"];
+                this.columnLINE_INDEX = base.Columns["LINE_INDEX"];
+                this.columnINDEX_IN_LINE = base.Columns["INDEX_IN_LINE"];
+                this.columnJOKE_INDEX = base.Columns["JOKE_INDEX"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnJOKE_ID = new global::System.Data.DataColumn("JOKE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJOKE_ID);
+                this.columnINDEX_IN_JOKE = new global::System.Data.DataColumn("INDEX_IN_JOKE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINDEX_IN_JOKE);
+                this.columnTEXT = new global::System.Data.DataColumn("TEXT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEXT);
+                this.columnTEXT_FOR_SEARCH = new global::System.Data.DataColumn("TEXT_FOR_SEARCH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTEXT_FOR_SEARCH);
+                this.columnLINE_INDEX = new global::System.Data.DataColumn("LINE_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLINE_INDEX);
+                this.columnINDEX_IN_LINE = new global::System.Data.DataColumn("INDEX_IN_LINE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINDEX_IN_LINE);
+                this.columnJOKE_INDEX = new global::System.Data.DataColumn("JOKE_INDEX", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJOKE_INDEX);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnJOKE_ID,
+                                this.columnINDEX_IN_JOKE}, true));
+                this.columnJOKE_ID.AllowDBNull = false;
+                this.columnINDEX_IN_JOKE.AllowDBNull = false;
+                this.columnTEXT.AllowDBNull = false;
+                this.columnTEXT.MaxLength = 50;
+                this.columnTEXT_FOR_SEARCH.MaxLength = 50;
+                this.columnJOKE_INDEX.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WORD_IN_JOKERow NewWORD_IN_JOKERow() {
+                return ((WORD_IN_JOKERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new WORD_IN_JOKERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(WORD_IN_JOKERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.WORD_IN_JOKERowChanged != null)) {
+                    this.WORD_IN_JOKERowChanged(this, new WORD_IN_JOKERowChangeEvent(((WORD_IN_JOKERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.WORD_IN_JOKERowChanging != null)) {
+                    this.WORD_IN_JOKERowChanging(this, new WORD_IN_JOKERowChangeEvent(((WORD_IN_JOKERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.WORD_IN_JOKERowDeleted != null)) {
+                    this.WORD_IN_JOKERowDeleted(this, new WORD_IN_JOKERowChangeEvent(((WORD_IN_JOKERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.WORD_IN_JOKERowDeleting != null)) {
+                    this.WORD_IN_JOKERowDeleting(this, new WORD_IN_JOKERowChangeEvent(((WORD_IN_JOKERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveWORD_IN_JOKERow(WORD_IN_JOKERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                JokesDS ds = new JokesDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "WORD_IN_JOKEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SEARCH_RESULTDataTable : global::System.Data.TypedTableBase<SEARCH_RESULTRow> {
             
             private global::System.Data.DataColumn columnJOKE_ID;
@@ -1428,6 +1811,149 @@ namespace DAL {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class WORD_IN_JOKERow : global::System.Data.DataRow {
+            
+            private WORD_IN_JOKEDataTable tableWORD_IN_JOKE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal WORD_IN_JOKERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableWORD_IN_JOKE = ((WORD_IN_JOKEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal JOKE_ID {
+                get {
+                    return ((decimal)(this[this.tableWORD_IN_JOKE.JOKE_IDColumn]));
+                }
+                set {
+                    this[this.tableWORD_IN_JOKE.JOKE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal INDEX_IN_JOKE {
+                get {
+                    return ((decimal)(this[this.tableWORD_IN_JOKE.INDEX_IN_JOKEColumn]));
+                }
+                set {
+                    this[this.tableWORD_IN_JOKE.INDEX_IN_JOKEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TEXT {
+                get {
+                    return ((string)(this[this.tableWORD_IN_JOKE.TEXTColumn]));
+                }
+                set {
+                    this[this.tableWORD_IN_JOKE.TEXTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TEXT_FOR_SEARCH {
+                get {
+                    try {
+                        return ((string)(this[this.tableWORD_IN_JOKE.TEXT_FOR_SEARCHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TEXT_FOR_SEARCH\' in table \'WORD_IN_JOKE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWORD_IN_JOKE.TEXT_FOR_SEARCHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal LINE_INDEX {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableWORD_IN_JOKE.LINE_INDEXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LINE_INDEX\' in table \'WORD_IN_JOKE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWORD_IN_JOKE.LINE_INDEXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal INDEX_IN_LINE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableWORD_IN_JOKE.INDEX_IN_LINEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'INDEX_IN_LINE\' in table \'WORD_IN_JOKE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableWORD_IN_JOKE.INDEX_IN_LINEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal JOKE_INDEX {
+                get {
+                    return ((decimal)(this[this.tableWORD_IN_JOKE.JOKE_INDEXColumn]));
+                }
+                set {
+                    this[this.tableWORD_IN_JOKE.JOKE_INDEXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTEXT_FOR_SEARCHNull() {
+                return this.IsNull(this.tableWORD_IN_JOKE.TEXT_FOR_SEARCHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTEXT_FOR_SEARCHNull() {
+                this[this.tableWORD_IN_JOKE.TEXT_FOR_SEARCHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLINE_INDEXNull() {
+                return this.IsNull(this.tableWORD_IN_JOKE.LINE_INDEXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLINE_INDEXNull() {
+                this[this.tableWORD_IN_JOKE.LINE_INDEXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsINDEX_IN_LINENull() {
+                return this.IsNull(this.tableWORD_IN_JOKE.INDEX_IN_LINEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetINDEX_IN_LINENull() {
+                this[this.tableWORD_IN_JOKE.INDEX_IN_LINEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class SEARCH_RESULTRow : global::System.Data.DataRow {
             
             private SEARCH_RESULTDataTable tableSEARCH_RESULT;
@@ -1662,6 +2188,40 @@ namespace DAL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public JK_SEARCH_HISTORYRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class WORD_IN_JOKERowChangeEvent : global::System.EventArgs {
+            
+            private WORD_IN_JOKERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WORD_IN_JOKERowChangeEvent(WORD_IN_JOKERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public WORD_IN_JOKERow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2643,6 +3203,666 @@ namespace DAL.JokesDSTableAdapters {
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class WORD_IN_JOKETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleTransaction _transaction;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public WORD_IN_JOKETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Oracle.ManagedDataAccess.Client.OracleDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Oracle.ManagedDataAccess.Client.OracleCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "WORD_IN_JOKE";
+            tableMapping.ColumnMappings.Add("JOKE_ID", "JOKE_ID");
+            tableMapping.ColumnMappings.Add("INDEX_IN_JOKE", "INDEX_IN_JOKE");
+            tableMapping.ColumnMappings.Add("TEXT", "TEXT");
+            tableMapping.ColumnMappings.Add("TEXT_FOR_SEARCH", "TEXT_FOR_SEARCH");
+            tableMapping.ColumnMappings.Add("LINE_INDEX", "LINE_INDEX");
+            tableMapping.ColumnMappings.Add("INDEX_IN_LINE", "INDEX_IN_LINE");
+            tableMapping.ColumnMappings.Add("JOKE_INDEX", "JOKE_INDEX");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""CONN"".""WORD_IN_JOKE"" WHERE ((""JOKE_ID"" = :Original_JOKE_ID) AND (""INDEX_IN_JOKE"" = :Original_INDEX_IN_JOKE) AND (""TEXT"" = :Original_TEXT) AND ((:IsNull_TEXT_FOR_SEARCH = 1 AND ""TEXT_FOR_SEARCH"" IS NULL) OR (""TEXT_FOR_SEARCH"" = :Original_TEXT_FOR_SEARCH)) AND ((:IsNull_LINE_INDEX = 1 AND ""LINE_INDEX"" IS NULL) OR (""LINE_INDEX"" = :Original_LINE_INDEX)) AND ((:IsNull_INDEX_IN_LINE = 1 AND ""INDEX_IN_LINE"" IS NULL) OR (""INDEX_IN_LINE"" = :Original_INDEX_IN_LINE)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_JOKE_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "JOKE_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_INDEX_IN_JOKE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_JOKE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_TEXT";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_TEXT_FOR_SEARCH";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT_FOR_SEARCH";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_TEXT_FOR_SEARCH";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT_FOR_SEARCH";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_LINE_INDEX";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "LINE_INDEX";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_LINE_INDEX";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "LINE_INDEX";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_INDEX_IN_LINE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_LINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_INDEX_IN_LINE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_LINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"CONN\".\"WORD_IN_JOKE\" (\"JOKE_ID\", \"INDEX_IN_JOKE\", \"TEXT\", \"TEXT_FOR_" +
+                "SEARCH\", \"LINE_INDEX\", \"INDEX_IN_LINE\") VALUES (:JOKE_ID, :INDEX_IN_JOKE, :TEXT," +
+                " :TEXT_FOR_SEARCH, :LINE_INDEX, :INDEX_IN_LINE)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "JOKE_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "JOKE_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "INDEX_IN_JOKE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_JOKE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "TEXT";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "TEXT_FOR_SEARCH";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT_FOR_SEARCH";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "LINE_INDEX";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "LINE_INDEX";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "INDEX_IN_LINE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_LINE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""CONN"".""WORD_IN_JOKE"" SET ""JOKE_ID"" = :JOKE_ID, ""INDEX_IN_JOKE"" = :INDEX_IN_JOKE, ""TEXT"" = :TEXT, ""TEXT_FOR_SEARCH"" = :TEXT_FOR_SEARCH, ""LINE_INDEX"" = :LINE_INDEX, ""INDEX_IN_LINE"" = :INDEX_IN_LINE WHERE ((""JOKE_ID"" = :Original_JOKE_ID) AND (""INDEX_IN_JOKE"" = :Original_INDEX_IN_JOKE) AND (""TEXT"" = :Original_TEXT) AND ((:IsNull_TEXT_FOR_SEARCH = 1 AND ""TEXT_FOR_SEARCH"" IS NULL) OR (""TEXT_FOR_SEARCH"" = :Original_TEXT_FOR_SEARCH)) AND ((:IsNull_LINE_INDEX = 1 AND ""LINE_INDEX"" IS NULL) OR (""LINE_INDEX"" = :Original_LINE_INDEX)) AND ((:IsNull_INDEX_IN_LINE = 1 AND ""INDEX_IN_LINE"" IS NULL) OR (""INDEX_IN_LINE"" = :Original_INDEX_IN_LINE)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "JOKE_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "JOKE_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "INDEX_IN_JOKE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_JOKE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "TEXT";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "TEXT_FOR_SEARCH";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT_FOR_SEARCH";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "LINE_INDEX";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "LINE_INDEX";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "INDEX_IN_LINE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_LINE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_JOKE_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "JOKE_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_INDEX_IN_JOKE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_JOKE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_TEXT";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_TEXT_FOR_SEARCH";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT_FOR_SEARCH";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_TEXT_FOR_SEARCH";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "TEXT_FOR_SEARCH";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_LINE_INDEX";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "LINE_INDEX";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_LINE_INDEX";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "LINE_INDEX";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_INDEX_IN_LINE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_LINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_INDEX_IN_LINE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "INDEX_IN_LINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
+            this._connection.ConnectionString = global::DAL.Properties.Settings.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT JOKE_ID, INDEX_IN_JOKE, TEXT, TEXT_FOR_SEARCH, LINE_INDEX, INDEX_IN_LINE F" +
+                "ROM CONN.WORD_IN_JOKE";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(JokesDS.WORD_IN_JOKEDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual JokesDS.WORD_IN_JOKEDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            JokesDS.WORD_IN_JOKEDataTable dataTable = new JokesDS.WORD_IN_JOKEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(JokesDS.WORD_IN_JOKEDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(JokesDS dataSet) {
+            return this.Adapter.Update(dataSet, "WORD_IN_JOKE");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(decimal Original_JOKE_ID, decimal Original_INDEX_IN_JOKE, string Original_TEXT, string Original_TEXT_FOR_SEARCH, global::System.Nullable<decimal> Original_LINE_INDEX, global::System.Nullable<decimal> Original_INDEX_IN_LINE) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_JOKE_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_INDEX_IN_JOKE));
+            if ((Original_TEXT == null)) {
+                throw new global::System.ArgumentNullException("Original_TEXT");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_TEXT));
+            }
+            if ((Original_TEXT_FOR_SEARCH == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_TEXT_FOR_SEARCH));
+            }
+            if ((Original_LINE_INDEX.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_LINE_INDEX.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_INDEX_IN_LINE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_INDEX_IN_LINE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(decimal JOKE_ID, decimal INDEX_IN_JOKE, string TEXT, string TEXT_FOR_SEARCH, global::System.Nullable<decimal> LINE_INDEX, global::System.Nullable<decimal> INDEX_IN_LINE) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(JOKE_ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(INDEX_IN_JOKE));
+            if ((TEXT == null)) {
+                throw new global::System.ArgumentNullException("TEXT");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(TEXT));
+            }
+            if ((TEXT_FOR_SEARCH == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(TEXT_FOR_SEARCH));
+            }
+            if ((LINE_INDEX.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(LINE_INDEX.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((INDEX_IN_LINE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(INDEX_IN_LINE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(decimal JOKE_ID, decimal INDEX_IN_JOKE, string TEXT, string TEXT_FOR_SEARCH, global::System.Nullable<decimal> LINE_INDEX, global::System.Nullable<decimal> INDEX_IN_LINE, decimal Original_JOKE_ID, decimal Original_INDEX_IN_JOKE, string Original_TEXT, string Original_TEXT_FOR_SEARCH, global::System.Nullable<decimal> Original_LINE_INDEX, global::System.Nullable<decimal> Original_INDEX_IN_LINE) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(JOKE_ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(INDEX_IN_JOKE));
+            if ((TEXT == null)) {
+                throw new global::System.ArgumentNullException("TEXT");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(TEXT));
+            }
+            if ((TEXT_FOR_SEARCH == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(TEXT_FOR_SEARCH));
+            }
+            if ((LINE_INDEX.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(LINE_INDEX.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((INDEX_IN_LINE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(INDEX_IN_LINE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_JOKE_ID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_INDEX_IN_JOKE));
+            if ((Original_TEXT == null)) {
+                throw new global::System.ArgumentNullException("Original_TEXT");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_TEXT));
+            }
+            if ((Original_TEXT_FOR_SEARCH == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_TEXT_FOR_SEARCH));
+            }
+            if ((Original_LINE_INDEX.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_LINE_INDEX.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_INDEX_IN_LINE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_INDEX_IN_LINE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string TEXT, string TEXT_FOR_SEARCH, global::System.Nullable<decimal> LINE_INDEX, global::System.Nullable<decimal> INDEX_IN_LINE, decimal Original_JOKE_ID, decimal Original_INDEX_IN_JOKE, string Original_TEXT, string Original_TEXT_FOR_SEARCH, global::System.Nullable<decimal> Original_LINE_INDEX, global::System.Nullable<decimal> Original_INDEX_IN_LINE) {
+            return this.Update(Original_JOKE_ID, Original_INDEX_IN_JOKE, TEXT, TEXT_FOR_SEARCH, LINE_INDEX, INDEX_IN_LINE, Original_JOKE_ID, Original_INDEX_IN_JOKE, Original_TEXT, Original_TEXT_FOR_SEARCH, Original_LINE_INDEX, Original_INDEX_IN_LINE);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2657,6 +3877,8 @@ namespace DAL.JokesDSTableAdapters {
         private JK_FILETableAdapter _jK_FILETableAdapter;
         
         private JK_SEARCH_HISTORYTableAdapter _jK_SEARCH_HISTORYTableAdapter;
+        
+        private WORD_IN_JOKETableAdapter _wORD_IN_JOKETableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2703,6 +3925,20 @@ namespace DAL.JokesDSTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public WORD_IN_JOKETableAdapter WORD_IN_JOKETableAdapter {
+            get {
+                return this._wORD_IN_JOKETableAdapter;
+            }
+            set {
+                this._wORD_IN_JOKETableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -2728,6 +3964,10 @@ namespace DAL.JokesDSTableAdapters {
                             && (this._jK_SEARCH_HISTORYTableAdapter.Connection != null))) {
                     return this._jK_SEARCH_HISTORYTableAdapter.Connection;
                 }
+                if (((this._wORD_IN_JOKETableAdapter != null) 
+                            && (this._wORD_IN_JOKETableAdapter.Connection != null))) {
+                    return this._wORD_IN_JOKETableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -2745,6 +3985,9 @@ namespace DAL.JokesDSTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._wORD_IN_JOKETableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2776,6 +4019,15 @@ namespace DAL.JokesDSTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._wORD_IN_JOKETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.WORD_IN_JOKE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._wORD_IN_JOKETableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -2802,6 +4054,14 @@ namespace DAL.JokesDSTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._wORD_IN_JOKETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.WORD_IN_JOKE.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._wORD_IN_JOKETableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -2812,6 +4072,14 @@ namespace DAL.JokesDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(JokesDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._wORD_IN_JOKETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.WORD_IN_JOKE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._wORD_IN_JOKETableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.JK_SEARCH_HISTORY.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -2877,6 +4145,11 @@ namespace DAL.JokesDSTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._wORD_IN_JOKETableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._wORD_IN_JOKETableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -2925,6 +4198,15 @@ namespace DAL.JokesDSTableAdapters {
                     if (this._jK_SEARCH_HISTORYTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._jK_SEARCH_HISTORYTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._jK_SEARCH_HISTORYTableAdapter.Adapter);
+                    }
+                }
+                if ((this._wORD_IN_JOKETableAdapter != null)) {
+                    revertConnections.Add(this._wORD_IN_JOKETableAdapter, this._wORD_IN_JOKETableAdapter.Connection);
+                    this._wORD_IN_JOKETableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._wORD_IN_JOKETableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._wORD_IN_JOKETableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._wORD_IN_JOKETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._wORD_IN_JOKETableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2992,6 +4274,10 @@ namespace DAL.JokesDSTableAdapters {
                 if ((this._jK_SEARCH_HISTORYTableAdapter != null)) {
                     this._jK_SEARCH_HISTORYTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._jK_SEARCH_HISTORYTableAdapter]));
                     this._jK_SEARCH_HISTORYTableAdapter.Transaction = null;
+                }
+                if ((this._wORD_IN_JOKETableAdapter != null)) {
+                    this._wORD_IN_JOKETableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._wORD_IN_JOKETableAdapter]));
+                    this._wORD_IN_JOKETableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

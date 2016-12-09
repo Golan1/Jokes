@@ -107,7 +107,7 @@ namespace Jokes
             //MyFileForm.Show();'
 
             string title = (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_TITLE;
-            //decimal id =  (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_ID;
+            decimal id =  (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_ID;
             mainForm.ShowFile(id , title);
 
         }

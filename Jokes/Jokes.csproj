@@ -146,6 +146,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\DAL.JokesDS+JK_FILEDataTable.datasource" />
     <None Include="Properties\DataSources\DAL.JokesDS+SEARCH_RESULTDataTable.datasource" />
+    <None Include="Properties\DataSources\DAL.JokesDS+WORD_IN_JOKEDataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,12 +1,10 @@
-﻿namespace DAL
+﻿using Oracle.ManagedDataAccess.Client;
+
+namespace DAL
 {
 
 
     partial class JokesDS
     {
     }
-}
-
-namespace DAL.JokesDSTableAdapters
-{
 }
