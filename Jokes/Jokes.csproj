@@ -107,6 +107,12 @@
     <Compile Include="GroupsTab.Designer.cs">
       <DependentUpon>GroupsTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatisticsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StatisticsTab.Designer.cs">
+      <DependentUpon>StatisticsTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlUtils.cs" />
     <EmbeddedResource Include="FileForm.resx">
       <DependentUpon>FileForm.cs</DependentUpon>
@@ -143,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="GroupsTab.resx">
       <DependentUpon>GroupsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticsTab.resx">
+      <DependentUpon>StatisticsTab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\DAL.JokesDS+JK_FILEDataTable.datasource" />
     <None Include="Properties\DataSources\DAL.JokesDS+SEARCH_RESULTDataTable.datasource" />

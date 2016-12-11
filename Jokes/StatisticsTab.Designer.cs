@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.avgLetters = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.avgWords = new System.Windows.Forms.Label();
+            this.avgJokes = new System.Windows.Forms.Label();
+            this.maxLetters = new System.Windows.Forms.Label();
+            this.maxWords = new System.Windows.Forms.Label();
+            this.maxJokes = new System.Windows.Forms.Label();
+            this.minLetters = new System.Windows.Forms.Label();
+            this.minWords = new System.Windows.Forms.Label();
+            this.minJokes = new System.Windows.Forms.Label();
+            this.mostCommon = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // avgLetters
@@ -50,109 +50,109 @@
             this.avgLetters.TabIndex = 0;
             this.avgLetters.Text = "Average letters in word:";
             // 
-            // label2
+            // avgWords
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Average words in joke:";
+            this.avgWords.AutoSize = true;
+            this.avgWords.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avgWords.Location = new System.Drawing.Point(24, 65);
+            this.avgWords.Name = "avgWords";
+            this.avgWords.Size = new System.Drawing.Size(202, 25);
+            this.avgWords.TabIndex = 0;
+            this.avgWords.Text = "Average words in joke:";
             // 
-            // label3
+            // avgJokes
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Average jokes in file:";
+            this.avgJokes.AutoSize = true;
+            this.avgJokes.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avgJokes.Location = new System.Drawing.Point(24, 103);
+            this.avgJokes.Name = "avgJokes";
+            this.avgJokes.Size = new System.Drawing.Size(185, 25);
+            this.avgJokes.TabIndex = 0;
+            this.avgJokes.Text = "Average jokes in file:";
             // 
-            // label4
+            // maxLetters
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(178, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Max letters in word:";
+            this.maxLetters.AutoSize = true;
+            this.maxLetters.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxLetters.Location = new System.Drawing.Point(24, 156);
+            this.maxLetters.Name = "maxLetters";
+            this.maxLetters.Size = new System.Drawing.Size(178, 25);
+            this.maxLetters.TabIndex = 0;
+            this.maxLetters.Text = "Max letters in word:";
             // 
-            // label5
+            // maxWords
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 194);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Max words in joke:";
+            this.maxWords.AutoSize = true;
+            this.maxWords.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxWords.Location = new System.Drawing.Point(24, 194);
+            this.maxWords.Name = "maxWords";
+            this.maxWords.Size = new System.Drawing.Size(169, 25);
+            this.maxWords.TabIndex = 0;
+            this.maxWords.Text = "Max words in joke:";
             // 
-            // label6
+            // maxJokes
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 230);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Max jokes in file:";
+            this.maxJokes.AutoSize = true;
+            this.maxJokes.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxJokes.Location = new System.Drawing.Point(24, 230);
+            this.maxJokes.Name = "maxJokes";
+            this.maxJokes.Size = new System.Drawing.Size(152, 25);
+            this.maxJokes.TabIndex = 0;
+            this.maxJokes.Text = "Max jokes in file:";
             // 
-            // label7
+            // minLetters
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 279);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Min letters in word:";
+            this.minLetters.AutoSize = true;
+            this.minLetters.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minLetters.Location = new System.Drawing.Point(24, 279);
+            this.minLetters.Name = "minLetters";
+            this.minLetters.Size = new System.Drawing.Size(175, 25);
+            this.minLetters.TabIndex = 0;
+            this.minLetters.Text = "Min letters in word:";
             // 
-            // label8
+            // minWords
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(24, 317);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(171, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Min  words in joke:";
+            this.minWords.AutoSize = true;
+            this.minWords.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minWords.Location = new System.Drawing.Point(24, 317);
+            this.minWords.Name = "minWords";
+            this.minWords.Size = new System.Drawing.Size(171, 25);
+            this.minWords.TabIndex = 0;
+            this.minWords.Text = "Min  words in joke:";
             // 
-            // label9
+            // minJokes
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 353);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(149, 25);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Min jokes in file:";
+            this.minJokes.AutoSize = true;
+            this.minJokes.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minJokes.Location = new System.Drawing.Point(24, 353);
+            this.minJokes.Name = "minJokes";
+            this.minJokes.Size = new System.Drawing.Size(149, 25);
+            this.minJokes.TabIndex = 0;
+            this.minJokes.Text = "Min jokes in file:";
             // 
-            // label10
+            // mostCommon
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(305, 31);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(185, 25);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Most common word:";
+            this.mostCommon.AutoSize = true;
+            this.mostCommon.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mostCommon.Location = new System.Drawing.Point(305, 31);
+            this.mostCommon.Name = "mostCommon";
+            this.mostCommon.Size = new System.Drawing.Size(185, 25);
+            this.mostCommon.TabIndex = 0;
+            this.mostCommon.Text = "Most common word:";
             // 
             // StatisticsTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.minJokes);
+            this.Controls.Add(this.maxJokes);
+            this.Controls.Add(this.minWords);
+            this.Controls.Add(this.maxWords);
+            this.Controls.Add(this.minLetters);
+            this.Controls.Add(this.maxLetters);
+            this.Controls.Add(this.avgJokes);
+            this.Controls.Add(this.avgWords);
+            this.Controls.Add(this.mostCommon);
             this.Controls.Add(this.avgLetters);
             this.Name = "StatisticsTab";
             this.Size = new System.Drawing.Size(687, 412);
@@ -164,14 +164,14 @@
         #endregion
 
         private System.Windows.Forms.Label avgLetters;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label avgWords;
+        private System.Windows.Forms.Label avgJokes;
+        private System.Windows.Forms.Label maxLetters;
+        private System.Windows.Forms.Label maxWords;
+        private System.Windows.Forms.Label maxJokes;
+        private System.Windows.Forms.Label minLetters;
+        private System.Windows.Forms.Label minWords;
+        private System.Windows.Forms.Label minJokes;
+        private System.Windows.Forms.Label mostCommon;
     }
 }
