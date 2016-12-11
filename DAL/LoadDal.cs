@@ -105,6 +105,9 @@ VALUES
             foreach (var line in lines)
             {
                 var words = line.Split(' ').ToList();
+                words.RemoveAll(x => string.IsNullOrEmpty(x));
+
+                if (words.Count == 0) continue;
 
                 for (int i = 0; i < words.Count; i++)
                 {

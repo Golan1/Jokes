@@ -7,6 +7,22 @@
   <Jokes>
     <Joke>abc Bba!
 Second sentence</Joke>
-    <Joke>"abc AAA" ---</Joke>
+    <Joke>"abc  AAA"   
+---   
+aaa
+bbb
+
+aaa
+
+
+xxx
+	xxx
+xxx
+xxx
+aaa
+aaa
+aaa
+bbb
+aaa</Joke>
   </Jokes>
 </File>
