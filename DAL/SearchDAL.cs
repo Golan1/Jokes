@@ -47,6 +47,8 @@ INNER JOIN jk_file f ON f.id = j.file_id";
 
         private string BuildSearchCommand(string searchText)
         {
+            searchText = searchText.Replace("\'", "\'\'");
+
             string command = "";
             var words = searchText.Split(' ').Select(x => StripWord(x).ToUpper()).ToList();
 

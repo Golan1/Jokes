@@ -11,36 +11,67 @@ namespace DAL
     public class FileFormDal : BaseDal
     {
 
-        private const string GET_JOKES_SQL = @"
-SELECT LISTAGG(jokes.text, chr(10) || chr(10)) WITHIN GROUP (ORDER BY jokes.joke_index) AS text
-FROM(
-    SELECT lines.joke_index, LISTAGG(lines.text, chr(10)) WITHIN GROUP(ORDER BY lines.line_index) AS text
-    FROM(
-        SELECT j.joke_index, wij.line_index, LISTAGG(wij.text, ' ') WITHIN GROUP(ORDER BY wij.index_in_line) AS text
-        FROM joke j
-        JOIN word_in_joke wij ON j.id = wij.joke_id
-        WHERE j.file_id = :FILE_ID
-        GROUP BY j.joke_index, wij.line_index
-        ORDER BY wij.line_index) lines
-    GROUP BY lines.joke_index
-    ORDER BY lines.joke_index) jokes";
+//        private const string GET_JOKES_SQL = @"
+//SELECT LISTAGG(jokes.text, chr(10) || chr(10)) WITHIN GROUP (ORDER BY jokes.joke_index) AS text
+//FROM(
+//    SELECT lines.joke_index, LISTAGG(lines.text, chr(10)) WITHIN GROUP(ORDER BY lines.line_index) AS text
+//    FROM(
+//        SELECT j.joke_index, wij.line_index, LISTAGG(wij.text, ' ') WITHIN GROUP(ORDER BY wij.index_in_line) AS text
+//        FROM joke j
+//        JOIN word_in_joke wij ON j.id = wij.joke_id
+//        WHERE j.file_id = :FILE_ID
+//        GROUP BY j.joke_index, wij.line_index
+//        ORDER BY wij.line_index) lines
+//    GROUP BY lines.joke_index
+//    ORDER BY lines.joke_index) jokes";
+
+        private const string SQL_GET_JOKES = @"
+SELECT j.joke_index, wij.line_index, wij.text
+FROM word_in_joke wij
+JOIN joke j on wij.joke_id = j.id
+WHERE j.file_id = :FILE_ID
+ORDER BY j.joke_index, wij.index_in_joke";
 
         public string GetFileText(decimal fileId)
         {
-            string text = "";
-
             using (var conn = CreateConnection())
             {
-                var cmd = new OracleCommand(GET_JOKES_SQL, conn);
+                var cmd = new OracleCommand(SQL_GET_JOKES, conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.Add("FILE_ID", fileId);
 
                 OracleDataReader dr = cmd.ExecuteReader();
 
-                dr.Read();
-                text = dr["text"].ToString();
+                StringBuilder text = new StringBuilder();
 
-                return text;
+                int lineIdx = 0;
+                int jokeIdx = 0;
+
+                while (dr.Read())
+                {
+                    if (dr.GetInt32(0) > jokeIdx)
+                    {
+                        text.Append(Environment.NewLine);
+                        jokeIdx++;
+                    }
+
+                    if (dr.GetInt32(1) > lineIdx)
+                    {
+                        text.Append(Environment.NewLine);
+                        lineIdx++;
+                    }
+                    else
+                    {
+                        text.Append(" ");
+                    }
+
+                    text.Append(dr.GetString(2));
+                }
+
+                // remove first space
+                text.Remove(0, 1);
+
+                return text.ToString();
             }
         }
 

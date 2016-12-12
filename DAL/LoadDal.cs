@@ -98,7 +98,7 @@ VALUES
 
             commandText.Append("BEGIN ");
 
-            var lines = joke.Split('\n').ToList();
+            var lines = joke.Split(new string[] { Environment.NewLine, "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
             int indexInJoke = 0;
 
@@ -114,8 +114,8 @@ VALUES
                     commandText.Append(string.Format(
                         SQL_INSERT_WORD_IN_JOKE,
                         indexInJoke++,
-                        words[i],
-                        StripWord(words[i]).ToUpper(),
+                        words[i].Replace("\'", "\'\'"),
+                        StripWord(words[i]).ToUpper().Replace("\'", "\'\'"),
                         lineIndex,
                         i));
                 }

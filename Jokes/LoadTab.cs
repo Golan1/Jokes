@@ -30,12 +30,67 @@ namespace Jokes
             if (result == DialogResult.OK)
             {
                 string fileName = openFileDialog.FileName;
+                bool isXml;
+                try
+                {
+                    info = XmlUtils.desirialize<JokeFileInfo>(fileName);
+                    isXml = true;
+                }
+                catch (Exception)
+                {
+                    isXml = false;
+                }
 
-                info = XmlUtils.desirialize<JokeFileInfo>(fileName);
+                if (!isXml)
+                {
+                    //info = new JokeFileInfo();
+                    info.Jokes = ConvertFreeFile(fileName);
+                }
 
                 txtFileName.Text = fileName;
 
                 ResetDataBindings();
+            }
+        }
+
+        private List<string> ConvertFreeFile(string fileName)
+        {
+            string text;
+            using (
+                var sr = new StreamReader(fileName))
+            {
+                text = sr.ReadToEnd();
+            }
+
+            if (text[0] == '1' && text[1] == '.')
+            {
+                int index = 1;
+                var jokes = new List<string>();
+
+                int startJoke = text.IndexOf(index + ".") + 2;
+                int endJoke = text.IndexOf((++index) + ".");
+
+                string joke;
+
+                while (endJoke != -1)
+                {
+                    joke = text.Substring(startJoke, endJoke - startJoke);
+                    jokes.Add(joke);
+
+                    startJoke = endJoke + index.ToString().Length + 1;
+
+                    endJoke = text.IndexOf((++index) + ".");
+                }
+
+                joke = text.Substring(startJoke);
+
+                jokes.Add(joke);
+
+                return jokes;
+            }
+            else
+            {
+                return text.Split(new string[] { Environment.NewLine + Environment.NewLine, "\n\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
             }
         }
 

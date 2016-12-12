@@ -1,0 +1,20 @@
+SQL injection
+
+working together on script
+
+SELECT LISTAGG(jokes.text, chr(10) || chr(10)) WITHIN GROUP (ORDER BY jokes.joke_index) AS text
+FROM(
+    SELECT lines.joke_index, LISTAGG(lines.text, chr(10)) WITHIN GROUP(ORDER BY lines.line_index) AS text
+    FROM(
+        SELECT j.joke_index, wij.line_index, LISTAGG(wij.text, ' ') WITHIN GROUP(ORDER BY wij.index_in_line) AS text
+        FROM joke j
+        JOIN word_in_joke wij ON j.id = wij.joke_id
+        WHERE j.file_id = :FILE_ID
+        GROUP BY j.joke_index, wij.line_index
+        ORDER BY wij.line_index) lines
+    GROUP BY lines.joke_index
+    ORDER BY lines.joke_index) jokes
+	
+Transaction
+
+Multiple inserts (each word)

@@ -20,7 +20,7 @@ namespace DAL
         FROM joke
         WHERE id=:ID";
 
-        public string getJokeText (decimal id)
+        public string getJokeText(decimal id)
         {
             using (var conn = CreateConnection())
             {
@@ -28,21 +28,31 @@ namespace DAL
                 var cmd = new OracleCommand(SQL_GET_JOKE_WORDS, conn);
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.Add("JOKE_ID", id);
+
                 OracleDataReader dr = cmd.ExecuteReader();
+
                 StringBuilder joke = new StringBuilder();
+
                 dr.Read();
-                int lineIdx = int.Parse(dr["line_index"].ToString());
-                joke.Append(dr["text"].ToString() + " ");
+
+                int lineIdx = dr.GetInt32(1);
+
+                joke.Append(dr.GetString(0));
+
                 while (dr.Read())
                 {
-                    if((int.Parse(dr["line_index"].ToString()) > lineIdx))
+                    if (dr.GetInt32(1) > lineIdx)
                     {
-                        joke.Append("\n");
+                        joke.Append(Environment.NewLine);
                         lineIdx++;
                     }
-                    joke.Append(dr["text"].ToString() +" ");
+                    else
+                    {
+                        joke.Append(" ");
+                    }
+
+                    joke.Append(dr.GetString(0));
                 }
-                    
 
                 return joke.ToString();
             }
@@ -59,7 +69,7 @@ namespace DAL
 
                 OracleDataReader dr = cmd.ExecuteReader();
 
-                int fileId = int.Parse(dr["file_id"].ToString());
+                int fileId = dr.GetInt32(0);
                 return fileId;
 
             }
