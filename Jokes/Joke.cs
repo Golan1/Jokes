@@ -83,17 +83,30 @@ namespace Jokes
             wordLable.Text = word;
             JokeId = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).JOKE_ID;
             decimal idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
+            decimal line = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).LINE_INDEX;
+           
             string joke = myDal.getJokeText(JokeId);
-            var wordsList = word.Split(' ');
-            int cnt = wordsList.Length;
-            int charIndex = 0;
-            for (int i = 0; i < idx; i++)
-                charIndex += wordsList[i].Length;
-
-            if (charIndex > 0)
-                charIndex += 2;
+            // var lines = joke.s
             
-            var tmp = joke.Substring((int)idx).Split(' ').ToList().GetRange(0, cnt);
+            var wordsList = joke.Split(' ','\n');//.Where( (x)=>x.Length> 0 ).ToArray();
+            int cnt = word.Split(' ').Length ;
+            int charIndex = 0;
+            //int lines = 0;
+            for (int i = 0; i < idx; i++)
+            {
+                if(wordsList[i].Length>0)
+                    charIndex += wordsList[i].Length;
+
+            }
+
+
+            charIndex++;//= (int)line;
+
+            // idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
+
+
+
+            var tmp = joke.Split(' ', '\n').ToList().GetRange((int)idx, cnt);
 
             string tmp2 = "";
             foreach (var t in tmp)
