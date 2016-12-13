@@ -99,8 +99,8 @@ namespace Jokes
 
             }
 
-
-            charIndex++;//= (int)line;
+            if(charIndex>0)
+            charIndex+= (int)idx;//= (int)line;
 
             // idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
 

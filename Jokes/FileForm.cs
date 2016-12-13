@@ -210,7 +210,7 @@ namespace Jokes
                 }
 
                 if (charIndex > 0)
-                    charIndex += i - 1;
+                    charIndex += i - j;
 
                 //// idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
 
