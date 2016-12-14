@@ -15,7 +15,7 @@ namespace Jokes
         private FileFormDal myDal;
 
         private MainForm mainForm;
-        public decimal FileId{ get; set; }
+        public decimal FileId { get; set; }
 
         public FileForm(decimal fileId, string fileTitle)
         {
@@ -175,58 +175,54 @@ namespace Jokes
         {
 
             var res = dgvWords.DataSource as JokesDS.WORD_IN_JOKEDataTable;
-            if (res.Count > 0)
+            if (res.Count <= 0) return;
+            //wordLable.Text = word;
+            var JokeId = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).JOKE_ID;
+            decimal idx = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).INDEX_IN_JOKE;
+            decimal line = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).LINE_INDEX;
+            string word = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).TEXT;
+            var jkgIdx = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).JOKE_INDEX;
+
+            string joke = this.richTextBox1.Text;
+            // var lines = joke.s
+
+            var wordsList = joke.Split(' ', '\n');//.Where( (x)=>x.Length> 0 ).ToArray();
+            int cnt = word.Split(' ').Length;
+            int charIndex = 0;
+            ////int lines = 0;
+            int k = 0;
+            int i = 0;
+            int j = 0;
+            while ((k < idx) || (j < jkgIdx))
             {
-                //wordLable.Text = word;
-                var JokeId = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).JOKE_ID;
-                decimal idx = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).INDEX_IN_JOKE;
-                decimal line = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).LINE_INDEX;
-                string word = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).TEXT;
-                var jkgIdx = (res.Rows[0] as JokesDS.WORD_IN_JOKERow).JOKE_INDEX;
-
-                string joke = this.richTextBox1.Text;
-                // var lines = joke.s
-
-                var wordsList = joke.Split(' ', '\n');//.Where( (x)=>x.Length> 0 ).ToArray();
-                int cnt = word.Split(' ').Length;
-                int charIndex = 0;
-                ////int lines = 0;
-                int k = 0;
-                int i = 0;
-                int j = 0;
-                while ((k < idx) || (j < jkgIdx))
+                if (j == jkgIdx)
+                    k++;
+                if (wordsList[i].Length > 0)
+                    charIndex += wordsList[i].Length;
+                else
                 {
-                    if (j == jkgIdx)
-                        k++;
-                    if (wordsList[i].Length > 0)
-                        charIndex += wordsList[i].Length;
-                    else
-                    {
-                        charIndex++;
-                        j++;
-                    }
-                    i++;
-
+                    charIndex++;
+                    j++;
                 }
+                i++;
 
-                if (charIndex > 0)
-                    charIndex += i - j;
-
-                //// idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
-
-
-
-                var tmp = joke.Split(' ', '\n').ToList().GetRange(i, cnt);
-
-                string tmp2 = "";
-                foreach (var t in tmp)
-                    tmp2 += t;
-
-                richTextBox1.Clear();
-                richTextBox1.Text = joke;
-                richTextBox1.Select(charIndex, tmp2.Length);
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Bold);
             }
+
+            if (charIndex > 0)
+                charIndex += i - j;
+
+            //// idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
+
+            var tmp = joke.Split(' ', '\n').ToList().GetRange(i, cnt);
+
+            string tmp2 = "";
+            foreach (var t in tmp)
+                tmp2 += t;
+
+            richTextBox1.Clear();
+            richTextBox1.Text = joke;
+            richTextBox1.Select(charIndex, tmp2.Length);
+            richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont, FontStyle.Bold);
         }
     }
 }

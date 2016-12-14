@@ -65,7 +65,7 @@
             this.dgvSearchResults.Location = new System.Drawing.Point(0, 54);
             this.dgvSearchResults.Name = "dgvSearchResults";
             this.dgvSearchResults.ReadOnly = true;
-            this.dgvSearchResults.Size = new System.Drawing.Size(547, 361);
+            this.dgvSearchResults.Size = new System.Drawing.Size(644, 361);
             this.dgvSearchResults.TabIndex = 0;
             this.dgvSearchResults.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchResults_CellContentDoubleClick);
             // 
@@ -90,14 +90,14 @@
             this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearch.Location = new System.Drawing.Point(77, 16);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(320, 20);
+            this.txtSearch.Size = new System.Drawing.Size(417, 20);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // btnGo
             // 
             this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGo.Location = new System.Drawing.Point(416, 6);
+            this.btnGo.Location = new System.Drawing.Point(513, 6);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(111, 42);
             this.btnGo.TabIndex = 3;
@@ -107,6 +107,7 @@
             // 
             // jOKEID1DataGridViewTextBoxColumn
             // 
+            this.jOKEID1DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.jOKEID1DataGridViewTextBoxColumn.DataPropertyName = "JOKE_ID";
             this.jOKEID1DataGridViewTextBoxColumn.HeaderText = "JOKE_ID";
             this.jOKEID1DataGridViewTextBoxColumn.Name = "jOKEID1DataGridViewTextBoxColumn";
@@ -114,6 +115,7 @@
             // 
             // fIRSTINDEXDataGridViewTextBoxColumn
             // 
+            this.fIRSTINDEXDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.fIRSTINDEXDataGridViewTextBoxColumn.DataPropertyName = "FIRST_INDEX";
             this.fIRSTINDEXDataGridViewTextBoxColumn.HeaderText = "FIRST_INDEX";
             this.fIRSTINDEXDataGridViewTextBoxColumn.Name = "fIRSTINDEXDataGridViewTextBoxColumn";
@@ -121,6 +123,7 @@
             // 
             // fILETITLEDataGridViewTextBoxColumn
             // 
+            this.fILETITLEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.fILETITLEDataGridViewTextBoxColumn.DataPropertyName = "FILE_TITLE";
             this.fILETITLEDataGridViewTextBoxColumn.HeaderText = "FILE_TITLE";
             this.fILETITLEDataGridViewTextBoxColumn.Name = "fILETITLEDataGridViewTextBoxColumn";
@@ -128,6 +131,7 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "JOKE_INDEX";
             this.dataGridViewTextBoxColumn1.HeaderText = "JOKE_INDEX";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -135,6 +139,7 @@
             // 
             // lINEINDEXDataGridViewTextBoxColumn
             // 
+            this.lINEINDEXDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.lINEINDEXDataGridViewTextBoxColumn.DataPropertyName = "LINE_INDEX";
             this.lINEINDEXDataGridViewTextBoxColumn.HeaderText = "LINE_INDEX";
             this.lINEINDEXDataGridViewTextBoxColumn.Name = "lINEINDEXDataGridViewTextBoxColumn";
@@ -142,6 +147,7 @@
             // 
             // SEARCH_TEXT
             // 
+            this.SEARCH_TEXT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.SEARCH_TEXT.DataPropertyName = "SEARCH_TEXT";
             this.SEARCH_TEXT.HeaderText = "SEARCH_TEXT";
             this.SEARCH_TEXT.Name = "SEARCH_TEXT";
@@ -154,7 +160,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvSearchResults);
             this.Name = "SearchTab";
-            this.Size = new System.Drawing.Size(548, 415);
+            this.Size = new System.Drawing.Size(645, 415);
             this.Load += new System.EventHandler(this.SearchTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEARCHRESULTDataTableBindingSource)).EndInit();

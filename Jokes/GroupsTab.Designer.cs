@@ -44,15 +44,15 @@
             // groupsListBox
             // 
             this.groupsListBox.FormattingEnabled = true;
-            this.groupsListBox.Location = new System.Drawing.Point(370, 64);
+            this.groupsListBox.Location = new System.Drawing.Point(33, 41);
             this.groupsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupsListBox.Name = "groupsListBox";
-            this.groupsListBox.Size = new System.Drawing.Size(90, 186);
+            this.groupsListBox.Size = new System.Drawing.Size(208, 186);
             this.groupsListBox.TabIndex = 0;
             // 
             // addWordBtn
             // 
-            this.addWordBtn.Location = new System.Drawing.Point(32, 223);
+            this.addWordBtn.Location = new System.Drawing.Point(324, 301);
             this.addWordBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addWordBtn.Name = "addWordBtn";
             this.addWordBtn.Size = new System.Drawing.Size(92, 26);
@@ -63,7 +63,7 @@
             // 
             // addGroupBtn
             // 
-            this.addGroupBtn.Location = new System.Drawing.Point(32, 122);
+            this.addGroupBtn.Location = new System.Drawing.Point(33, 301);
             this.addGroupBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addGroupBtn.Name = "addGroupBtn";
             this.addGroupBtn.Size = new System.Drawing.Size(92, 26);
@@ -76,7 +76,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(28, 76);
+            this.label1.Location = new System.Drawing.Point(29, 262);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 21);
@@ -87,7 +87,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(28, 184);
+            this.label2.Location = new System.Drawing.Point(320, 262);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(202, 21);
@@ -96,7 +96,7 @@
             // 
             // groupTextBox
             // 
-            this.groupTextBox.Location = new System.Drawing.Point(136, 130);
+            this.groupTextBox.Location = new System.Drawing.Point(137, 309);
             this.groupTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupTextBox.Name = "groupTextBox";
             this.groupTextBox.Size = new System.Drawing.Size(104, 20);
@@ -104,7 +104,7 @@
             // 
             // wordTextBox
             // 
-            this.wordTextBox.Location = new System.Drawing.Point(136, 230);
+            this.wordTextBox.Location = new System.Drawing.Point(428, 308);
             this.wordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.wordTextBox.Name = "wordTextBox";
             this.wordTextBox.Size = new System.Drawing.Size(104, 20);
@@ -113,18 +113,18 @@
             // wordsListBox
             // 
             this.wordsListBox.FormattingEnabled = true;
-            this.wordsListBox.Location = new System.Drawing.Point(272, 64);
+            this.wordsListBox.Location = new System.Drawing.Point(324, 41);
             this.wordsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.wordsListBox.Name = "wordsListBox";
             this.wordsListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.wordsListBox.Size = new System.Drawing.Size(96, 186);
+            this.wordsListBox.Size = new System.Drawing.Size(208, 186);
             this.wordsListBox.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(268, 41);
+            this.label3.Location = new System.Drawing.Point(320, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 20);
@@ -135,7 +135,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(366, 41);
+            this.label4.Location = new System.Drawing.Point(29, 18);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
@@ -144,12 +144,12 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(370, 271);
+            this.btnSearch.Location = new System.Drawing.Point(33, 354);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(92, 26);
+            this.btnSearch.Size = new System.Drawing.Size(208, 26);
             this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Search Group";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -170,7 +170,7 @@
             this.Controls.Add(this.groupsListBox);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GroupsTab";
-            this.Size = new System.Drawing.Size(480, 299);
+            this.Size = new System.Drawing.Size(565, 401);
             this.Load += new System.EventHandler(this.GroupsTab_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

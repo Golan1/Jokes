@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvFiles = new System.Windows.Forms.DataGridView();
+            this.jKFILEDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,7 +38,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jKFILEDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -62,12 +62,17 @@
             this.dgvFiles.Location = new System.Drawing.Point(0, 0);
             this.dgvFiles.Name = "dgvFiles";
             this.dgvFiles.ReadOnly = true;
-            this.dgvFiles.Size = new System.Drawing.Size(744, 254);
+            this.dgvFiles.Size = new System.Drawing.Size(749, 254);
             this.dgvFiles.TabIndex = 0;
             this.dgvFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiles_CellDoubleClick);
             // 
+            // jKFILEDataTableBindingSource
+            // 
+            this.jKFILEDataTableBindingSource.DataSource = typeof(DAL.JokesDS.JK_FILEDataTable);
+            // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -75,6 +80,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TITLE";
             this.dataGridViewTextBoxColumn2.HeaderText = "TITLE";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -82,6 +88,7 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "AUTHOR";
             this.dataGridViewTextBoxColumn3.HeaderText = "AUTHOR";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -89,6 +96,7 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "RATING";
             this.dataGridViewTextBoxColumn4.HeaderText = "RATING";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -96,6 +104,7 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "SOURCE";
             this.dataGridViewTextBoxColumn5.HeaderText = "SOURCE";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -103,6 +112,7 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn6.DataPropertyName = "CREATION_DATE";
             this.dataGridViewTextBoxColumn6.HeaderText = "CREATION_DATE";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
@@ -110,20 +120,17 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "INSERTION_DATE";
             this.dataGridViewTextBoxColumn7.HeaderText = "INSERTION_DATE";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // jKFILEDataTableBindingSource
-            // 
-            this.jKFILEDataTableBindingSource.DataSource = typeof(DAL.JokesDS.JK_FILEDataTable);
-            // 
             // FilesTab
             // 
             this.Controls.Add(this.dgvFiles);
             this.Name = "FilesTab";
-            this.Size = new System.Drawing.Size(744, 254);
+            this.Size = new System.Drawing.Size(749, 254);
             this.Load += new System.EventHandler(this.FilesTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).EndInit();
@@ -134,6 +141,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvFiles;
+        private System.Windows.Forms.BindingSource jKFILEDataTableBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -141,6 +149,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource jKFILEDataTableBindingSource;
     }
 }

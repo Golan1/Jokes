@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dgvWords = new System.Windows.Forms.DataGridView();
+            this.wORDINJOKEDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rbJoke = new System.Windows.Forms.RadioButton();
             this.rbLine = new System.Windows.Forms.RadioButton();
             this.numJoke = new System.Windows.Forms.NumericUpDown();
@@ -40,19 +41,18 @@
             this.numJokeIndex = new System.Windows.Forms.NumericUpDown();
             this.numLineIndex = new System.Windows.Forms.NumericUpDown();
             this.btnClear = new System.Windows.Forms.Button();
-            this.wORDINJOKEDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtTitle = new System.Windows.Forms.Label();
             this.tEXTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jOKEINDEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNDEXINJOKEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lINEINDEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNDEXINLINEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWords)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wORDINJOKEDataTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numJoke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numJokeIndex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLineIndex)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wORDINJOKEDataTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -86,6 +86,10 @@
             this.dgvWords.ReadOnly = true;
             this.dgvWords.Size = new System.Drawing.Size(548, 276);
             this.dgvWords.TabIndex = 1;
+            // 
+            // wORDINJOKEDataTableBindingSource
+            // 
+            this.wORDINJOKEDataTableBindingSource.DataSource = typeof(DAL.JokesDS.WORD_IN_JOKEDataTable);
             // 
             // rbJoke
             // 
@@ -171,12 +175,21 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // wORDINJOKEDataTableBindingSource
+            // txtTitle
             // 
-            this.wORDINJOKEDataTableBindingSource.DataSource = typeof(DAL.JokesDS.WORD_IN_JOKEDataTable);
+            this.txtTitle.AutoSize = true;
+            this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.txtTitle.Location = new System.Drawing.Point(20, 16);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(48, 25);
+            this.txtTitle.TabIndex = 11;
+            this.txtTitle.Text = "Title";
             // 
             // tEXTDataGridViewTextBoxColumn
             // 
+            this.tEXTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tEXTDataGridViewTextBoxColumn.DataPropertyName = "TEXT";
             this.tEXTDataGridViewTextBoxColumn.HeaderText = "TEXT";
             this.tEXTDataGridViewTextBoxColumn.Name = "tEXTDataGridViewTextBoxColumn";
@@ -184,6 +197,7 @@
             // 
             // jOKEINDEXDataGridViewTextBoxColumn
             // 
+            this.jOKEINDEXDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.jOKEINDEXDataGridViewTextBoxColumn.DataPropertyName = "JOKE_INDEX";
             this.jOKEINDEXDataGridViewTextBoxColumn.HeaderText = "JOKE_INDEX";
             this.jOKEINDEXDataGridViewTextBoxColumn.Name = "jOKEINDEXDataGridViewTextBoxColumn";
@@ -198,6 +212,7 @@
             // 
             // lINEINDEXDataGridViewTextBoxColumn
             // 
+            this.lINEINDEXDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.lINEINDEXDataGridViewTextBoxColumn.DataPropertyName = "LINE_INDEX";
             this.lINEINDEXDataGridViewTextBoxColumn.HeaderText = "LINE_INDEX";
             this.lINEINDEXDataGridViewTextBoxColumn.Name = "lINEINDEXDataGridViewTextBoxColumn";
@@ -205,22 +220,11 @@
             // 
             // iNDEXINLINEDataGridViewTextBoxColumn
             // 
+            this.iNDEXINLINEDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.iNDEXINLINEDataGridViewTextBoxColumn.DataPropertyName = "INDEX_IN_LINE";
             this.iNDEXINLINEDataGridViewTextBoxColumn.HeaderText = "INDEX_IN_LINE";
             this.iNDEXINLINEDataGridViewTextBoxColumn.Name = "iNDEXINLINEDataGridViewTextBoxColumn";
             this.iNDEXINLINEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.AutoSize = true;
-            this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txtTitle.Location = new System.Drawing.Point(20, 16);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(48, 25);
-            this.txtTitle.TabIndex = 11;
-            this.txtTitle.Text = "Title";
             // 
             // FileForm
             // 
@@ -244,11 +248,11 @@
             this.Text = "FileForm";
             this.Load += new System.EventHandler(this.FileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWords)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wORDINJOKEDataTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numJoke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numJokeIndex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLineIndex)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wORDINJOKEDataTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,12 +271,12 @@
         private System.Windows.Forms.NumericUpDown numJokeIndex;
         private System.Windows.Forms.NumericUpDown numLineIndex;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.BindingSource wORDINJOKEDataTableBindingSource;
+        private System.Windows.Forms.Label txtTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn tEXTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jOKEINDEXDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNDEXINJOKEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lINEINDEXDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iNDEXINLINEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource wORDINJOKEDataTableBindingSource;
-        private System.Windows.Forms.Label txtTitle;
     }
 }
