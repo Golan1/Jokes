@@ -52,10 +52,10 @@ namespace Jokes
         }
 
 
-        public void showJokes(string word, int selected, JokesDS.SEARCH_RESULTDataTable res)
+        public void showJokes(int selected, JokesDS.SEARCH_RESULTDataTable res)
         {
             jokeForm = new Joke();
-            jokeForm.updateJokes(word, selected, res);
+            jokeForm.UpdateJokes(selected, res);
 
             jokeForm.ShowDialog(this);
         }

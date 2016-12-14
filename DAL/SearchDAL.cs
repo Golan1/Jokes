@@ -13,7 +13,7 @@ namespace DAL
 
         const string SQL_SEARCH_TEXT_FIRST =
 @"SELECT firsts.joke_id as joke_id, firsts.first_index as first_index, 
-f.title as file_title, j.joke_index as joke_index, firsts.line_index as line_index, f.id as file_id
+f.title as file_title, j.joke_index as joke_index, firsts.line_index as line_index, f.id as file_id, '{1}' as SEARCH_TEXT
 FROM (SELECT index_in_joke as first_index, joke_id, line_index
 		FROM word_in_joke 
 		WHERE text_for_search = '{0}') firsts
@@ -44,7 +44,7 @@ INNER JOIN jk_file f ON f.id = j.file_id";
 
             return DS.SEARCH_RESULT;
         }
-        
+
         private string BuildMultipleSearchCommands(string searchTextStrings)
         {
             var searchStrings = searchTextStrings.Split(new string[] { "||" }, StringSplitOptions.RemoveEmptyEntries);
@@ -52,7 +52,7 @@ INNER JOIN jk_file f ON f.id = j.file_id";
             var totalSeachCommand = string.Join(" UNION ALL ", searchStrings.Select(x => BuildSearchCommand(x)));
 
             return totalSeachCommand;
-            
+
         }
 
         private string BuildSearchCommand(string searchText)
@@ -65,7 +65,8 @@ INNER JOIN jk_file f ON f.id = j.file_id";
 
 
             string command = "";
-            var words = searchText.Split(' ').Select(x => StripWord(x).ToUpper()).ToList();
+            var words = searchText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).
+                Select(x => StripWord(x).ToUpper()).ToList();
 
             if (words.Count < 1)
             {
@@ -74,7 +75,7 @@ INNER JOIN jk_file f ON f.id = j.file_id";
 
             string first = words[0];
 
-            command = string.Format(SQL_SEARCH_TEXT_FIRST, first);
+            command = string.Format(SQL_SEARCH_TEXT_FIRST, first, string.Join(" ", words));
 
             if (words.Count > 1)
             {

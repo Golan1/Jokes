@@ -12,10 +12,8 @@ namespace Jokes
 {
     public partial class Joke : Form
     {
-
-
         private JokeFormDal myDal;
-        
+
         public FileForm MyFileForm { get; set; }
         public decimal JokeId { get; set; }
 
@@ -43,14 +41,12 @@ namespace Jokes
 
         private void Joke_Click1(object sender, EventArgs e)
         {
-           
             mainForm.groupFire(jokeTextBox.SelectedText);
             this.Close();
         }
 
         private void Joke_Click2(object sender, EventArgs e)
         {
-            
             mainForm.firstRelWordFire(this.jokeTextBox.SelectedText);
             jokeTextBox.ContextMenu.MenuItems[1].Enabled = false;
             jokeTextBox.ContextMenu.MenuItems[2].Enabled = true;
@@ -59,7 +55,6 @@ namespace Jokes
 
         private void Joke_Click3(object sender, EventArgs e)
         {
-           
             mainForm.secRelWordFire(this.jokeTextBox.SelectedText);
             jokeTextBox.ContextMenu.MenuItems[1].Enabled = true;
             jokeTextBox.ContextMenu.MenuItems[2].Enabled = false;
@@ -68,7 +63,7 @@ namespace Jokes
 
         private void Joke_Click4(object sender, EventArgs e)
         {
-           
+
             mainForm.searchFire(jokeTextBox.SelectedText);
             this.Close();//send text to search
         }
@@ -76,48 +71,48 @@ namespace Jokes
 
         private int selected;
         private JokesDS.SEARCH_RESULTDataTable myJokes;
-        public void updateJokes (string word, int selected, JokesDS.SEARCH_RESULTDataTable res )
-        {
-            this.selected = selected;
-            myJokes = res;
-            wordLable.Text = word;
-            JokeId = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).JOKE_ID;
-            decimal idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
-            decimal line = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).LINE_INDEX;
-           
-            string joke = myDal.getJokeText(JokeId);
-            // var lines = joke.s
-            
-            var wordsList = joke.Split(' ','\n');//.Where( (x)=>x.Length> 0 ).ToArray();
-            int cnt = word.Split(' ').Length ;
-            int charIndex = 0;
-            //int lines = 0;
-            for (int i = 0; i < idx; i++)
-            {
-                if(wordsList[i].Length>0)
-                    charIndex += wordsList[i].Length;
 
+        private void UpdateJoke(JokesDS.SEARCH_RESULTRow joke)
+        {
+            lblSearchedText.Text = joke.SEARCH_TEXT;
+
+            string jokeFullText = myDal.getJokeText(joke.JOKE_ID);
+
+            int firstIndex = (int)joke.FIRST_INDEX;
+
+            var wordsList = jokeFullText.Split(
+                new string[] { " ", Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).
+                ToList();
+
+
+            int charFirstIndex = 0;
+            for (int i = 0; i < firstIndex; i++)
+            {
+                if (wordsList[i].Length > 0)
+                    charFirstIndex += wordsList[i].Length;
             }
 
-            if(charIndex>0)
-            charIndex+= (int)idx;//= (int)line;
+            if (charFirstIndex > 0)
+                charFirstIndex += firstIndex;
 
-            // idx = (res.Rows[selected] as JokesDS.SEARCH_RESULTRow).FIRST_INDEX;
+            var searchList = wordsList.GetRange(firstIndex, joke.SEARCH_TEXT.Split(' ').Length);
 
-
-
-            var tmp = joke.Split(' ', '\n').ToList().GetRange((int)idx, cnt);
-
-            string tmp2 = "";
-            foreach (var t in tmp)
-                tmp2 += t;
+            int searchListLength = 0;
+            foreach (var t in searchList)
+                searchListLength += t.Length;
 
             jokeTextBox.Clear();
-            jokeTextBox.Text = joke;
-            jokeTextBox.Select(charIndex, tmp2.Length);
+            jokeTextBox.Text = jokeFullText;
+            jokeTextBox.Select(charFirstIndex, searchListLength);
             jokeTextBox.SelectionFont = new Font(jokeTextBox.SelectionFont, FontStyle.Bold);
+        }
 
+        public void UpdateJokes(int firstSelected, JokesDS.SEARCH_RESULTDataTable results)
+        {
+            this.selected = firstSelected;
+            myJokes = results;
 
+            UpdateJoke(myJokes[selected]);
         }
 
         private void fullFileBtn_Click(object sender, EventArgs e)
@@ -128,8 +123,8 @@ namespace Jokes
             //MyFileForm.Show();'
 
             string title = (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_TITLE;
-            decimal id =  (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_ID;
-            mainForm.ShowFile(id , title);
+            decimal id = (myJokes.Rows[selected] as JokesDS.SEARCH_RESULTRow).FILE_ID;
+            mainForm.ShowFile(id, title);
 
         }
 
@@ -138,18 +133,18 @@ namespace Jokes
             if (selected + 1 < myJokes.Rows.Count)
             {
                 selected++;
-                updateJokes(wordLable.Text, selected, myJokes);
 
+                UpdateJoke(myJokes[selected]);
             }
         }
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
-            if (selected - 1 >=0)
+            if (selected - 1 >= 0)
             {
                 selected--;
-                updateJokes(wordLable.Text, selected, myJokes);
 
+                UpdateJoke(myJokes[selected]);
             }
         }
 

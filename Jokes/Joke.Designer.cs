@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.wordLable = new System.Windows.Forms.Label();
+            this.lblSearchedText = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.jokeTextBox = new System.Windows.Forms.RichTextBox();
             this.fullFileBtn = new System.Windows.Forms.Button();
@@ -36,40 +36,44 @@
             this.prevBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // wordLable
+            // lblSearchedText
             // 
-            this.wordLable.AutoSize = true;
-            this.wordLable.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordLable.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.wordLable.Location = new System.Drawing.Point(36, 30);
-            this.wordLable.Name = "wordLable";
-            this.wordLable.Size = new System.Drawing.Size(92, 32);
-            this.wordLable.TabIndex = 0;
-            this.wordLable.Text = "Word 1";
+            this.lblSearchedText.AutoSize = true;
+            this.lblSearchedText.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchedText.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblSearchedText.Location = new System.Drawing.Point(27, 24);
+            this.lblSearchedText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchedText.Name = "lblSearchedText";
+            this.lblSearchedText.Size = new System.Drawing.Size(73, 25);
+            this.lblSearchedText.TabIndex = 0;
+            this.lblSearchedText.Text = "Word 1";
             // 
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Location = new System.Drawing.Point(58, 90);
+            this.title.Location = new System.Drawing.Point(44, 73);
+            this.title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(67, 17);
+            this.title.Size = new System.Drawing.Size(52, 13);
             this.title.TabIndex = 1;
             this.title.Text = "The Joke";
             // 
             // jokeTextBox
             // 
-            this.jokeTextBox.Location = new System.Drawing.Point(69, 134);
+            this.jokeTextBox.Location = new System.Drawing.Point(52, 109);
+            this.jokeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.jokeTextBox.Name = "jokeTextBox";
             this.jokeTextBox.ReadOnly = true;
-            this.jokeTextBox.Size = new System.Drawing.Size(487, 161);
+            this.jokeTextBox.Size = new System.Drawing.Size(366, 132);
             this.jokeTextBox.TabIndex = 2;
             this.jokeTextBox.Text = "";
             // 
             // fullFileBtn
             // 
-            this.fullFileBtn.Location = new System.Drawing.Point(433, 396);
+            this.fullFileBtn.Location = new System.Drawing.Point(325, 322);
+            this.fullFileBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.fullFileBtn.Name = "fullFileBtn";
-            this.fullFileBtn.Size = new System.Drawing.Size(112, 46);
+            this.fullFileBtn.Size = new System.Drawing.Size(84, 37);
             this.fullFileBtn.TabIndex = 3;
             this.fullFileBtn.Text = "Watch full file";
             this.fullFileBtn.UseVisualStyleBackColor = true;
@@ -77,9 +81,10 @@
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(433, 322);
+            this.nextBtn.Location = new System.Drawing.Point(325, 262);
+            this.nextBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(112, 38);
+            this.nextBtn.Size = new System.Drawing.Size(84, 31);
             this.nextBtn.TabIndex = 4;
             this.nextBtn.Text = "Next";
             this.nextBtn.UseVisualStyleBackColor = true;
@@ -87,9 +92,10 @@
             // 
             // prevBtn
             // 
-            this.prevBtn.Location = new System.Drawing.Point(69, 322);
+            this.prevBtn.Location = new System.Drawing.Point(52, 262);
+            this.prevBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.prevBtn.Name = "prevBtn";
-            this.prevBtn.Size = new System.Drawing.Size(112, 38);
+            this.prevBtn.Size = new System.Drawing.Size(84, 31);
             this.prevBtn.TabIndex = 4;
             this.prevBtn.Text = "Previous";
             this.prevBtn.UseVisualStyleBackColor = true;
@@ -97,15 +103,16 @@
             // 
             // Joke
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 461);
+            this.ClientSize = new System.Drawing.Size(472, 375);
             this.Controls.Add(this.prevBtn);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.fullFileBtn);
             this.Controls.Add(this.jokeTextBox);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.wordLable);
+            this.Controls.Add(this.lblSearchedText);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Joke";
             this.Text = "Joke";
             this.Load += new System.EventHandler(this.Joke_Load);
@@ -116,7 +123,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label wordLable;
+        private System.Windows.Forms.Label lblSearchedText;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.RichTextBox jokeTextBox;
         private System.Windows.Forms.Button fullFileBtn;
