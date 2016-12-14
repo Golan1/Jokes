@@ -33,21 +33,36 @@ INNER JOIN jk_file f ON f.id = j.file_id";
             return data.AsEnumerable().Select(x => x.TEXT);
         }
 
-        public JokesDS.SEARCH_RESULTDataTable GetSearchResults(string searchText)
+        public JokesDS.SEARCH_RESULTDataTable GetSearchResults(string searchTextStrings)
         {
             using (var conn = CreateConnection())
             {
-                var adapter = new OracleDataAdapter(new OracleCommand(BuildSearchCommand(searchText), conn));
+                var adapter = new OracleDataAdapter(new OracleCommand(BuildMultipleSearchCommands(searchTextStrings), conn));
                 DS.SEARCH_RESULT.Clear();
                 adapter.Fill(DS.SEARCH_RESULT);
             }
 
             return DS.SEARCH_RESULT;
         }
+        
+        private string BuildMultipleSearchCommands(string searchTextStrings)
+        {
+            var searchStrings = searchTextStrings.Split(new string[] { "||" }, StringSplitOptions.RemoveEmptyEntries);
+
+            var totalSeachCommand = string.Join(" UNION ALL ", searchStrings.Select(x => BuildSearchCommand(x)));
+
+            return totalSeachCommand;
+            
+        }
 
         private string BuildSearchCommand(string searchText)
         {
+            // Escape '
             searchText = searchText.Replace("\'", "\'\'");
+
+            // Re esacape ||
+            searchText = searchText.Replace("\\|", "|");
+
 
             string command = "";
             var words = searchText.Split(' ').Select(x => StripWord(x).ToUpper()).ToList();

@@ -146,7 +146,7 @@ namespace DAL
                 {
                     OracleDataReader dr = cmd.ExecuteReader();
                     dr.Read();
-                    return dr["textLength"].ToString();
+                    return dr.GetInt32(0).ToString();
                 }
                 catch (Exception exp)
                 {
