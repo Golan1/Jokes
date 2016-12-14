@@ -39,6 +39,7 @@
             this.fILETITLEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lINEINDEXDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SEARCH_TEXT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sEARCHRESULTDataTableBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,8 @@
             this.fIRSTINDEXDataGridViewTextBoxColumn,
             this.fILETITLEDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn1,
-            this.lINEINDEXDataGridViewTextBoxColumn});
+            this.lINEINDEXDataGridViewTextBoxColumn,
+            this.SEARCH_TEXT});
             this.dgvSearchResults.DataSource = this.sEARCHRESULTDataTableBindingSource;
             this.dgvSearchResults.Location = new System.Drawing.Point(0, 54);
             this.dgvSearchResults.Name = "dgvSearchResults";
@@ -138,6 +140,13 @@
             this.lINEINDEXDataGridViewTextBoxColumn.Name = "lINEINDEXDataGridViewTextBoxColumn";
             this.lINEINDEXDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // SEARCH_TEXT
+            // 
+            this.SEARCH_TEXT.DataPropertyName = "SEARCH_TEXT";
+            this.SEARCH_TEXT.HeaderText = "SEARCH_TEXT";
+            this.SEARCH_TEXT.Name = "SEARCH_TEXT";
+            this.SEARCH_TEXT.ReadOnly = true;
+            // 
             // SearchTab
             // 
             this.Controls.Add(this.btnGo);
@@ -166,5 +175,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fILETITLEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lINEINDEXDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SEARCH_TEXT;
     }
 }

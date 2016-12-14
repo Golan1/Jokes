@@ -17,6 +17,8 @@ namespace Jokes
         public FileForm MyFileForm { get; set; }
         public decimal JokeId { get; set; }
 
+        private MainForm mainForm;
+
         public Joke()
         {
             InitializeComponent();
@@ -148,7 +150,6 @@ namespace Jokes
             }
         }
 
-        private MainForm mainForm;
         private void Joke_Load(object sender, EventArgs e)
         {
             mainForm = (MainForm)this.Owner;

@@ -16,9 +16,9 @@ namespace Jokes
     {
 
         private GroupsTabDal myDal;
-        public Dictionary<int,string> Groups { get; set; }
+        public Dictionary<int, string> Groups { get; set; }
 
-        
+        private MainForm mainForm;
 
         public GroupsTab()
         {
@@ -29,7 +29,7 @@ namespace Jokes
         }
 
 
-        public void updateWord (string word)
+        public void updateWord(string word)
         {
             this.wordTextBox.Text = word;
         }
@@ -39,7 +39,7 @@ namespace Jokes
             MessageBox.Show("kjhg");
         }
 
-        private void getGroups ()
+        private void getGroups()
         {
             Groups = myDal.getGroups();
             List<string> groupsNames = Groups.Values.ToList();
@@ -50,8 +50,11 @@ namespace Jokes
         private void GroupsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idx = groupsListBox.SelectedIndex;
+
+            if (idx < 0) return;
+
             int id = Groups.Keys.ToArray()[idx];
-            var words =myDal.getWordsInGroup(id);
+            var words = myDal.getWordsInGroup(id);
             wordsListBox.Items.Clear();
             foreach (var w in words)
                 wordsListBox.Items.Add(w);
@@ -98,6 +101,10 @@ namespace Jokes
 
                 if (newWord == string.Empty)
                     MessageBox.Show("Please enter a word");
+                else if (wordsListBox.Items.Contains(newWord))
+                {
+                    MessageBox.Show("The word already exists in the group");
+                }
                 else
                 {
                     bool success = true;
@@ -119,7 +126,25 @@ namespace Jokes
 
         private void GroupsTab_Load(object sender, EventArgs e)
         {
+            mainForm = (MainForm)Parent.Parent.Parent;
+
             getGroups();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (wordsListBox.Items.Count < 1) return;
+
+            var words = new List<string>();
+
+            foreach (string word in wordsListBox.Items)
+            {
+                words.Add(word);
+            }
+
+            string search = string.Join("||", words);
+
+            mainForm.searchFire(search);
         }
     }
 }

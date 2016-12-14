@@ -13,7 +13,7 @@ namespace DAL
     {
 
         private const string JK_GROUP_SEQ = "JK_GROUP_SEQ";
-        
+
         private const string SQL_INSERT_WORD_TO_GROUP = @"
         INSERT INTO word_in_group
         (group_id, text)
@@ -41,7 +41,7 @@ namespace DAL
         {
             using (var conn = CreateConnection())
             {
-                var groupId = this.NextVal(JK_GROUP_SEQ,conn);
+                var groupId = this.NextVal(JK_GROUP_SEQ, conn);
 
                 var cmd = new OracleCommand(SQL_INSERT_NEW_GROUP, conn);
 
@@ -53,18 +53,18 @@ namespace DAL
                 if (returnVal != 1)
                 {
                     throw new Exception("Failed to insert group");
-               
+
                 }
-               
+
 
             }
         }
 
-        public void SaveWordToGroup(int groupId , string word)
+        public void SaveWordToGroup(int groupId, string word)
         {
             using (var conn = CreateConnection())
             {
-               
+
 
                 var cmd = new OracleCommand(SQL_INSERT_WORD_TO_GROUP, conn);
 
@@ -75,15 +75,13 @@ namespace DAL
 
                 if (returnVal != 1)
                 {
-                     throw new Exception("Failed to insert word");
-               
-                }
-             
+                    throw new Exception("Failed to insert word");
 
+                }
             }
         }
 
-        public Dictionary<int,string> getGroups()
+        public Dictionary<int, string> getGroups()
         {
 
             using (var conn = CreateConnection())
@@ -93,7 +91,7 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.Text;
 
 
-       //         var returnVal = cmd.ExecuteNonQuery();
+                //         var returnVal = cmd.ExecuteNonQuery();
                 OracleDataReader dr = cmd.ExecuteReader();
                 Dictionary<int, string> groups = new Dictionary<int, string>();
                 while (dr.Read())
@@ -108,7 +106,7 @@ namespace DAL
 
             using (var conn = CreateConnection())
             {
-              
+
                 var cmd = new OracleCommand(SQL_GET_WORDS_IN_GROUP, conn);
                 cmd.Parameters.Add("ID", id);
 
@@ -122,15 +120,15 @@ namespace DAL
                     return words;
 
                 }
-                catch(Exception exp)
+                catch (Exception exp)
                 {
                     throw exp;
                 }
-            
 
-               
+
+
             }
 
-         }
+        }
     }
 }
