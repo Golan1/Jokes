@@ -64,7 +64,6 @@
     </Compile>
     <Compile Include="RelationsTabDal.cs" />
     <Compile Include="SearchDal.cs" />
-    <Compile Include="StatisticsTabDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
