@@ -103,6 +103,9 @@ namespace Jokes
             foreach (var t in searchList)
                 searchListLength += t.Length;
 
+            // Add spaces length
+            searchListLength += searchList.Count - 1;
+
             jokeTextBox.Clear();
             jokeTextBox.Text = jokeFullText;
             jokeTextBox.Select(charFirstIndex, searchListLength);

@@ -12,19 +12,20 @@ namespace DAL
         const string SQL_INSERT_TO_HISTORY = "INSERT INTO jk_search_history (TEXT) VALUES (:TEXT)";
 
         const string SQL_SEARCH_TEXT_FIRST =
-@"SELECT firsts.joke_id as joke_id, firsts.first_index as first_index, 
-f.title as file_title, j.joke_index as joke_index, firsts.line_index as line_index, f.id as file_id, '{1}' as SEARCH_TEXT
-FROM (SELECT index_in_joke as first_index, joke_id, line_index
-		FROM word_in_joke 
-		WHERE text_for_search = '{0}') firsts
-INNER JOIN joke j ON j.id = firsts.joke_id
-INNER JOIN jk_file f ON f.id = j.file_id";
+@"SELECT /*+ LEADING(wij) */
+wij.joke_id as joke_id, wij.index_in_joke as first_index, 
+f.title as file_title, j.joke_index as joke_index, wij.line_index as line_index, f.id as file_id, '{1}' as SEARCH_TEXT
+FROM word_in_joke wij 
+INNER JOIN joke j ON j.id = wij.joke_id
+INNER JOIN jk_file f ON f.id = j.file_id
+WHERE wij.text_for_search = '{0}'";
 
         const string SQL_SEARCH_TEXT_REST =
-@"'{0}' = (SELECT text_for_search 
-					FROM word_in_joke inner 
-					WHERE inner.joke_id = firsts.joke_id 
-					AND inner.index_in_joke = firsts.first_index + {1})";
+@" EXISTS (SELECT 0
+		   FROM word_in_joke inner 
+		   WHERE inner.joke_id = wij.joke_id 
+		   AND inner.index_in_joke = wij.index_in_joke + {1}
+           AND inner.text_for_search = '{0}')";
 
         public IEnumerable<string> GetSearchHistory()
         {
@@ -79,14 +80,11 @@ INNER JOIN jk_file f ON f.id = j.file_id";
 
             if (words.Count > 1)
             {
-                command += " WHERE ";
                 for (int i = 1; i < words.Count; i++)
                 {
+                    command += "\nAND ";
                     command += string.Format(SQL_SEARCH_TEXT_REST, words[i], i);
-                    command += " AND ";
                 }
-
-                command = command.Remove(command.Length - 5);
             }
 
             return command;

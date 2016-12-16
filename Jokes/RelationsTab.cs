@@ -14,7 +14,7 @@ namespace Jokes
     public partial class RelationsTab : UserControl
     {
         private RelationsTabDal myDal;
-        public  Dictionary<int, string> Relations { get; set; }
+        public Dictionary<int, string> Relations { get; set; }
         public RelationsTab()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Jokes
         }
 
 
-        public void updateFirstW (string w)
+        public void updateFirstW(string w)
         {
             this.word1TextBox.Text = w;
         }
@@ -38,11 +38,14 @@ namespace Jokes
         private void RelationsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idx = relationsListBox.SelectedIndex;
+
+            if (idx == -1) return;
+
             int id = Relations.Keys.ToArray()[idx];
             var tuples = myDal.getTupplesInRelation(id);
             tuplesListBox.Items.Clear();
             foreach (var t in tuples)
-                tuplesListBox.Items.Add(t.Item1 +" / " + t.Item2);
+                tuplesListBox.Items.Add(t.Item1 + " / " + t.Item2);
         }
 
         private void getRelations()

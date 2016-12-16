@@ -2,6 +2,7 @@ drop table jk_search_history;
 drop table word_in_group;
 drop SEQUENCE jk_group_seq;
 drop table jk_group;
+drop index text_search_index;
 drop table word_in_joke;
 drop sequence joke_seq;
 drop table joke;
@@ -10,8 +11,6 @@ drop table jk_file;
 drop table tupple_in_relation;
 drop sequence jk_relation_seq;
 drop table jk_relation;
-
-
 
 create table jk_file(
 id number primary key,
@@ -50,6 +49,7 @@ index_in_line number,
 primary key (joke_id, index_in_joke),
 foreign key (joke_id) references joke(id));
 
+CREATE INDEX text_search_index ON word_in_joke(text_for_search);
 
 create table jk_group(
 id number primary key,

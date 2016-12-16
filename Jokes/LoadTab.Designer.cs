@@ -43,6 +43,7 @@
             this.dtCreationDate = new System.Windows.Forms.DateTimePicker();
             this.numRating = new System.Windows.Forms.NumericUpDown();
             this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numRating)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,10 +175,21 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(263, 171);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 71;
+            this.button1.Text = "Debug";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoadTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.numRating);
             this.Controls.Add(this.dtCreationDate);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.DateTimePicker dtCreationDate;
         private System.Windows.Forms.NumericUpDown numRating;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button1;
     }
 }

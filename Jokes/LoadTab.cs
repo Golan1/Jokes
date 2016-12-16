@@ -30,26 +30,32 @@ namespace Jokes
             if (result == DialogResult.OK)
             {
                 string fileName = openFileDialog.FileName;
-                bool isXml;
-                try
-                {
-                    info = XmlUtils.desirialize<JokeFileInfo>(fileName);
-                    isXml = true;
-                }
-                catch (Exception)
-                {
-                    isXml = false;
-                }
 
-                if (!isXml)
-                {
-                    //info = new JokeFileInfo();
-                    info.Jokes = ConvertFreeFile(fileName);
-                }
+                convertFile(fileName);
 
                 txtFileName.Text = fileName;
 
                 ResetDataBindings();
+            }
+        }
+
+        private void convertFile(string fileName)
+        {
+            bool isXml;
+            try
+            {
+                info = XmlUtils.desirialize<JokeFileInfo>(fileName);
+                isXml = true;
+            }
+            catch (Exception)
+            {
+                isXml = false;
+            }
+
+            if (!isXml)
+            {
+                //info = new JokeFileInfo();
+                info.Jokes = ConvertFreeFile(fileName);
             }
         }
 
@@ -141,6 +147,25 @@ namespace Jokes
             myDal = new LoadDal();
 
             mainForm = (MainForm)Parent.Parent.Parent;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            info.Author = "Debug";
+            info.CreationDate = DateTime.Now;
+            info.Rating = 1;
+
+            for (int j = 0; j < 1000; j++)
+            {
+                for (int i = 1; i < 5; i++)
+                {
+                    convertFile(string.Format(@"C:\Users\Golan\Documents\GitHub\Jokes\{0}.txt", i));
+                    
+                    info.Title = i + ".txt";
+
+                    myDal.SaveNewFile(info);
+                }
+            }
         }
     }
 }

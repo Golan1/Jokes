@@ -18,3 +18,5 @@ FROM(
 Transaction
 
 Multiple inserts (each word)
+
+using explain plans to understand preformance

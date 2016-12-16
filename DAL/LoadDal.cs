@@ -127,7 +127,15 @@ VALUES
 
             cmd.CommandText = commandText.ToString();
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error on command:\n" + cmd.CommandText, ex);
+            }
         }
     }
 }
