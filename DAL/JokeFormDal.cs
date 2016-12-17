@@ -20,14 +20,14 @@ namespace DAL
         FROM joke
         WHERE id=:ID";
 
-        public string getJokeText(decimal id)
+        public string getJokeText(decimal jokeId)
         {
             using (var conn = CreateConnection())
             {
 
                 var cmd = new OracleCommand(SQL_GET_JOKE_WORDS, conn);
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.Add("JOKE_ID", id);
+                cmd.Parameters.Add("JOKE_ID", jokeId);
 
                 OracleDataReader dr = cmd.ExecuteReader();
 

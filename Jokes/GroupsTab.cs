@@ -66,22 +66,22 @@ namespace Jokes
 
             if (newGroup == string.Empty)
                 MessageBox.Show("Please enter a group name");
+            else if (groupsListBox.Items.Contains(newGroup))
+            {
+                MessageBox.Show("The group already exists");
+            }
             else
             {
-                bool success = true;
                 try
                 {
                     myDal.SaveNewGroup(newGroup);
+
+                    groupsListBox.Items.Clear();
+                    getGroups();
                 }
                 catch (Exception exp)
                 {
-                    success = false;
                     MessageBox.Show(exp.Message);
-                }
-                if (success)
-                {
-                    groupsListBox.Items.Clear();
-                    getGroups();
                 }
             }
 

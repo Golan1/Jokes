@@ -43,5 +43,31 @@ namespace Jokes
             RefreshFiles();
             mainForm = (MainForm)Parent.Parent.Parent;
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvFiles.SelectedRows)
+            {
+                var fileRow = (row.DataBoundItem as DataRowView).Row as JokesDS.JK_FILERow;
+
+                var x = new JokeFileInfo()
+                {
+                    Title = fileRow.TITLE,
+                    Author = fileRow.AUTHOR,
+                    CreationDate = fileRow.CREATION_DATE,
+                    Rating = fileRow.RATING,
+                    Source = fileRow.SOURCE,
+                    Jokes = myDal.getJokesOfFile(fileRow.ID)
+                };
+
+                System.Xml.Serialization.XmlSerializer s = 
+                    new System.Xml.Serialization.XmlSerializer(typeof(JokeFileInfo));
+
+                using (var sw = new StreamWriter(string.Format(@".\\{0}{1}.xml", x.Title, fileRow.ID)))
+                {
+                    s.Serialize(sw, x);
+                }
+            }
+        }
     }
 }

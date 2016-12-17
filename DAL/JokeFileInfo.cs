@@ -61,9 +61,9 @@ namespace DAL
             }
         }
 
-        private int rating;
+        private decimal rating;
 
-        public int Rating
+        public decimal Rating
         {
             get { return rating; }
             set { rating = value;

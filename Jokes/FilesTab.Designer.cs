@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvFiles = new System.Windows.Forms.DataGridView();
-            this.jKFILEDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +37,8 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jKFILEDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,17 +59,13 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dgvFiles.DataSource = this.jKFILEDataTableBindingSource;
-            this.dgvFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFiles.Location = new System.Drawing.Point(0, 0);
+            this.dgvFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvFiles.Location = new System.Drawing.Point(0, 32);
             this.dgvFiles.Name = "dgvFiles";
             this.dgvFiles.ReadOnly = true;
-            this.dgvFiles.Size = new System.Drawing.Size(749, 254);
+            this.dgvFiles.Size = new System.Drawing.Size(749, 222);
             this.dgvFiles.TabIndex = 0;
             this.dgvFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiles_CellDoubleClick);
-            // 
-            // jKFILEDataTableBindingSource
-            // 
-            this.jKFILEDataTableBindingSource.DataSource = typeof(DAL.JokesDS.JK_FILEDataTable);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -126,8 +123,23 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
+            // jKFILEDataTableBindingSource
+            // 
+            this.jKFILEDataTableBindingSource.DataSource = typeof(DAL.JokesDS.JK_FILEDataTable);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(3, 3);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(145, 23);
+            this.btnExport.TabIndex = 1;
+            this.btnExport.Text = "Export File";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // FilesTab
             // 
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dgvFiles);
             this.Name = "FilesTab";
             this.Size = new System.Drawing.Size(749, 254);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Button btnExport;
     }
 }

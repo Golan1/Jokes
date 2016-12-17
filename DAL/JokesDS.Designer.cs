@@ -1693,11 +1693,11 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string AUTHOR {
                 get {
-                    try {
-                        return ((string)(this[this.tableJK_FILE.AUTHORColumn]));
+                    if (this.IsAUTHORNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AUTHOR\' in table \'JK_FILE\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableJK_FILE.AUTHORColumn]));
                     }
                 }
                 set {
@@ -1725,11 +1725,11 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SOURCE {
                 get {
-                    try {
-                        return ((string)(this[this.tableJK_FILE.SOURCEColumn]));
+                    if (this.IsSOURCENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SOURCE\' in table \'JK_FILE\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableJK_FILE.SOURCEColumn]));
                     }
                 }
                 set {
