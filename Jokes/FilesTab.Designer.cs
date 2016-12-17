@@ -48,6 +48,9 @@
             this.dgvFiles.AllowUserToAddRows = false;
             this.dgvFiles.AllowUserToDeleteRows = false;
             this.dgvFiles.AllowUserToOrderColumns = true;
+            this.dgvFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFiles.AutoGenerateColumns = false;
             this.dgvFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -59,11 +62,10 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dgvFiles.DataSource = this.jKFILEDataTableBindingSource;
-            this.dgvFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvFiles.Location = new System.Drawing.Point(0, 32);
             this.dgvFiles.Name = "dgvFiles";
             this.dgvFiles.ReadOnly = true;
-            this.dgvFiles.Size = new System.Drawing.Size(749, 222);
+            this.dgvFiles.Size = new System.Drawing.Size(734, 258);
             this.dgvFiles.TabIndex = 0;
             this.dgvFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiles_CellDoubleClick);
             // 
@@ -133,7 +135,7 @@
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(145, 23);
             this.btnExport.TabIndex = 1;
-            this.btnExport.Text = "Export File";
+            this.btnExport.Text = "Export Files";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
@@ -142,7 +144,7 @@
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dgvFiles);
             this.Name = "FilesTab";
-            this.Size = new System.Drawing.Size(749, 254);
+            this.Size = new System.Drawing.Size(734, 290);
             this.Load += new System.EventHandler(this.FilesTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jKFILEDataTableBindingSource)).EndInit();

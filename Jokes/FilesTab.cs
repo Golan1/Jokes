@@ -36,11 +36,13 @@ namespace Jokes
         public void RefreshFiles()
         {
             dgvFiles.DataSource = myDal.GetFiles();
+            dgvFiles.Sort(dgvFiles.Columns[0], ListSortDirection.Ascending);
         }
 
         private void FilesTab_Load(object sender, EventArgs e)
         {
             RefreshFiles();
+
             mainForm = (MainForm)Parent.Parent.Parent;
         }
 
