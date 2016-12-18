@@ -146,7 +146,7 @@ namespace DAL
                 {
                     OracleDataReader dr = cmd.ExecuteReader();
                     dr.Read();
-                    return dr.GetInt32(0).ToString();
+                    return dr.GetDouble(0).ToString();
                 }
                 catch (Exception exp)
                 {
@@ -200,7 +200,7 @@ namespace DAL
                 {
                     OracleDataReader dr = cmd.ExecuteReader();
                     dr.Read();
-                    return dr["wordsNum"].ToString();
+                    return dr.GetDouble(0).ToString();
                 }
                 catch (Exception exp)
                 {
@@ -254,7 +254,7 @@ namespace DAL
                 {
                     OracleDataReader dr = cmd.ExecuteReader();
                     dr.Read();
-                    return dr["wordsNum"].ToString();
+                    return dr.GetDouble(0).ToString();
                 }
                 catch (Exception exp)
                 {
