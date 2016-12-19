@@ -5,6 +5,7 @@ drop table jk_group;
 drop index text_search_index;
 drop table word_in_joke;
 drop sequence joke_seq;
+drop index file_id_fk_idx;
 drop table joke;
 drop sequence jk_file_seq;
 drop table jk_file;
@@ -33,6 +34,8 @@ file_id number not null,
 joke_index number not null,
 foreign key (file_id) references jk_file(id));
 
+create index file_id_fk_idx on joke(file_id);
+
 CREATE SEQUENCE joke_seq
  START WITH     1
  INCREMENT BY   1
@@ -60,8 +63,6 @@ CREATE SEQUENCE jk_group_seq
  INCREMENT BY   1
  NOCACHE
  NOCYCLE;
-
-
 
 create table word_in_group(
 group_id number,
