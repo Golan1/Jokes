@@ -271,6 +271,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="COMMONNESS_WORD" msprop:Generator_TableClassName="COMMONNESS_WORDDataTable" msprop:Generator_TableVarName="tableCOMMONNESS_WORD" msprop:Generator_RowChangedName="COMMONNESS_WORDRowChanged" msprop:Generator_TablePropName="COMMONNESS_WORD" msprop:Generator_RowDeletingName="COMMONNESS_WORDRowDeleting" msprop:Generator_RowChangingName="COMMONNESS_WORDRowChanging" msprop:Generator_RowEvHandlerName="COMMONNESS_WORDRowChangeEventHandler" msprop:Generator_RowDeletedName="COMMONNESS_WORDRowDeleted" msprop:Generator_RowClassName="COMMONNESS_WORDRow" msprop:Generator_UserTableName="COMMONNESS_WORD" msprop:Generator_RowEvArgName="COMMONNESS_WORDRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WORD" msprop:Generator_ColumnVarNameInTable="columnWORD" msprop:Generator_ColumnPropNameInRow="WORD" msprop:Generator_ColumnPropNameInTable="WORDColumn" msprop:Generator_UserColumnName="WORD" type="xs:string" minOccurs="0" />
+              <xs:element name="COUNT" msprop:Generator_ColumnVarNameInTable="columnCOUNT" msprop:Generator_ColumnPropNameInRow="COUNT" msprop:Generator_ColumnPropNameInTable="COUNTColumn" msprop:Generator_UserColumnName="COUNT" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

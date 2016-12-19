@@ -9,6 +9,11 @@ namespace DAL
 {
     public class StatisticsTabDal: BaseDal
     {
+        private const string SQL_COMONNESS = @"
+SELECT text_for_search as WORD, count(0) as COUNT
+FROM word_in_joke
+GROUP BY text_for_search
+ORDER BY COUNT(0) DESC";
 
         private const string SQL_MOST_COMM = @" 
         SELECT * FROM (SELECT COunt (*) as times, TEXT_FOR_SEARCH as text
@@ -249,7 +254,7 @@ namespace DAL
         {
             using (var conn = CreateConnection())
             {
-                var cmd = new OracleCommand(SQL_MIN_WORDS_FILE, conn);
+                var cmd = new OracleCommand(SQL_AVG_WORDS_FILE, conn);
                 try
                 {
                     OracleDataReader dr = cmd.ExecuteReader();
@@ -264,5 +269,17 @@ namespace DAL
         }
 
 
+        public JokesDS.COMMONNESS_WORDDataTable GetCommonness()
+        {
+            using (var conn = CreateConnection())
+            {
+                var adapter = new OracleDataAdapter(new OracleCommand(SQL_COMONNESS, conn));
+
+                DS.COMMONNESS_WORD.Clear();
+                adapter.Fill(DS.COMMONNESS_WORD);
+            }
+
+            return DS.COMMONNESS_WORD;
+        }
     }
 }

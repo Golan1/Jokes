@@ -144,6 +144,7 @@
     <EmbeddedResource Include="StatisticsTab.resx">
       <DependentUpon>StatisticsTab.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\DAL.JokesDS+COMMONNESS_WORDDataTable.datasource" />
     <None Include="Properties\DataSources\DAL.JokesDS+JK_FILEDataTable.datasource" />
     <None Include="Properties\DataSources\DAL.JokesDS+SEARCH_RESULTDataTable.datasource" />
     <None Include="Properties\DataSources\DAL.JokesDS+WORD_IN_JOKEDataTable.datasource" />

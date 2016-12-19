@@ -92,6 +92,19 @@ namespace Jokes
             textBox1.Text = x.Item1;
         }
 
+        private void StatisticsTab_Load(object sender, EventArgs e)
+        {
+            refreshCommon();
+        }
 
+        private void refreshCommon()
+        {
+            dgvCommon.DataSource = myDal.GetCommonness();
+        }
+
+        private void btnRefreshCommon_Click(object sender, EventArgs e)
+        {
+            refreshCommon();
+        }
     }
 }
